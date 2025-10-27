@@ -1,7 +1,6 @@
 library(treemap)
 library(dplyr)
 
-# Datasets públicos
 public_datasets <- data.frame(
   Dataset = c("CAFE", "FER-2013", "CAFE+GuessWhat", "Q-Chat-10", 
               "FEI/GT/Gallagher", "STREs WoZ", "GuessWhat App"),
@@ -9,7 +8,6 @@ public_datasets <- data.frame(
   Category = "PUBLIC 62.5%"
 )
 
-# Datasets privados
 private_datasets <- data.frame(
   Dataset = c("MoodCapture", "Mobile Landmarks", "D-MOMO", 
               "App Reviews", "Children Drawings", "WEMAC", 
@@ -29,8 +27,8 @@ treemap(df_datasets,
         type = "categorical",
         palette = c("#4169E1", "#FFD700"),
         title = "Distribución de Datasets Públicos y Privados",
-        fontsize.labels = c(0, 10),  # Primer valor en 0 oculta el texto de categoría
-        fontcolor.labels = c("transparent", "white"),  # Categoría transparente
+        fontsize.labels = c(0, 10),
+        fontcolor.labels = c("transparent", "white"),
         fontface.labels = c(1, 2),
         align.labels = list(c("center", "center"), c("center", "center")),
         overlap.labels = 0.5,
