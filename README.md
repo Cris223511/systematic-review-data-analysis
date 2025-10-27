@@ -1,8 +1,8 @@
-# Systematic Review - Data Analysis
+# Systematic Review - Machine Learning and Mobile Applications for Emotion Recognition in Adults with Autism Spectrum Disorder
 
 ## Overview
 
-This repository contains all data, scripts, and analysis files for the systematic literature review on emotion recognition interventions for adults with Autism Spectrum Disorder using machine learning and facial recognition technologies. The research follows PRISMA methodology and analyzes machine learning algorithms, performance metrics, datasets, and mobile applications for ASD emotion recognition.
+This repository contains all data, scripts, and analysis files for the systematic literature review on machine learning applications and mobile technologies (including serious games) for emotion recognition in adults with Autism Spectrum Disorder. The research follows PRISMA methodology and analyzes machine learning algorithms, performance metrics, datasets, and mobile/serious game applications for ASD emotion recognition.
 
 ## Research Questions
 
@@ -27,7 +27,7 @@ This repository contains all data, scripts, and analysis files for the systemati
 - **Web of Science**: Secondary academic database  
 - **IEEE Xplore**: Technical publications database
 
-Total records identified: 188 studies
+Total records identified: 188 studies  
 Final studies included after PRISMA filtering: 42 studies
 
 ## Search String
@@ -38,7 +38,9 @@ OR ( "emotion recognition" OR "facial expression" OR "emotional recognition" )
 AND ( "machine learning" OR "deep learning" OR "CNN" 
 OR "convolutional neural network" OR "artificial intelligence" ) 
 AND ( "mobile application" OR "smartphone" OR "serious game" 
-OR "digital intervention" ) )
+OR "digital intervention" ) ) AND ( LIMIT-TO ( OA , "all" ) ) 
+AND ( LIMIT-TO ( DOCTYPE , "re" ) OR LIMIT-TO ( DOCTYPE , "cp" ) 
+OR LIMIT-TO ( DOCTYPE , "ar" ) )
 ```
 
 ## Methodology
@@ -74,11 +76,12 @@ Scripts should be executed sequentially to ensure proper data flow: first data p
 
 ## Institution
 
-Universidad San Ignacio de Loyola - Facultad de Ingeniería - Carrera de Ingeniería de Sistemas de la Información - Lima, Perú
+Universidad San Ignacio de Loyola - Faculty of Engineering - Information Systems Engineering Program - Lima, Peru
 
 ## Contact
 
-jhafet.canepa@usil.pe
+jhafet.canepa@usil.pe  
+c.pillihuaman@usil.pe
 
 ## License
 
