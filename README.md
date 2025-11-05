@@ -1,12 +1,12 @@
-# Systematic Review - Machine Learning and Mobile Applications for Emotion Recognition in Adults with Autism Spectrum Disorder
+# Systematic Review - Machine Learning and Mobile Applications for Emotion Recognition in Children with Autism Spectrum Disorder
 
 ## Overview
 
-This repository contains all data, scripts, and analysis files for the systematic literature review on machine learning applications and mobile technologies (including serious games) for emotion recognition in adults with Autism Spectrum Disorder. The research follows PRISMA methodology and analyzes machine learning algorithms, performance metrics, datasets, and mobile/serious game applications for ASD emotion recognition.
+This repository contains all data, scripts, and analysis files for the systematic literature review on machine learning applications and mobile technologies (including serious games) for emotion recognition in childrens with Autism Spectrum Disorder. The research follows PRISMA methodology and analyzes machine learning algorithms, performance metrics, datasets, and mobile/serious game applications for ASD emotion recognition.
 
 ## Research Questions
 
-- **RQ1**: Machine learning algorithms, architectures and models for emotion recognition in adults with ASD
+- **RQ1**: Machine learning algorithms, architectures and models for emotion recognition in childrens with ASD
 - **RQ2**: Performance evaluation metrics for emotion recognition models
 - **RQ3**: Accuracy, precision, recall, F1-score and AUC values
 - **RQ4**: Datasets used for model training and validation
