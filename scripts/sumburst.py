@@ -23,47 +23,49 @@ start_angle = 90
 
 for metric in metrics_data:
     angle_size = (metric['count'] / total) * 360
-
     refs_per_angle = angle_size / len(metric['refs'])
+    
     for i, ref in enumerate(metric['refs']):
         ref_start = start_angle + (i * refs_per_angle)
         ref_end = ref_start + refs_per_angle
         color = color_dark if i % 2 == 0 else color_light
-
+        
         wedge = Wedge((0, 0), 1.0, ref_start, ref_end, width=0.20,
                      facecolor=color, edgecolor='white', linewidth=1.5)
         ax.add_patch(wedge)
-
+        
         mid_angle = np.radians(ref_start + refs_per_angle / 2)
         r = 0.93
         x, y = r * np.cos(mid_angle), r * np.sin(mid_angle)
+        
         rotation = (ref_start + refs_per_angle / 2 - 90) % 360
         if rotation > 90 and rotation < 270:
             rotation += 180
+        
         ax.text(x, y, f"{ref}\n{metric['pct']:.2f}%", ha='center', va='center',
                fontsize=6, rotation=rotation, weight='normal', color='black')
-
+    
     color = color_dark if metrics_data.index(metric) % 2 == 0 else color_light
     wedge = Wedge((0, 0), 0.80, start_angle, start_angle + angle_size, width=0.20,
                  facecolor=color, edgecolor='white', linewidth=2)
     ax.add_patch(wedge)
-
+    
     mid_angle = np.radians(start_angle + angle_size / 2)
     r = 0.72
     x, y = r * np.cos(mid_angle), r * np.sin(mid_angle)
     ax.text(x, y, metric['name'].upper(), ha='center', va='center',
            fontsize=11, weight='bold', color='black')
-
+    
     color = color_light if metrics_data.index(metric) % 2 == 0 else color_dark
     wedge = Wedge((0, 0), 0.60, start_angle, start_angle + angle_size, width=0.20,
                  facecolor=color, edgecolor='white', linewidth=2)
     ax.add_patch(wedge)
-
+    
     r = 0.52
     x, y = r * np.cos(mid_angle), r * np.sin(mid_angle)
     ax.text(x, y, f"{metric['count']}\n{metric['pct']:.1f}%", ha='center', va='center',
            fontsize=9, weight='normal', color='black')
-
+    
     start_angle += angle_size
 
 circle_outer = Circle((0, 0), 0.40, facecolor=color_light, edgecolor='white', linewidth=2)
@@ -80,5 +82,5 @@ ax.set_ylim(-1.1, 1.1)
 ax.axis('off')
 
 plt.tight_layout()
-plt.savefig('figura4_metricas_4capas.png', dpi=300, bbox_inches='tight', facecolor='white')
+plt.savefig('figure5_evaluation_metrics.png', dpi=300, bbox_inches='tight', facecolor='white')
 plt.show()
