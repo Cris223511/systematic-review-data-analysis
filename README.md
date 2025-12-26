@@ -71,6 +71,7 @@ Scripts should be executed sequentially to ensure proper data flow: first data p
 
 ## Authors
 
+- Jorge Eduardo Castañeda Alban
 - Jhafet Martín Cánepa Maceda
 - Christopher Antonio Pillihuamán Santiago
 
