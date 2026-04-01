@@ -116,7 +116,7 @@ from imblearn.over_sampling import SMOTE
 
 ## Authors
 
-Jorge Eduardo Castañeda Alban: Universidad San Ignacio de Loyola / Universidad Complutense de Madrid (jorge.castaneda@usil.edu.pe)
+Jorge Eduardo Castañeda Alban: Universidad San Ignacio de Loyola / Universidad Complutense de Madrid (jorge.castanedaa@usil.pe)
 
 Christopher Antonio Pillihuamán Santiago: Universidad San Ignacio de Loyola (c.pillihuaman@usil.pe)
 
