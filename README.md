@@ -1,14 +1,16 @@
-# Systematic Review - Machine Learning and Mobile Applications for Emotion Recognition in Children with Autism Spectrum Disorder
+# Systematic Review: Facial Emotion Recognition through Machine Learning for Therapeutic Monitoring in Children with Autism Spectrum Disorder
 
 ## Overview
-This repository contains all data, scripts, and analysis files for the systematic literature review on machine learning applications and mobile technologies for emotion recognition in children with Autism Spectrum Disorder. The research follows PRISMA 2020 methodology and analyzes machine learning algorithms, performance metrics, datasets, and mobile applications for ASD emotion recognition in pediatric populations (ages 0-18 years).
+
+This repository contains all data, scripts, and analysis files for the systematic literature review on machine learning applications for facial emotion recognition in children with Autism Spectrum Disorder (ASD) for therapeutic monitoring purposes. The research follows PRISMA 2020 methodology and analyzes machine learning architectures, performance metrics, datasets, input features, and methodological limitations for ASD emotion recognition in pediatric populations (ages 0–18 years).
 
 ## Research Questions
-- **RQ1**: Which machine learning architectures and models demonstrate the highest effectiveness in emotion recognition and ASD detection?
+
+- **RQ1**: What machine learning architectures and models have been employed for facial emotion recognition in children with ASD in the context of therapeutic monitoring?
 - **RQ2**: What metrics are used to evaluate the performance of emotion recognition algorithms, methods, or models?
 - **RQ3**: What are the accuracy, precision, recall, F1-score, and AUC values of these models?
 - **RQ4**: What datasets are used for model training and validation, and what are their representativeness limitations?
-- **RQ5**: What input variables or features do ML systems employ for ASD detection and evaluation?
+- **RQ5**: What input variables or features do emotion monitoring systems employ during therapeutic interventions with children with ASD?
 - **RQ6**: What technical and methodological limitations impede ML system implementation in resource-limited contexts?
 
 ## Repository Structure
@@ -16,124 +18,146 @@ This repository contains all data, scripts, and analysis files for the systemati
 ├── data/           # CSV exports from academic databases and merged datasets
 ├── scripts/        # R and Python scripts for processing, analysis and visualization
 ├── results/        # Generated figures, tables and statistical outputs
-└── supplementary/  # PRISMA checklist, search strings, quality assessment
+└── README.md
 ```
 
 ## Data Sources
+
 - **IEEE Xplore Digital Library**: Technical publications
-- **Scopus**: Primary academic database  
+- **Scopus**: Primary academic database
 - **Web of Science Core Collection**: Secondary academic database
 
-**Search period**: January 2018 - October 2025  
-**Total records identified**: 188 studies  
-**Studies included after PRISMA filtering**: 42 studies
+**Search period**: 2018–2025
+**Total records identified**: 1,915
+**Studies included after PRISMA filtering**: 34
 
-## Search String
+## Search String (Scopus)
 ```
-TITLE-ABS-KEY ( ( "autism spectrum disorder" OR "ASD" OR "autism" ) 
-OR ( "emotion recognition" OR "facial expression" OR "emotional recognition" ) 
-AND ( "machine learning" OR "deep learning" OR "CNN" 
-OR "convolutional neural network" OR "artificial intelligence" ) 
-AND ( "mobile application" OR "smartphone" OR "serious game" 
-OR "digital intervention" ) ) AND ( LIMIT-TO ( OA , "all" ) ) 
-AND ( LIMIT-TO ( DOCTYPE , "re" ) OR LIMIT-TO ( DOCTYPE , "cp" ) 
-OR LIMIT-TO ( DOCTYPE , "ar" ) )
+TITLE-ABS-KEY(("autism" OR "ASD" OR "autism spectrum" OR "autistic")
+AND ("emotion" OR "facial expression" OR "affective" OR "social communication")
+AND ("machine learning" OR "deep learning" OR "artificial intelligence"
+OR "computer vision" OR "neural network" OR "classification" OR "recognition"))
+AND PUBYEAR > 2018 AND PUBYEAR < 2026
+AND (LIMIT-TO(DOCTYPE,"ar") OR LIMIT-TO(DOCTYPE,"cp"))
+AND (LIMIT-TO(OA,"all"))
+AND (LIMIT-TO(LANGUAGE,"English"))
 ```
+
+Search strings for IEEE Xplore and Web of Science are provided in the supplementary materials within this repository.
 
 ## Methodology
-PRISMA 2020 systematic review methodology with rigorous inclusion criteria:
-- Focus on emotion recognition/ASD detection using ML approaches
-- Mobile applications or smartphone-based technologies
-- Quantitative performance metrics reported
-- Published in peer-reviewed journals/conference proceedings **indexed in Scimago Journal Rank (SJR) Q1-Q4**
+
+PRISMA 2020 systematic review protocol with the following inclusion criteria:
+
+- Studies on facial emotion recognition via ML in children with ASD, with primary focus on therapeutic monitoring
+- Use of mobile applications, smartphone-based systems, or mobile-adaptable technologies
+- Quantitative evaluation metrics reported (ACC, F1, AUC, effect sizes, or usability metrics)
+- Published in peer-reviewed journals or conference proceedings indexed in Scimago Journal Rank (SJR) Q1–Q4
 - Open access full-text available
 - Written in English
 
-**Exclusion criteria**: Review articles, studies without empirical validation, non-facial modality only studies, duplicate publications.
+**Exclusion criteria**: Review articles and meta-analyses; studies without any quantitative empirical validation; studies focused exclusively on non-facial modalities; duplicate publications of the same dataset or methodology.
 
-**Quality assessment**: Inter-rater reliability monitored using Cohen's kappa coefficient (κ = 0.82 for Phase 1; κ = 0.89 for Phase 2).
+**Inter-rater reliability**: Cohen's kappa κ = 0.82 (Phase 1 — title/abstract screening); κ = 0.89 (Phase 2 — full-text review).
+
+**Quality assessment**: Mixed Methods Appraisal Tool (MMAT) version 2018, applied independently by two reviewers.
 
 ## Key Findings
 
-### Model Architectures
-- **Most prevalent families**: Wearable/Mobile (26.19%) and Traditional ML (26.19%)
-- **Best performance**: Hybrid architectures combining CNN with temporal analysis and multimodal fusion (>95% accuracy in controlled datasets)
-- **Temporal trend**: Peak productivity 2022-2024 (13 studies/year)
+### Model Architectures (N = 19 studies with identifiable ML component)
 
-### Performance Metrics
-- **Most reported**: Accuracy (62.50%), Recall (43.75%), F1-score (37.50%), Precision (37.50%)
-- **Underutilized**: AUC (18.75%) despite methodological superiority in imbalanced datasets
+- **Most prevalent family**: CNN / Deep Learning (57.9%)
+- **Ensemble models**: 26.3% of implementations
+- **Non-ensemble models**: 73.7% of implementations
+- **Temporal trend**: Peak productivity 2024–2025
+
+### Performance Metrics (N = 13 studies with extractable supervised classification metrics)
+
+- **Most reported**: Accuracy — 12/13 studies (92%)
+- **F1-score**: 9/13 studies (69%)
+- **Precision**: 6/13 studies (46%)
+- **Recall**: 4/13 studies (31%)
+- **AUC**: 3/13 studies (23%)
+- **Accuracy range in genuine clinical data**: 67.8%–88.0%
+- **Accuracy range in Kaggle datasets (compromised clinical validity)**: 96.5%–99.0%
 
 ### Datasets
-- **Public datasets**: CAFE (7.1%), FER-2013 (4.8%)
-- **Private datasets**: 38.1% (clinical proprietary data)
-- **Critical gap**: No datasets representing Latin American pediatric populations with ASD
+
+- **Public datasets**: 50.0% of studies (FER-2013, FERAC, DREAM, CAFE, ABIDE, CK+, Kaggle ASD)
+- **Private / semi-restricted datasets**: 50.0% (clinical proprietary data, robot therapy data, eye-tracking)
+- **Critical gap**: No validated datasets representing Latin American pediatric populations with ASD
 
 ### Input Features
-- **Most prevalent**: Facial Features (40.48%), CNN Architectures (23.81%), Input Modalities (14.29%)
-- **Underexplored**: Physiological signals (7.14%), contextual features
 
-### Limitations
-1. Reality representativeness (28.57%)
-2. Imbalanced data (23.81%)
-3. Inconsistent information recording (19.05%)
-4. Limited clinical interpretability (14.29%)
+- **Facial Features**: 44.1% (landmarks, action units, microexpressions, gaze patterns)
+- **CNN Architectures**: 23.5%
+- **Input Modalities**: 11.8% (video frames, smartphone images, clinical session video)
+- **Physiological Signals**: 8.8% (EDA, GSR, EEG, skeleton 3D)
+
+### Methodological Limitations
+
+1. Limited ecological representativeness — 11/34 studies (32.4%)
+2. Class imbalance and sampling biases — 9/34 studies (26.5%)
+3. Inconsistency in data recording and annotation — 6/34 studies (17.6%)
+4. Limited clinical interpretability of models — 5/34 studies (14.7%)
+5. Data availability and centralized processing — 2/34 studies (5.9%)
 
 ### Preprocessing Techniques
-- **Balancing**: Data Augmentation (14.29%), SMOTE (7.14%), Class Weighting (9.52%)
-- **Optimization**: K-Fold Cross-Validation (26.19%), Grid Search (11.90%)
 
-## Registration and Data Availability
-- **PROSPERO Registration**: CRD420251248821
-- **Zenodo Repository**: DOI 10.5281/zenodo.17900467
-- **Supplementary Materials**: Search strings (S1), Selection process (S2), Quality assessment (S3)
+- **Balancing**: Data Augmentation (17.6%), Class Weighting (8.8%), SMOTE (5.9%), Stratified Sampling (8.8%), RUS (2.9%)
+- **Hyperparameter optimization**: K-Fold Cross-Validation (23.5%), Manual Tuning (11.8%), Hold-out Validation (11.8%), Grid Search (8.8%), GWO Metaheuristic (2.9%)
+
+## Data Availability
+
+All data, scripts, and supplementary materials (PRISMA checklist, platform-specific search strings, quality assessment forms) are publicly available in this repository.
+
+**Protocol registration**: PROSPERO CRD420251248821
 
 ## Technical Requirements
+
 ### R Environment
 ```r
-# Data processing and statistical analysis
 library(dplyr)
 library(ggplot2)
-library(caret)      # K-Fold CV, Grid Search
-library(ROSE)       # Data balancing techniques
+library(caret)   # K-Fold CV, Grid Search
+library(ROSE)    # Data balancing
 ```
 
 ### Python Environment
 ```python
-# Visualization and metrics
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-from imblearn.over_sampling import SMOTE  # Class balancing
+from imblearn.over_sampling import SMOTE
 ```
 
-## Execution Instructions
-1. **Data Processing**: Merge database exports and remove duplicates
-2. **Statistical Analysis**: Apply balancing techniques and calculate metrics
-3. **Visualization**: Generate figures for PRISMA flow, temporal trends, and performance distributions
-
 ## Authors
-- Jorge Eduardo Castañeda Alban (jcastanedaa@usil.edu.pe)
-- Jhafet Martín Cánepa Maceda (jhafet.canepa@usil.pe)
-- Christopher Antonio Pillihuamán Santiago (c.pillihuaman@usil.pe)
+
+- **Jorge Eduardo Castañeda Alban** — Universidad San Ignacio de Loyola / Universidad Complutense de Madrid (jorge.castaneda@usil.edu.pe)
+- **Christopher Antonio Pillihuamán Santiago** — Universidad San Ignacio de Loyola
+- **Jhafet Martín Cánepa Maceda** — Universidad San Ignacio de Loyola
+- **Jomark Pablo Noriega Zapata** — Universidad Nacional Mayor de San Marcos
+- **Juan Orlando Salazar Campos** — Universidad Nacional Mayor de San Marcos
+- **Kenny Disney Neira Neira** — Universidad Tecnológica del Perú
 
 ## Institution
-Universidad San Ignacio de Loyola  
-Faculty of Engineering  
-Information Systems Engineering Program  
-Lima, Peru
+
+Universidad San Ignacio de Loyola (USIL)
+Faculty of Engineering — Lima, Peru
 
 ## Funding
+
 This research was funded by Universidad San Ignacio de Loyola (USIL), Lima, Peru.
 
 ## Citation
-If you use this data or methodology, please cite:
 ```
-Castañeda Alban, J.E., Cánepa Maceda, J.M., Pillihuamán Santiago, C.A. (2025). 
-Machine Learning and Mobile Applications for Emotion Recognition in Children 
-with Autism Spectrum Disorder: A Systematic Literature Review. 
-IEEE Access. [Submitted]
+Castañeda Alban, J.E., Pillihuamán Santiago, C.A., Cánepa Maceda, J.M.,
+Noriega Zapata, J.P., Salazar Campos, J.O., & Neira Neira, K.D. (2026).
+Facial Emotion Recognition through Machine Learning for Therapeutic Monitoring
+in Children with Autism Spectrum Disorder: A Systematic Review.
+[Submitted for publication]
 ```
 
 ## License
-Academic use only. All data extracted will be available in supplementary materials upon publication.
+
+Academic use only. All extracted data are available in this repository upon publication.
