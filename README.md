@@ -116,17 +116,17 @@ from imblearn.over_sampling import SMOTE
 
 ## Authors
 
-Jorge Eduardo Castañeda Alban — Universidad San Ignacio de Loyola / Universidad Complutense de Madrid (jorge.castaneda@usil.edu.pe)
+Jorge Eduardo Castañeda Alban: Universidad San Ignacio de Loyola / Universidad Complutense de Madrid (jorge.castaneda@usil.edu.pe)
 
-Christopher Antonio Pillihuamán Santiago — Universidad San Ignacio de Loyola
+Christopher Antonio Pillihuamán Santiago: Universidad San Ignacio de Loyola (c.pillihuaman@usil.pe)
 
-Jhafet Martín Cánepa Maceda — Universidad San Ignacio de Loyola
+Jhafet Martín Cánepa Maceda: Universidad San Ignacio de Loyola (jhafet.canepa@usil.pe)
 
-Jomark Pablo Noriega Zapata — Universidad Nacional Mayor de San Marcos
+Jomark Pablo Noriega Zapata: Universidad Nacional Mayor de San Marcos (jnoriegaz@usil.edu.pe)
 
-Juan Orlando Salazar Campos — Universidad Nacional Mayor de San Marcos
+Juan Orlando Salazar Campos: Universidad Nacional Mayor de San Marcos (jsalazarc@usil.edu.pe)
 
-Kenny Disney Neira Neira — Universidad Tecnológica del Perú
+Kenny Disney Neira Neira: Universidad Tecnológica del Perú (kneira@usil.edu.pe)
 
 ## Institution
 
