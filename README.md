@@ -21,6 +21,7 @@ This repository contains all data, scripts, and analysis files for the systemati
 ## Repository Structure
 ```
 ├── data/       # CSV exports from academic databases and merged datasets
+├── prisma/     # PRISMA 2020 flow diagram, checklist and supplementary materials
 ├── scripts/    # R and Python scripts for processing, analysis and visualization
 ├── results/    # Generated figures, tables and statistical outputs
 └── README.md
@@ -34,7 +35,7 @@ This repository contains all data, scripts, and analysis files for the systemati
 
 **Web of Science Core Collection**: Secondary academic database
 
-Search period: 2018–2025
+Search period: 2018–2026
 
 Total records identified: 1,915
 
@@ -63,6 +64,8 @@ Exclusion criteria: review articles and meta-analyses; studies without any quant
 Inter-rater reliability: Cohen's kappa κ = 0.82 (Phase 1, title/abstract screening) and κ = 0.89 (Phase 2, full-text review).
 
 Quality assessment: Mixed Methods Appraisal Tool (MMAT) version 2018, applied independently by two reviewers.
+
+The PRISMA 2020 flow diagram, checklist, and selection tracking spreadsheet are available in the `prisma/` directory.
 
 ## Key Findings
 
@@ -94,7 +97,7 @@ Hyperparameter optimization: K-Fold Cross-Validation (23.5%), Manual Tuning (11.
 
 ## Data Availability
 
-All data, scripts, and supplementary materials including the PRISMA checklist, platform-specific search strings, and quality assessment forms are publicly available in this repository: https://github.com/Cris223511/systematic-review-data-analysis
+All data, scripts, and supplementary materials including the PRISMA 2020 flow diagram, checklist, platform-specific search strings, and quality assessment forms are publicly available in this repository: https://github.com/Cris223511/systematic-review-data-analysis
 
 ## Technical Requirements
 
