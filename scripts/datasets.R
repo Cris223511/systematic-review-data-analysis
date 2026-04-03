@@ -2,23 +2,23 @@ library(treemap)
 library(dplyr)
 
 public_datasets <- data.frame(
-  Dataset = c("CAFE", "FER-2013", "CAFE+GuessWhat", "Q-Chat-10", 
-              "FEI/GT/Gallagher", "STREs WoZ", "GuessWhat App"),
-  Frequency = c(3, 2, 1, 1, 1, 1, 1),
-  Category = "PUBLIC (23.8%)"
+  Dataset = c("Kaggle ASD / Autistic Children Emotions", "FER-2013",
+              "FERAC", "CK+", "CAFE", "DREAM Dataset",
+              "ABIDE", "Kaggle FER", "Kaggle Screening / Tabular"),
+  Frequency = c(6, 3, 2, 1, 1, 1, 1, 1, 1),
+  Category = "PUBLIC (50.0%)"
 )
 
 private_datasets <- data.frame(
-  Dataset = c("MoodCapture", "Mobile Landmarks", "D-MOMO", 
-              "App Reviews", "Children Drawings", "WEMAC", 
-              "YouTube Videos", "Children Art", "Other Private"),
-  Frequency = c(1, 1, 1, 1, 2, 1, 1, 1, 7),
-  Category = "PRIVATE (38.1%)"
+  Dataset = c("Own Clinical Data (ASD Children)", "Semi-public (on request)",
+              "Robot Therapy Data", "Clinical Eye-tracking Data",
+              "Corporate Clinical Trial Data", "No ML Dataset Identified"),
+  Frequency = c(7, 3, 3, 2, 1, 1),
+  Category = "PRIVATE (50.0%)"
 )
 
 df_datasets <- rbind(public_datasets, private_datasets)
-
-total_studies <- 42
+total_studies <- 34
 df_datasets$Percentage <- round(df_datasets$Frequency / total_studies * 100, 1)
 df_datasets$Label <- paste0(df_datasets$Dataset, "\n", df_datasets$Percentage, "%")
 
