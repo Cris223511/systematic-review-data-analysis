@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains all data, scripts, and analysis files for the systematic literature review on machine learning applications for facial emotion recognition in children with Autism Spectrum Disorder (ASD) for therapeutic monitoring purposes. The research follows PRISMA 2020 methodology and analyzes machine learning architectures, performance metrics, datasets, input features, and methodological limitations for ASD emotion recognition in pediatric populations (ages 0–18 years).
+This repository contains all data, scripts, and analysis files for the systematic literature review on machine learning applications for facial emotion recognition in children with Autism Spectrum Disorder (ASD) for therapeutic monitoring purposes. The research follows PRISMA 2020 methodology and analyzes machine learning architectures, performance metrics, datasets, input features, and methodological limitations for ASD emotion recognition in pediatric populations (ages 0 to 18 years). The search was restricted to open-access publications, framing this work as a systematic synthesis of open-access evidence.
 
 ## Research Questions
 
@@ -19,6 +19,7 @@ This repository contains all data, scripts, and analysis files for the systemati
 **RQ6**: What technical and methodological limitations impede ML system implementation in resource-limited contexts?
 
 ## Repository Structure
+
 ```
 ├── data/       # CSV exports from academic databases and merged datasets
 ├── prisma/     # PRISMA 2020 flow diagram, checklist and supplementary materials
@@ -30,18 +31,16 @@ This repository contains all data, scripts, and analysis files for the systemati
 ## Data Sources
 
 **IEEE Xplore Digital Library**: Technical publications
-
 **Scopus**: Primary academic database
-
 **Web of Science Core Collection**: Secondary academic database
 
-Search period: 2018–2026
-
+Automated search chain coverage: 2019 to 2025
+Final corpus publication range: 2018 to 2026
 Total records identified: 1,915
-
-Studies included after PRISMA filtering: 34
+Studies identified for analysis after PRISMA filtering: 34 (31 main scientific synthesis; 3 retracted studies documented separately as evidence of ethical vulnerabilities)
 
 ## Search String (Scopus)
+
 ```
 TITLE-ABS-KEY(("autism" OR "ASD" OR "autism spectrum" OR "autistic")
 AND ("emotion" OR "facial expression" OR "affective" OR "social communication")
@@ -57,13 +56,13 @@ Search strings for IEEE Xplore and Web of Science are provided in the supplement
 
 ## Methodology
 
-PRISMA 2020 systematic review protocol. Inclusion criteria: studies on facial emotion recognition via ML in children with ASD with primary focus on therapeutic monitoring; use of mobile applications, smartphone-based systems, or mobile-adaptable technologies; quantitative evaluation metrics reported (ACC, F1, AUC, effect sizes, or usability metrics); published in peer-reviewed journals or conference proceedings indexed in Scimago Journal Rank (SJR) Q1–Q4; open access full-text available; written in English.
+PRISMA 2020 systematic review protocol. Inclusion criteria: studies on facial emotion recognition via ML in children with ASD with primary focus on therapeutic monitoring; use of mobile applications, smartphone-based systems, or mobile-adaptable technologies; quantitative evaluation metrics reported (ACC, F1, AUC, effect sizes, or usability metrics); published in peer-reviewed journals or conference proceedings indexed in Scimago Journal Rank (SJR) Q1 to Q4; open access full-text available; written in English.
 
 Exclusion criteria: review articles and meta-analyses; studies without any quantitative empirical validation; studies focused exclusively on non-facial modalities; duplicate publications of the same dataset or methodology.
 
 Inter-rater reliability: Cohen's kappa κ = 0.82 (Phase 1, title/abstract screening) and κ = 0.89 (Phase 2, full-text review).
 
-Quality assessment: Mixed Methods Appraisal Tool (MMAT) version 2018, applied independently by two reviewers.
+Quality assessment: Mixed Methods Appraisal Tool (MMAT) version 2018, applied independently by two reviewers. A supplementary risk-of-bias assessment based on TRIPOD+AI and PROBAST+AI criteria was applied to the studies with an identifiable ML component.
 
 The PRISMA 2020 flow diagram, checklist, and selection tracking spreadsheet are available in the `prisma/` directory.
 
@@ -71,11 +70,11 @@ The PRISMA 2020 flow diagram, checklist, and selection tracking spreadsheet are 
 
 ### Model Architectures (N = 19 studies with identifiable ML component)
 
-Most prevalent family: CNN / Deep Learning (57.9%). Ensemble models represent 26.3% of implementations and non-ensemble models 73.7%. Peak productivity observed in 2024–2025.
+Most prevalent family: CNN / Deep Learning (57.9%). Ensemble models represent 26.3% of implementations and non-ensemble models 73.7%. Peak productivity observed in 2024 to 2025.
 
 ### Performance Metrics (N = 13 studies with extractable supervised classification metrics)
 
-Accuracy was the most reported metric (12/13 studies, 92%), followed by F1-score (9/13, 69%), Precision (6/13, 46%), Recall (4/13, 31%), and AUC (3/13, 23%). Accuracy range in genuine clinical data: 67.8%–88.0%. Accuracy range in Kaggle datasets with compromised clinical validity: 96.5%–99.0%.
+Accuracy was the most reported metric (12/13 studies, 92%), followed by F1-score (9/13, 69%), Precision (5/13, 38%), Recall (4/13, 31%), and AUC (3/13, 23%). Accuracy range in genuine clinical data: 67.8% to 88.0%. Accuracy range in Kaggle datasets with compromised clinical validity: 96.5% to 99.0%. These ranges are descriptive and do not constitute comparable estimates of the field.
 
 ### Datasets
 
@@ -87,7 +86,9 @@ Facial Features: 44.1% (landmarks, action units, microexpressions, gaze patterns
 
 ### Methodological Limitations
 
-Limited ecological representativeness: 11/34 studies (32.4%). Class imbalance and sampling biases: 9/34 studies (26.5%). Inconsistency in data recording and annotation: 6/34 studies (17.6%). Limited clinical interpretability of models: 5/34 studies (14.7%). Data availability and centralized processing: 2/34 studies (5.9%).
+Percentages are computed over the main synthesis (N = 31, excluding the 3 retracted studies); individual studies may report multiple limitations simultaneously.
+
+Limited ecological representativeness: 11/31 studies (35.5%). Class imbalance and sampling biases: 9/31 studies (29.0%). Inconsistency in data recording and annotation: 6/31 studies (19.4%). Limited clinical interpretability of models: 5/31 studies (16.1%). Data availability and centralized processing: 2/31 studies (6.5%). Adaptability in structured/unstructured processing: 1/31 studies (3.2%).
 
 ### Preprocessing Techniques
 
@@ -102,6 +103,7 @@ All data, scripts, and supplementary materials including the PRISMA 2020 flow di
 ## Technical Requirements
 
 ### R Environment
+
 ```r
 library(dplyr)
 library(ggplot2)
@@ -110,6 +112,7 @@ library(ROSE)
 ```
 
 ### Python Environment
+
 ```python
 import pandas as pd
 import numpy as np
@@ -120,15 +123,10 @@ from imblearn.over_sampling import SMOTE
 ## Authors
 
 Jorge Eduardo Castañeda Alban: Universidad San Ignacio de Loyola / Universidad Complutense de Madrid (jorge.castanedaa@usil.pe)
-
 Christopher Antonio Pillihuamán Santiago: Universidad San Ignacio de Loyola (c.pillihuaman@usil.pe)
-
 Jhafet Martín Cánepa Maceda: Universidad San Ignacio de Loyola (jhafet.canepa@usil.pe)
-
 Jomark Pablo Noriega Zapata: Universidad Nacional Mayor de San Marcos (jnoriegaz@usil.edu.pe)
-
 Juan Orlando Salazar Campos: Universidad Nacional Mayor de San Marcos (jsalazarc@usil.edu.pe)
-
 Kenny Disney Neira Neira: Universidad Tecnológica del Perú (kneira@usil.edu.pe)
 
 ## Institution
@@ -137,14 +135,15 @@ Universidad San Ignacio de Loyola (USIL), Faculty of Engineering, Lima, Peru
 
 ## Funding
 
-This research was funded by Universidad San Ignacio de Loyola (USIL), Lima, Peru.
+The authors declare that no external funding was received for this research.
 
 ## Citation
+
 ```
 Castañeda Alban, J.E., Pillihuamán Santiago, C.A., Cánepa Maceda, J.M.,
 Noriega Zapata, J.P., Salazar Campos, J.O., & Neira Neira, K.D. (2026).
 Facial Emotion Recognition through Machine Learning for Therapeutic Monitoring
-in Children with Autism Spectrum Disorder: A Systematic Review.
+in Children with Autism Spectrum Disorder: A Systematic Review of Open-Access Evidence.
 [Submitted for publication]
 ```
 
