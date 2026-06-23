@@ -135,7 +135,7 @@ Universidad San Ignacio de Loyola (USIL), Faculty of Engineering, Lima, Peru
 
 ## Funding
 
-The authors declare that no external funding was received for this research.
+This research was funded by Universidad San Ignacio de Loyola (USIL), Lima, Peru.
 
 ## Citation
 
