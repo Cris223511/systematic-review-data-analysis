@@ -74,7 +74,7 @@ Most prevalent family: CNN / Deep Learning (57.9%). Ensemble models represent 26
 
 ### Performance Metrics (N = 13 studies with extractable supervised classification metrics)
 
-Accuracy was the most reported metric (12/13 studies, 92%), followed by F1-score (9/13, 69%), Precision (5/13, 38%), Recall (4/13, 31%), and AUC (3/13, 23%). Accuracy range in genuine clinical data: 67.8% to 88.0%. Accuracy range in Kaggle datasets with compromised clinical validity: 96.5% to 99.0%. These ranges are descriptive and do not constitute comparable estimates of the field.
+Accuracy was the most reported metric (12/13 studies, 92%), followed by F1-score (9/13, 69%), Precision (4/13, 31%), Recall (4/13, 31%), and AUC (3/13, 23%). Accuracy range in genuine clinical data: 67.8% to 88.0%. Accuracy range in Kaggle datasets with compromised clinical validity: 96.5% to 99.82%. These ranges are descriptive and do not constitute comparable estimates of the field.
 
 ### Datasets
 
