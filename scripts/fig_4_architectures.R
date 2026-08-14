@@ -1,18 +1,16 @@
 library(ggplot2)
 library(dplyr)
-
 df_arch <- data.frame(
   Family = rep(c("CNN / Deep Learning",
                  "Traditional ML",
                  "Multimodal / Wearable",
                  "Computer Vision / Eye-tracking"), each = 2),
   Configuration = rep(c("Non-ensemble", "Ensemble"), times = 4),
-  Studies = c(8, 3,
+  Studies = c(9, 4,
               2, 1,
               2, 1,
               2, 0)
 )
-
 df_arch$Family <- factor(df_arch$Family,
                          levels = c("Computer Vision / Eye-tracking",
                                     "Multimodal / Wearable",
@@ -20,12 +18,9 @@ df_arch$Family <- factor(df_arch$Family,
                                     "CNN / Deep Learning"))
 df_arch$Configuration <- factor(df_arch$Configuration,
                                 levels = c("Non-ensemble", "Ensemble"))
-
 totals <- df_arch %>% group_by(Family) %>% summarise(Total = sum(Studies))
-
 colors_conf <- c("Non-ensemble" = "#2F4858",
                  "Ensemble"     = "#C9D6DE")
-
 p <- ggplot(df_arch, aes(x = Studies, y = Family, fill = Configuration)) +
   geom_bar(stat = "identity", width = 0.62,
            colour = "black", linewidth = 0.5) +
@@ -39,8 +34,8 @@ p <- ggplot(df_arch, aes(x = Studies, y = Family, fill = Configuration)) +
   scale_fill_manual(values = colors_conf, name = NULL) +
   scale_colour_manual(values = c("Non-ensemble" = "white",
                                  "Ensemble"     = "black")) +
-  scale_x_continuous(limits = c(0, 13), breaks = seq(0, 12, 2), expand = c(0, 0)) +
-  labs(x = "Number of studies (n = 19 with identifiable ML architecture)", y = NULL) +
+  scale_x_continuous(limits = c(0, 15), breaks = seq(0, 14, 2), expand = c(0, 0)) +
+  labs(x = "Number of studies (n = 21 with identifiable ML architecture)", y = NULL) +
   theme_minimal(base_family = "sans") +
   theme(legend.position = "bottom",
         legend.text = element_text(size = 12, face = "bold", colour = "black"),
@@ -51,6 +46,5 @@ p <- ggplot(df_arch, aes(x = Studies, y = Family, fill = Configuration)) +
         panel.grid.major.y = element_blank(),
         panel.grid.minor = element_blank(),
         panel.grid.major.x = element_line(colour = "gray90"))
-
 ggsave("../images/fig_4.png", plot = p, width = 9, height = 5.2, dpi = 300)
 ggsave("../images/fig_4.pdf", plot = p, width = 9, height = 5.2)
