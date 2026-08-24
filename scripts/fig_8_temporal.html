@@ -35,14 +35,19 @@
     <div class="chart-container">
         <canvas id="temporalChart"></canvas>
     </div>
+
     <script>
         const ctx = document.getElementById('temporalChart').getContext('2d');
+
         const data = {
-            labels: ['2018', '2019', '2020', '2021', '2022', '2023', '2024', '2025', '2026'],
+            labels: [
+                '2018', '2019', '2020', '2021', '2022',
+                '2023', '2024', '2025', '2026'
+            ],
             datasets: [
                 {
                     label: 'CNN / Deep Learning',
-                    data: [0, 0, 0, 0, 1, 0, 5, 7, 0],
+                    data: [0, 0, 0, 0, 1, 0, 3, 6, 0],
                     backgroundColor: 'rgba(47, 72, 88, 0.90)',
                     borderColor: 'rgba(47, 72, 88, 1)',
                     borderWidth: 2
@@ -63,20 +68,21 @@
                 },
                 {
                     label: 'Multimodal / Wearable',
-                    data: [1, 1, 0, 0, 1, 0, 0, 1, 1],
+                    data: [1, 1, 0, 0, 0, 0, 0, 1, 1],
                     backgroundColor: 'rgba(201, 214, 222, 0.95)',
                     borderColor: 'rgba(47, 72, 88, 1)',
                     borderWidth: 2
                 },
                 {
                     label: 'No ML model (clinical / conceptual)',
-                    data: [0, 2, 0, 3, 0, 2, 0, 1, 0],
+                    data: [0, 2, 0, 2, 0, 0, 0, 1, 0],
                     backgroundColor: 'rgba(232, 182, 73, 0.90)',
                     borderColor: 'rgba(138, 106, 31, 1)',
                     borderWidth: 2
                 }
             ]
         };
+
         const config = {
             type: 'bar',
             data: data,
@@ -103,7 +109,9 @@
                         callbacks: {
                             footer: function (tooltipItems) {
                                 let sum = 0;
-                                tooltipItems.forEach(function (t) { sum += t.parsed.y; });
+                                tooltipItems.forEach(function (t) {
+                                    sum += t.parsed.y;
+                                });
                                 return 'Year total: ' + sum + ' studies';
                             }
                         }
@@ -127,7 +135,7 @@
                     y: {
                         stacked: true,
                         beginAtZero: true,
-                        max: 12,
+                        max: 11,
                         ticks: {
                             stepSize: 2,
                             font: { size: 13, weight: 'bold' },
@@ -135,7 +143,7 @@
                         },
                         title: {
                             display: true,
-                            text: 'Number of studies (n = 31 corpus)',
+                            text: 'Number of studies (n = 24 eligible corpus)',
                             font: { size: 13, weight: 'bold' },
                             color: '#000000'
                         },
@@ -144,6 +152,7 @@
                 }
             }
         };
+
         new Chart(ctx, config);
     </script>
 </body>

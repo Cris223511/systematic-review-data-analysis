@@ -15,9 +15,11 @@ import matplotlib as mpl
 from matplotlib.font_manager import FontProperties
 
 mpl.rcParams['font.family'] = 'sans-serif'
-mpl.rcParams['font.sans-serif'] = ['Arial', 'Liberation Sans',
-                                   'Helvetica', 'DejaVu Sans']
+mpl.rcParams['font.sans-serif'] = [
+    'Arial', 'Liberation Sans', 'Helvetica', 'DejaVu Sans'
+]
 mpl.rcParams['axes.unicode_minus'] = False
+
 print("Font in use:",
       FontProperties(family=mpl.rcParams['font.sans-serif']).get_name())
 
@@ -25,8 +27,8 @@ OUTDIR = '../images'
 os.makedirs(OUTDIR, exist_ok=True)
 
 metrics = ['ACC', 'F1-score', 'Precision', 'Recall', 'AUC']
-counts  = [12, 9, 4, 4, 3]
-pcts    = [92, 69, 31, 31, 23]
+counts  = [10, 9, 4, 4, 3]
+pcts    = [83, 75, 33, 33, 25]
 
 BAR_COLOR  = '#2F4858'
 EDGE_COLOR = '#1B2C36'
@@ -34,33 +36,62 @@ EDGE_COLOR = '#1B2C36'
 fig, ax = plt.subplots(figsize=(9, 4.6))
 
 y = list(range(len(metrics)))[::-1]
-ax.barh(y, counts, height=0.62,
-        color=BAR_COLOR, edgecolor=EDGE_COLOR, linewidth=1.6)
+
+ax.barh(
+    y, counts,
+    height=0.62,
+    color=BAR_COLOR,
+    edgecolor=EDGE_COLOR,
+    linewidth=1.6
+)
 
 for yi, c, p in zip(y, counts, pcts):
-    ax.text(c + 0.25, yi, f'{c}  ({p}%)',
-            va='center', ha='left', fontsize=13,
-            fontweight='bold', color='black')
+    ax.text(
+        c + 0.25, yi,
+        f'{c}  ({p}%)',
+        va='center',
+        ha='left',
+        fontsize=13,
+        fontweight='bold',
+        color='black'
+    )
 
 ax.set_yticks(y)
 ax.set_yticklabels(metrics, fontsize=13, fontweight='bold', color='black')
+
 ax.set_xlim(0, 15)
 ax.set_xticks(range(0, 16, 3))
 ax.tick_params(axis='x', labelsize=12, colors='black')
-ax.set_xlabel('Number of studies (n = 13 with extractable supervised metrics)',
-              fontsize=13, fontweight='bold', color='black', labelpad=10)
+
+ax.set_xlabel(
+    'Number of studies (n = 12 eligible with extractable supervised metrics)',
+    fontsize=13,
+    fontweight='bold',
+    color='black',
+    labelpad=10
+)
 
 ax.xaxis.grid(True, color='0.90', linewidth=0.8)
 ax.set_axisbelow(True)
+
 for side in ['top', 'right', 'left']:
     ax.spines[side].set_visible(False)
 ax.spines['bottom'].set_color('black')
 
 plt.tight_layout()
-plt.savefig(os.path.join(OUTDIR, 'fig_5.png'), dpi=300,
-            bbox_inches='tight', facecolor='white')
-plt.savefig(os.path.join(OUTDIR, 'fig_5.pdf'),
-            bbox_inches='tight', facecolor='white')
-plt.close()
 
+plt.savefig(
+    os.path.join(OUTDIR, 'fig_5.png'),
+    dpi=300,
+    bbox_inches='tight',
+    facecolor='white'
+)
+
+plt.savefig(
+    os.path.join(OUTDIR, 'fig_5.pdf'),
+    bbox_inches='tight',
+    facecolor='white'
+)
+
+plt.close()
 print("Guardado en:", os.path.abspath(OUTDIR))
