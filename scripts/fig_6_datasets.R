@@ -1,7 +1,6 @@
 library(treemap)
 
 df_datasets <- data.frame(
-  
   Dataset = c(
     "Kaggle ASD collections",
     "FER-2013",
@@ -16,17 +15,14 @@ df_datasets <- data.frame(
     "Semi-public on request",
     "No ML dataset"
   ),
-  
   Studies = c(
-    5, 1, 1, 1, 1, 1, 1,
+    4, 1, 1, 1, 1, 1, 1,
     5, 2, 2, 3, 1
   ),
-  
   Access = c(
-    rep("PUBLIC (45.8%)", 7),
-    rep("PRIVATE / SEMI-RESTRICTED (54.2%)", 5)
+    rep("PUBLIC (43.5%)", 7),
+    rep("PRIVATE / SEMI-RESTRICTED (56.5%)", 5)
   ),
-  
   Provenance = c(
     "Web", "Public general", "Partial provenance",
     "Public curated", "Public curated",
@@ -36,7 +32,7 @@ df_datasets <- data.frame(
   )
 )
 
-total_studies <- 24
+total_studies <- 23
 
 df_datasets$Percentage <- round(
   df_datasets$Studies / total_studies * 100, 1

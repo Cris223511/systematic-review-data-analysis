@@ -37,10 +37,8 @@
     <div class="chart-container">
         <canvas id="riskChart"></canvas>
     </div>
-
     <script>
         const ctx = document.getElementById('riskChart').getContext('2d');
-
         const data = {
             labels: [
                 'Outcome data completeness',
@@ -52,7 +50,7 @@
             datasets: [
                 {
                     label: 'Yes',
-                    data: [23, 23, 15, 15, 11],
+                    data: [22, 22, 15, 15, 11],
                     backgroundColor: 'rgba(47, 72, 88, 0.90)',
                     borderColor: 'rgba(47, 72, 88, 1)',
                     borderWidth: 2
@@ -66,14 +64,13 @@
                 },
                 {
                     label: 'No',
-                    data: [0, 0, 4, 5, 8],
+                    data: [0, 0, 3, 4, 7],
                     backgroundColor: 'rgba(236, 240, 243, 0.95)',
                     borderColor: 'rgba(47, 72, 88, 1)',
                     borderWidth: 2
                 }
             ]
         };
-
         const config = {
             type: 'bar',
             data: data,
@@ -100,7 +97,7 @@
                         bodyFont: { size: 13 },
                         callbacks: {
                             label: function (context) {
-                                return context.dataset.label + ': ' + context.parsed.x + ' of 23';
+                                return context.dataset.label + ': ' + context.parsed.x + ' of 22';
                             }
                         }
                     },
@@ -118,11 +115,11 @@
                     x: {
                         stacked: true,
                         beginAtZero: true,
-                        max: 23,
+                        max: 22,
                         ticks: { stepSize: 5, font: { size: 13 } },
                         title: {
                             display: true,
-                            text: 'Number of studies (n = 23 appraised)',
+                            text: 'Number of studies (n = 22 appraised)',
                             font: { size: 13, weight: 'bold' },
                             color: '#000000'
                         },
@@ -143,7 +140,6 @@
             },
             plugins: [ChartDataLabels]
         };
-
         new Chart(ctx, config);
     </script>
 </body>

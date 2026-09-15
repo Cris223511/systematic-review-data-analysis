@@ -8,11 +8,9 @@ df_arch <- data.frame(
     "Multimodal / Wearable",
     "Computer Vision / Eye-tracking"
   ), each = 2),
-  
   Configuration = rep(c("Non-ensemble", "Ensemble"), times = 4),
-  
   Studies = c(
-    8, 3,
+    7, 3,
     2, 1,
     2, 1,
     2, 0
@@ -44,14 +42,12 @@ colors_conf <- c(
 )
 
 p <- ggplot(df_arch, aes(x = Studies, y = Family, fill = Configuration)) +
-  
   geom_bar(
     stat = "identity",
     width = 0.62,
     colour = "black",
     linewidth = 0.5
   ) +
-  
   geom_text(
     aes(
       label = ifelse(Studies > 0, Studies, ""),
@@ -62,7 +58,6 @@ p <- ggplot(df_arch, aes(x = Studies, y = Family, fill = Configuration)) +
     fontface = "bold",
     show.legend = FALSE
   ) +
-  
   geom_text(
     data = totals,
     inherit.aes = FALSE,
@@ -72,27 +67,21 @@ p <- ggplot(df_arch, aes(x = Studies, y = Family, fill = Configuration)) +
     fontface = "bold",
     colour = "black"
   ) +
-  
   scale_fill_manual(values = colors_conf, name = NULL) +
-  
   scale_colour_manual(values = c(
     "Non-ensemble" = "white",
     "Ensemble"     = "black"
   )) +
-  
   scale_x_continuous(
     limits = c(0, 14),
     breaks = seq(0, 12, 2),
     expand = c(0, 0)
   ) +
-  
   labs(
-    x = "Number of studies (n = 19 eligible with identifiable ML architecture)",
+    x = "Number of studies (n = 18 eligible with identifiable ML architecture)",
     y = NULL
   ) +
-  
   theme_minimal(base_family = "sans") +
-  
   theme(
     legend.position = "bottom",
     legend.text = element_text(size = 12, face = "bold", colour = "black"),

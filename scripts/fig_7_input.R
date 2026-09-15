@@ -1,19 +1,16 @@
 library(ggplot2)
 
 df_input <- data.frame(
-  
   Group = c(
-    "Facial Features",
-    "CNN Architectures",
-    "Input Modalities",
-    "Optimization Methods",
-    "Physiological Signals",
+    "Facial descriptor extraction",
+    "End-to-end learning (CNN)",
+    "Capture format definition",
+    "Algorithmic descriptor selection",
+    "Physiological signal derivation",
     "Others"
   ),
-  
-  Studies = c(14, 4, 2, 2, 1, 1),
-  
-  Percentage = c(58.3, 16.7, 8.3, 8.3, 4.2, 4.2)
+  Studies = c(14, 3, 2, 2, 1, 1),
+  Percentage = c(60.9, 13.0, 8.7, 8.7, 4.3, 4.3)
 )
 
 df_input$Group <- factor(
@@ -22,7 +19,6 @@ df_input$Group <- factor(
 )
 
 p <- ggplot(df_input, aes(x = Studies, y = Group)) +
-  
   geom_bar(
     stat = "identity",
     width = 0.62,
@@ -30,7 +26,6 @@ p <- ggplot(df_input, aes(x = Studies, y = Group)) +
     colour = "black",
     linewidth = 0.5
   ) +
-  
   geom_text(
     aes(label = paste0(Studies, "  (", Percentage, "%)")),
     hjust = -0.15,
@@ -38,20 +33,16 @@ p <- ggplot(df_input, aes(x = Studies, y = Group)) +
     fontface = "bold",
     colour = "black"
   ) +
-  
   scale_x_continuous(
     limits = c(0, 18),
     breaks = seq(0, 16, 4),
     expand = c(0, 0)
   ) +
-  
   labs(
-    x = "Number of studies (n = 24 eligible corpus)",
+    x = "Number of studies (n = 23 eligible corpus)",
     y = NULL
   ) +
-  
   theme_minimal(base_family = "sans") +
-  
   theme(
     legend.position = "none",
     axis.text.y = element_text(size = 12, face = "bold", colour = "black"),
