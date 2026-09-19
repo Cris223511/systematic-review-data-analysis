@@ -71,7 +71,7 @@ systematic-review-data-analysis/
 | Scopus | 935 | Primary academic database (2018–2026) |
 | Web of Science Core Collection | 942 | Secondary academic database (2018–2026) |
 | IEEE Xplore Digital Library | 38 | Technical publications (2018–2026) |
-| ACM Digital Library | 5 | Complementary database (2018–2026); all 5 records excluded (CI4: not open access) |
+| ACM Digital Library | 5 | Complementary database (2018–2026); all 5 records excluded before screening (CI4): 2 not available under open access, 3 subject to institutional access restrictions at the time of the search |
 | **Total identified** | **1,920** | |
 
 All four searches were executed on February 15, 2026, and updated on September 12, 2026; the update identified no additional eligible studies. Citation chasing (backward and forward) identified 5 candidate studies; their full-text screening was completed during the September 2026 update and none of the five met the eligibility criteria in full.
