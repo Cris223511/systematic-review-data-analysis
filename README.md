@@ -68,12 +68,13 @@ systematic-review-data-analysis/
 
 | Database | Records | Role |
 |----------|---------|------|
-| Scopus | 935 | Primary academic database (2019–2025) |
+| Scopus | 935 | Primary academic database (2018–2026) |
 | Web of Science Core Collection | 942 | Secondary academic database (2018–2026) |
 | IEEE Xplore Digital Library | 38 | Technical publications (2018–2026) |
-| **Total identified** | **1,915** | |
+| ACM Digital Library | 5 | Complementary database (2018–2026); all 5 records excluded (CI4: not open access) |
+| **Total identified** | **1,920** | |
 
-All three searches were executed on February 15, 2026, and updated on September 12, 2026; the update identified no additional eligible studies. Citation chasing (backward and forward) identified 5 candidate studies; their full-text screening was completed during the September 2026 update and none of the five met the eligibility criteria in full.
+All four searches were executed on February 15, 2026, and updated on September 12, 2026; the update identified no additional eligible studies. Citation chasing (backward and forward) identified 5 candidate studies; their full-text screening was completed during the September 2026 update and none of the five met the eligibility criteria in full.
 
 Final corpus publication range: 2018 to 2026.
 
@@ -116,7 +117,7 @@ AND (LIMIT-TO(OA,"all"))
 AND (LIMIT-TO(LANGUAGE,"English"))
 ```
 
-Search strings for IEEE Xplore and Web of Science, with platform-specific syntax, temporal ranges, execution dates, and record counts, are provided in Supplementary Material S1.
+Search strings for IEEE Xplore, Web of Science, and ACM Digital Library, with platform-specific syntax, temporal ranges, execution dates, and record counts, are provided in Supplementary Material S1.
 
 ## Methodology
 
@@ -204,7 +205,7 @@ No study in the eligible corpus reports session-to-session longitudinal tracking
 
 | File | Content |
 |------|---------|
-| S1 | Platform-specific search strings with syntax, temporal ranges, execution dates, and record counts; updated to reflect September 2026 search update and citation chasing resolution |
+| S1 | Platform-specific search strings with syntax, temporal ranges, execution dates, and record counts for Scopus, WoS, IEEE Xplore, and ACM Digital Library; updated to reflect September 2026 search update and citation chasing resolution |
 | S2 | MMAT appraisal by study and domain: Section A (23 eligible, 22 appraised), Section B (7 contextual) |
 | S3 | Documentary sources for the 8-domain dataset quality evaluation, including retraction notices for all 4 retracted studies |
 | S4 | Complete stratified synthesis: Section A (23 eligible by D1–D4), Section B (7 contextual) |
@@ -252,7 +253,7 @@ Universidad San Ignacio de Loyola (USIL), Faculty of Engineering, Lima, Peru.
 
 ## Funding
 
-This research was funded by Universidad San Ignacio de Toyola (USIL), Lima, Peru.
+This research was funded by Universidad San Ignacio de Loyola (USIL), Lima, Peru.
 
 ## Citation
 
