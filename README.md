@@ -71,7 +71,7 @@ systematic-review-data-analysis/
 | Scopus | 935 | Primary academic database (2018–2026) |
 | Web of Science Core Collection | 942 | Secondary academic database (2018–2026) |
 | IEEE Xplore Digital Library | 38 | Technical publications (2018–2026) |
-| ACM Digital Library | 5 | Complementary database (2018–2026); all 5 records excluded before screening (CI4): 2 not available under open access, 3 subject to institutional access restrictions at the time of the search |
+| ACM Digital Library | 5 | Complementary database (2018–2026); all 5 records excluded CI(4): 2 unavailable under open access, 3 subject to institutional access restrictions at time of search |
 | **Total identified** | **1,920** | |
 
 All four searches were executed on February 15, 2026, and updated on September 12, 2026; the update identified no additional eligible studies. Citation chasing (backward and forward) identified 5 candidate studies; their full-text screening was completed during the September 2026 update and none of the five met the eligibility criteria in full.
@@ -111,7 +111,7 @@ TITLE-ABS-KEY(("autism" OR "ASD" OR "autism spectrum" OR "autistic")
 AND ("emotion" OR "facial expression" OR "affective" OR "social communication")
 AND ("machine learning" OR "deep learning" OR "artificial intelligence"
 OR "computer vision" OR "neural network" OR "classification" OR "recognition"))
-AND PUBYEAR > 2018 AND PUBYEAR < 2026
+AND PUBYEAR >= 2018 AND PUBYEAR <= 2026
 AND (LIMIT-TO(DOCTYPE,"ar") OR LIMIT-TO(DOCTYPE,"cp"))
 AND (LIMIT-TO(OA,"all"))
 AND (LIMIT-TO(LANGUAGE,"English"))
@@ -125,7 +125,7 @@ Search strings for IEEE Xplore, Web of Science, and ACM Digital Library, with pl
 
 **Framework:** Population, Concept and Context (PCC): population (children with ASD, 0–18 years), concept (ML systems for facial emotional expressiveness recognition), context (therapeutic monitoring in clinical and mobile settings with limited resources).
 
-**Inclusion criteria:** (1) Studies on facial emotion recognition via ML in children with ASD, with primary focus on therapeutic monitoring; as secondary comparative context, studies on ASD detection or classification were also included; (2) quantitative evaluation metrics reported (ACC, F1, AUC, effect sizes, or usability metrics); (3) published in peer-reviewed journals or conference proceedings indexed in SJR Q1–Q4; (4) open-access full-text available; (5) written in English.
+**Inclusion criteria:** (1) Studies on facial emotion recognition via ML in children with ASD, with primary focus on therapeutic monitoring; as secondary comparative context, studies on ASD detection or classification were also included; (2) quantitative evaluation metrics reported (ACC, F1, AUC, effect sizes, or usability metrics); (3) published in peer-reviewed journals or conference proceedings indexed in Scimago Journal Rank (SJR) in any quartile (Q1–Q4), adopted as a proxy for structured peer review rather than as an intrinsic scientific quality indicator; venues not indexed in SJR or with unassigned quartile at time of search are documented as a scope limitation; no study was excluded exclusively by this criterion, as all candidates meeting all other criteria were indexed in at least one SJR quartile; (4) open-access full-text available; (5) written in English.
 
 **Exclusion criteria:** (1) Review articles and meta-analyses; (2) studies without any quantitative empirical validation; (3) studies focused exclusively on non-facial modalities; (4) duplicate publications; (5) studies that do not report the dataset used for training or validation.
 
@@ -175,7 +175,7 @@ Critical gap: no validated datasets representing Latin American pediatric popula
 | Capture format definition | 2 | 8.7% |
 | Algorithmic descriptor selection | 2 | 8.7% |
 | Physiological signal derivation | 1 | 4.3% |
-| Others | 1 | 4.3% |
+| Diseño de sistema sin clasificación supervisada | 1 | 4.3% |
 
 ### Methodological Limitations (n = 23 eligible corpus)
 
