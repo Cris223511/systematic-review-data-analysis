@@ -124,7 +124,7 @@ TITLE-ABS-KEY(("autism" OR "ASD" OR "autism spectrum" OR "autistic")
 AND ("emotion" OR "facial expression" OR "affective" OR "social communication")
 AND ("machine learning" OR "deep learning" OR "artificial intelligence"
 OR "computer vision" OR "neural network" OR "classification" OR "recognition"))
-AND PUBYEAR > 2018 AND PUBYEAR < 2026
+AND PUBYEAR >= 2018 AND PUBYEAR <= 2026
 AND (LIMIT-TO(DOCTYPE,"ar") OR LIMIT-TO(DOCTYPE,"cp"))
 AND (LIMIT-TO(OA,"all"))
 AND (LIMIT-TO(LANGUAGE,"English"))
