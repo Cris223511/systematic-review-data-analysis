@@ -184,7 +184,7 @@ Critical gap: no validated datasets representing Latin American pediatric popula
 | Group | Studies | % |
 |-------|---------|---|
 | Facial Features | 14 | 60.9% |
-| CNN Architectures | 4 | 17.4% |
+| CNN Architectures | 3 | 13.0% |
 | Input Modalities | 2 | 8.7% |
 | Optimization Methods | 2 | 8.7% |
 | Physiological Signals | 1 | 4.3% |
@@ -204,7 +204,7 @@ Critical gap: no validated datasets representing Latin American pediatric popula
 | Level | Description | Studies | % |
 |-------|-------------|---------|---|
 | 1 | Conceptual model, no implementation | 6 | 26.1% |
-| 2 | Offline evaluation on workstation | 13 | 56.5% |
+| 2 | Offline evaluation on workstation | 12 | 52.2% |
 | 3 | Mobile prototype, no deployment metrics | 3 | 13.0% |
 | 4 | Measured inference on target device | 0 | 0.0% |
 | 5 | End-user evaluation | 2 | 8.7% |
