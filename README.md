@@ -68,13 +68,13 @@ systematic-review-data-analysis/
 
 | Database | Records | Role |
 |----------|---------|------|
-| Scopus | 935 | Primary academic database (2019-2025) |
+| Scopus | 935 | Primary academic database (2018-2026) |
 | Web of Science Core Collection | 942 | Secondary academic database (2018-2026) |
 | IEEE Xplore Digital Library | 38 | Technical publications (2018-2026) |
 | ACM Digital Library | 5 | Complementary search (2018-2026); excluded pre-screening per CI(4) |
 | **Total identified** | **1,920** | |
 
-All searches were executed on February 15, 2026. Final corpus publication range: 2018 to 2026.
+All four searches were executed on February 15, 2026, and updated on September 12, 2026; the update identified no additional eligible studies. Final corpus publication range: 2018 to 2026.
 
 The 5 ACM records are included in the identification total (1,920) but excluded before title/abstract screening for non-compliance with CI(4) (open-access availability). They are counted as a separate pre-screening exclusion category, independent of the 1,002 duplicates.
 
