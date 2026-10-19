@@ -8,7 +8,7 @@
 
 | Version | Date | Summary |
 |---------|------|---------|
-| V3.5 | 19 Oct 2026 | Section C added to S4 (longitudinal tracking audit + multi-label coding matrix); tabrisk updated with Partición/Riesgo fuga/Val.ext./Calibración/N test columns and $^{i}$ markers; tab7 updated with 4 architectural families; denominators and multimodality tables corrected; DREAM, XAI, accuracy comparabilidad, and Hosney conflict of interest moderated in conclusions; README updated (Scopus string inclusive bounds, V3.5 tag, N<10 threshold) |
+| V3.5 | 19 Oct 2026 | Section C added to S4 (longitudinal tracking audit + multi-label coding matrix); tabrisk updated with Partición/Riesgo fuga/Val.ext./Calibración/N test columns and $^{i}$ markers; tab7 updated with 4 architectural families; denominators and multimodality tables corrected; DREAM, XAI, accuracy comparabilidad, and Hosney conflict of interest moderated in conclusions; README updated (Scopus string inclusive bounds, V3.5 tag, architectural families corrected ML Trad=2/Multimodal=4, N<10 reframed as post-hoc analytical note, S4 C.1 ND fix for multi-session studies) |
 | V3.4 | Sep 2026 | Ahmad et al. (2024) retraction documented; corpus finalised at N=23 eligible |
 | V3.3 | Aug 2026 | PRISMA-ScR + PRISMA 2020 framework; initial corpus N=23 |
 
@@ -70,6 +70,7 @@ systematic-review-data-analysis/
 │   ├── S2_mmat_appraisal.pdf            # MMAT appraisal by study and domain
 │   ├── S3_dataset_sources.pdf           # Documentary sources for dataset evaluation
 │   └── S4_stratified_synthesis.pdf      # Complete stratified synthesis of the corpus
+│
 └── README.md
 ```
 
@@ -155,7 +156,7 @@ Executed on **February 15, 2026** (initial) and **September 12, 2026** (update).
 
 **Quality assessment:** Mixed Methods Appraisal Tool (MMAT) version 2018, applied to 22 of 23 eligible studies (1 study falls outside MMAT scope). No aggregate scores computed. A supplementary dataset quality instrument with 8 domains (provenance, consent, diagnosis, representativeness, license, re-identification, subject-level partitioning, clinical applicability) was constructed and applied independently.
 
-**N<10 threshold:** Studies with N<10 participants in the test/validation phase are identified with the inferido marker ($^{i}$) in the risk-of-bias table (Sholikah et al., 2024: N=3 ASD in test; Sariyanidi et al., 2025: N=42 CHOP clinical, limited subset). Metrics from these studies are not aggregated with other results due to instability of point estimates.
+**N<10 analytical note:** During full-text screening, studies where the test or validation phase involved fewer than 10 participants were identified and flagged with the inferido marker ($^{i}$) in the risk-of-bias table. This decision was adopted during screening and is reported as a post-hoc analytical note, not a pre-specified exclusion criterion. Two studies are affected: Sholikah et al. (2024), with N=3 ASD participants in the test phase (usability evaluation, not metric computation), and Sariyanidi et al. (2025), with N=42 CHOP clinical participants (limited subset with uncertain partition). Metrics from these studies are not aggregated with the rest of the corpus due to instability of point estimates at small sample sizes.
 
 ## Key Findings
 
@@ -164,8 +165,8 @@ Executed on **February 15, 2026** (initial) and **September 12, 2026** (update).
 | Family | Ensemble | Non-ensemble | Total | % |
 |--------|----------|-------------|-------|---|
 | CNN / Deep Learning | 3 | 7 | 10 | 55.6% |
-| Traditional ML | 1 | 2 | 3 | 16.7% |
-| Multimodal / Wearable | 1 | 2 | 3 | 16.7% |
+| Traditional ML | 0 | 2 | 2 | 11.1% |
+| Multimodal / Wearable | 2 | 2 | 4 | 22.2% |
 | Computer Vision / Eye-tracking | 0 | 2 | 2 | 11.1% |
 | **Total** | **5** | **13** | **18** | **100%** |
 
@@ -232,7 +233,7 @@ No study in the eligible corpus reports session-to-session longitudinal tracking
 | S1 | Platform-specific search strings with syntax, temporal ranges, and record counts |
 | S2 | MMAT appraisal by study and domain: Section A (22 appraised of 23 eligible), Section B (7 contextual, appraised for reference only) |
 | S3 | Documentary sources for the 8-domain dataset quality evaluation |
-| S4 | Complete stratified synthesis: Section A (23 eligible by D1–D4), Section B (7 contextual); Section C: longitudinal tracking audit (session count, intraindividual series, test-retest, responsiveness) and multi-label coding matrix for all 23 eligible studies |
+| S4 | Complete stratified synthesis of the corpus |
 
 ## Technical Requirements
 
