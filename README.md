@@ -2,6 +2,16 @@
 
 ## A Systematic Scoping Review of Open-Access Computational Evidence and of the Gaps Toward Therapeutic Monitoring
 
+**Version:** V3.5 (19 October 2026)
+
+## Changelog
+
+| Version | Date | Summary |
+|---------|------|---------|
+| V3.5 | 19 Oct 2026 | Section C added to S4 (longitudinal tracking audit + multi-label coding matrix); tabrisk updated with Partición/Riesgo fuga/Val.ext./Calibración/N test columns and $^{i}$ markers; tab7 updated with 4 architectural families; denominators and multimodality tables corrected; DREAM, XAI, accuracy comparabilidad, and Hosney conflict of interest moderated in conclusions; README updated (Scopus string inclusive bounds, V3.5 tag, N<10 threshold) |
+| V3.4 | Sep 2026 | Ahmad et al. (2024) retraction documented; corpus finalised at N=23 eligible |
+| V3.3 | Aug 2026 | PRISMA-ScR + PRISMA 2020 framework; initial corpus N=23 |
+
 ## Overview
 
 This repository contains all data, scripts, supplementary materials, and analysis files for the systematic scoping review on machine learning applications for facial emotion recognition in children with Autism Spectrum Disorder (ASD), with potential relevance to therapeutic monitoring.
@@ -59,7 +69,7 @@ systematic-review-data-analysis/
 │   ├── S1_search_strings.pdf            # Platform-specific search strings with syntax
 │   ├── S2_mmat_appraisal.pdf            # MMAT appraisal by study and domain
 │   ├── S3_dataset_sources.pdf           # Documentary sources for dataset evaluation
-│   └── S4_stratified_synthesis.pdf      # Complete stratified synthesis of the corpus
+│   └── S4_stratified_synthesis.pdf      # Complete stratified synthesis: Section A (23 eligible by D1–D4), Section B (7 contextual), Section C (longitudinal tracking audit + multi-label coding matrix for all 23 eligible studies)
 │
 └── README.md
 ```
@@ -68,10 +78,10 @@ systematic-review-data-analysis/
 
 | Database | Records | Role |
 |----------|---------|------|
-| Scopus | 935 | Primary academic database (2018-2026) |
-| Web of Science Core Collection | 942 | Secondary academic database (2018-2026) |
-| IEEE Xplore Digital Library | 38 | Technical publications (2018-2026) |
-| ACM Digital Library | 5 | Complementary search (2018-2026); excluded pre-screening per CI(4) |
+| Scopus | 935 | Primary academic database (2018–2026) |
+| Web of Science Core Collection | 942 | Secondary academic database (2018–2026) |
+| IEEE Xplore Digital Library | 38 | Technical publications (2018–2026) |
+| ACM Digital Library | 5 | Complementary search (2018–2026); excluded pre-screening per CI(4) |
 | **Total identified** | **1,920** | |
 
 All four searches were executed on February 15, 2026, and updated on September 12, 2026; the update identified no additional eligible studies. Final corpus publication range: 2018 to 2026.
@@ -130,21 +140,23 @@ AND (LIMIT-TO(OA,"all"))
 AND (LIMIT-TO(LANGUAGE,"English"))
 ```
 
-Search strings for IEEE Xplore and Web of Science, with platform-specific syntax, temporal ranges, execution dates, and record counts, are provided in Supplementary Material S1.
+Executed on **February 15, 2026** (initial) and **September 12, 2026** (update). Search strings for IEEE Xplore and Web of Science, with platform-specific syntax, temporal ranges, execution dates, and record counts, are provided in Supplementary Material S1.
 
 ## Methodology
 
 **Design:** Systematic scoping review following PRISMA-ScR and PRISMA 2020.
 
-**Framework:** Population, Concept and Context (PCC): population (children with ASD, 0-18 years), concept (ML systems for facial emotional expressiveness recognition), context (therapeutic monitoring in clinical and mobile settings with limited resources).
+**Framework:** Population, Concept and Context (PCC): population (children with ASD, 0–18 years), concept (ML systems for facial emotional expressiveness recognition), context (therapeutic monitoring in clinical and mobile settings with limited resources).
 
-**Inclusion criteria:** (1) Studies on facial emotion recognition via ML in children with ASD, with primary focus on therapeutic monitoring; as secondary comparative context, studies on ASD detection or classification were also included; (2) quantitative evaluation metrics reported (ACC, F1, AUC, effect sizes, or usability metrics); (3) published in peer-reviewed journals or conference proceedings indexed in SJR Q1-Q4 (no study was excluded solely on this criterion); (4) open-access full-text available; (5) written in English.
+**Inclusion criteria:** (1) Studies on facial emotion recognition via ML in children with ASD, with primary focus on therapeutic monitoring; as secondary comparative context, studies on ASD detection or classification were also included; (2) quantitative evaluation metrics reported (ACC, F1, AUC, effect sizes, or usability metrics); (3) published in peer-reviewed journals or conference proceedings indexed in SJR Q1–Q4 (no study was excluded solely on this criterion); (4) open-access full-text available; (5) written in English.
 
 **Exclusion criteria:** (1) Review articles and meta-analyses; (2) studies without any quantitative empirical validation; (3) studies focused exclusively on non-facial modalities; (4) duplicate publications.
 
 **Inter-rater reliability:** Cohen's kappa = 0.82 (Phase 1, title/abstract screening), 0.89 (Phase 2, full-text review).
 
 **Quality assessment:** Mixed Methods Appraisal Tool (MMAT) version 2018, applied to 22 of 23 eligible studies (1 study falls outside MMAT scope). No aggregate scores computed. A supplementary dataset quality instrument with 8 domains (provenance, consent, diagnosis, representativeness, license, re-identification, subject-level partitioning, clinical applicability) was constructed and applied independently.
+
+**N<10 threshold:** Studies with N<10 participants in the test/validation phase are identified with the inferido marker ($^{i}$) in the risk-of-bias table (Sholikah et al., 2024: N=3 ASD in test; Sariyanidi et al., 2025: N=42 CHOP clinical, limited subset). Metrics from these studies are not aggregated with other results due to instability of point estimates.
 
 ## Key Findings
 
@@ -212,7 +224,7 @@ Critical gap: no validated datasets representing Latin American pediatric popula
 
 ### Principal Finding
 
-No study in the eligible corpus reports session-to-session longitudinal tracking variables as defined in Section 1 (quantitative intraindividual tracking of facial emotional expressiveness across intervention sessions). The available evidence is confined to cross-sectional classification, diagnostic screening, or emotion recognition under largely controlled conditions. Studies with multiple recorded sessions, Rudovic et al. (2018) (35 children, repeated interactions with a robot) and Hassan et al. (2025) (61 children, 3,121 sessions in the DREAM dataset), measure emotional state or engagement per session independently, without quantifying intraindividual change trajectories, test-retest reliability, or responsiveness. Lecciso et al. (2021), the only study with a pre-post design, compares two time points without intraindividual session-by-session series. Longitudinal therapeutic monitoring therefore remains an open gap rather than a consolidated result. The systematic longitudinal audit (session count, subject unit, intraindividual series, progress outcomes, test-retest, responsiveness) for all 23 eligible studies is presented in Supplementary Material S4.
+No study in the eligible corpus reports session-to-session longitudinal tracking variables as defined in Section 1 (quantitative intraindividual tracking of facial emotional expressiveness across intervention sessions). The available evidence is confined to cross-sectional classification, diagnostic screening, or emotion recognition under largely controlled conditions. Studies with multiple recorded sessions, Rudovic et al. (2018) (35 children, repeated interactions with a robot) and Hassan et al. (2025) (61 children, 3,121 sessions in the DREAM dataset), measure emotional state or engagement per session independently, without quantifying intraindividual change trajectories, test-retest reliability, or responsiveness. Lecciso et al. (2021), the only study with a pre-post design, compares two time points without intraindividual session-by-session series. Longitudinal therapeutic monitoring therefore remains an open gap rather than a consolidated result. The systematic longitudinal audit (session count, intraindividual series, test-retest, responsiveness) for all 23 eligible studies is presented in Supplementary Material S4, Section C.
 
 ## Supplementary Materials
 
@@ -221,7 +233,7 @@ No study in the eligible corpus reports session-to-session longitudinal tracking
 | S1 | Platform-specific search strings with syntax, temporal ranges, and record counts |
 | S2 | MMAT appraisal by study and domain: Section A (22 appraised of 23 eligible), Section B (7 contextual, appraised for reference only) |
 | S3 | Documentary sources for the 8-domain dataset quality evaluation |
-| S4 | Complete stratified synthesis: Section A (23 eligible by D1-D4), Section B (7 contextual); includes longitudinal tracking audit (session count, intraindividual series, test-retest, responsiveness) for all 23 eligible studies |
+| S4 | Complete stratified synthesis: Section A (23 eligible by D1–D4), Section B (7 contextual); Section C: longitudinal tracking audit (session count, intraindividual series, test-retest, responsiveness) and multi-label coding matrix for all 23 eligible studies |
 
 ## Technical Requirements
 
