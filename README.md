@@ -69,7 +69,7 @@ systematic-review-data-analysis/
 │   ├── S1_search_strings.pdf            # Platform-specific search strings with syntax
 │   ├── S2_mmat_appraisal.pdf            # MMAT appraisal by study and domain
 │   ├── S3_dataset_sources.pdf           # Documentary sources for dataset evaluation
-│   └── S4_stratified_synthesis.pdf      # Complete stratified synthesis of the corpus│
+│   └── S4_stratified_synthesis.pdf      # Complete stratified synthesis of the corpus
 └── README.md
 ```
 
