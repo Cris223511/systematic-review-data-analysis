@@ -7,7 +7,7 @@ df_input <- data.frame(
     "Capture format definition",
     "Algorithmic descriptor selection",
     "Physiological signal derivation",
-    "Others"
+    "System design\n(no supervised ML)"
   ),
   Studies = c(14, 3, 2, 2, 1, 1),
   Percentage = c(60.9, 13.0, 8.7, 8.7, 4.3, 4.3)

@@ -5,13 +5,11 @@ df_arch <- data.frame(
   Family = rep(c(
     "CNN / Deep Learning",
     "Traditional ML",
-    "Multimodal / Wearable",
     "Computer Vision / Eye-tracking"
   ), each = 2),
-  Configuration = rep(c("Non-ensemble", "Ensemble"), times = 4),
+  Configuration = rep(c("Non-ensemble", "Ensemble"), times = 3),
   Studies = c(
-    7, 3,
-    2, 1,
+    9, 4,
     2, 1,
     2, 0
   )
@@ -21,7 +19,6 @@ df_arch$Family <- factor(
   df_arch$Family,
   levels = c(
     "Computer Vision / Eye-tracking",
-    "Multimodal / Wearable",
     "Traditional ML",
     "CNN / Deep Learning"
   )
@@ -77,6 +74,7 @@ p <- ggplot(df_arch, aes(x = Studies, y = Family, fill = Configuration)) +
     breaks = seq(0, 12, 2),
     expand = c(0, 0)
   ) +
+  coord_cartesian(clip = "off") +
   labs(
     x = "Number of studies (n = 18 eligible with identifiable ML architecture)",
     y = NULL
@@ -93,6 +91,7 @@ p <- ggplot(df_arch, aes(x = Studies, y = Family, fill = Configuration)) +
       colour = "black",
       margin = margin(t = 10)
     ),
+    plot.margin = margin(t = 5, r = 40, b = 5, l = 5),
     panel.grid.major.y = element_blank(),
     panel.grid.minor = element_blank(),
     panel.grid.major.x = element_line(colour = "gray90")
