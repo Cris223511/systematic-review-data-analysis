@@ -6,17 +6,56 @@ Versions before V3.3 lack formal git tags; boundaries are estimated from commit 
 
 ---
 
-## [V3.5] - 2026-10-19
+## [V3.5] - 2026-10-20
 
 ### Changed
-- tabrisk (Tabla 6): Riesgo fuga column vocabulary corrected. Alto/Bajo removed; replaced by Potencial (superscript i, inferred from partition unit) and ND (undetermined). Demostrado reserved for audited evidence; no case qualifies in corpus. Addresses advisory §7.1 + §8 C2/C4.
-- tabrisk note: `\cite{Collins2024,Moons2025}` added at two points: after "ND cuando no puede determinarse" and after "S o ND" for Calibración. Addresses advisory §8 C4.
-- S4 Section C added: longitudinal tracking audit (N=23) and multi-label coding matrix for D1+D2.
-- tab7 note: single-criterion taxonomy for architectural families ("el origen de la representación que el modelo consume") verified present. Addresses advisory §8.1 C1.
-- README: Scopus string bounds corrected to PUBYEAR >= 2018 AND PUBYEAR <= 2026; architectural families corrected ML Trad=2/Multimodal=4; N<10 reframed as post-hoc analytical note; S4 C.1 ND fix for multi-session studies. Changelog section moved to this file.
-- DOI/names audit completed from .bib: one critical key mismatch identified (Radocaz2025 vs Radocaj2025 in tabrisk); one naming note (Ramachandran2025 key with first author Vedantham).
+- abstract/transabstract (both versions): condensed to remove redundant clauses
+  while preserving all advisory-required data points: counts 1,920/23/7/4/18/13/12,
+  limitation percentages 6/23 26.1% and 5/23 21.7%, operational longitudinal
+  finding with intraindividual change / test-retest / responsiveness,
+  Section 1 reference, Datasets block and GitHub URL. Addresses advisory R34-01.
+- tabrisk (Tabla 6): rows within domains D1 and D4 reordered by ascending citation
+  number. D1: [2,7,8,11,18,19,30,45] (Radočaj raised before Sholikah; Aljbori and
+  Vedantham raised before Leo). D4: [6,10,16,20,32,46] (Hwang second; Sariyanidi
+  third; Hosney fourth; Akın-Bülbül fifth; Alam last). D2 was already in correct
+  order [17,27,31,33]. Addresses advisory I-01.
+- tabrisk (Tabla 6): Riesgo fuga column vocabulary corrected. Alto/Bajo removed;
+  replaced by Potencial (superscript i, inferred from partition unit) and ND
+  (undetermined). Demostrado reserved for audited evidence; no case qualifies in
+  corpus. Addresses advisory §7.1 + §8 C2/C4.
+- tabrisk note: `\cite{Collins2024,Moons2025}` added at two points: after "ND cuando
+  no puede determinarse" and after "S o ND" for Calibración. Addresses advisory §8 C4.
+- tabdim (Tabla Dimensiones Técnicas Complementarias): converted from `table` to
+  `table*` for two-column span; `\parbox` wrappers and `[6pt]` vertical spacers
+  removed; all `\cite{}` groups reordered ascending by citation number in each
+  category (GPU, CPU, Móvil, Especializada, Inferida, Robot multimodal). Applied to
+  both Wiley and ElsArticle versions. Addresses advisory I-01/I-12.
+- fig3, fig5: converted from `figure` to `figure*` environment; `width=\columnwidth`
+  replaced by `width=\textwidth` for two-column span. Applied to both versions.
+  Addresses advisory I-12.
+- ElsArticle D1 residual: Akın-Bülbül encoding corrected from `Ak{\i}n-Bülbül` to
+  direct UTF-8 `Akın-Bülbül` in tabrisk.
+- ElsArticle D3 residual: Scopus search string box header added
+  (`\noindent\textbf{Cadena de búsqueda ejecutada en Scopus (rango temporal
+  2018--2026)}`) before `\begin{quote}`.
+- S4 Section C added: longitudinal tracking audit (N=23) and multi-label coding
+  matrix for D1+D2. Addresses advisory §7.4 + I-11 + R34-05.
+- tab7 note: single-criterion taxonomy for architectural families ("el origen de la
+  representación que el modelo consume") verified present. Addresses advisory §8.1 C1.
+- README: Scopus string bounds corrected to `PUBYEAR >= 2018 AND PUBYEAR <= 2026`;
+  architectural families corrected ML Trad=2/Multimodal=4; N<10 reframed as
+  post-hoc analytical note; search update note for 12 September 2026 added.
+  Changelog section moved to this file. Addresses advisory I-04/R34-01.
+- DOI/names audit completed from .bib: one critical key mismatch identified
+  (Radocaz2025 vs Radocaj2025 in tabrisk); one naming note (Ramachandran2025 key
+  with first author Vedantham). Addresses advisory I-12.
 
 ### Commits
+- `PENDING` 2026-10-20 fix(abstract): condense RESUMEN and ABSTRACT preserving all advisory data points
+- `PENDING` 2026-10-20 fix(tabrisk): reorder D1 and D4 rows by ascending citation number
+- `PENDING` 2026-10-20 fix(tabdim): convert to table*, reorder cite groups, remove parbox spacers (Wiley + ElsArticle)
+- `PENDING` 2026-10-20 fix(figures): convert fig3 and fig5 to figure* with textwidth (both versions)
+- `PENDING` 2026-10-20 fix(elsarticle): correct Akın-Bülbül encoding D1; add Scopus box header D3
 - `8e1a78c` 2026-10-19 Revise changelog for version 3.5
 - `56fa11f` 2026-10-19 Revise README for version V3.5 updates and clarifications
 - `6a56285` 2026-10-19 Fix formatting issue in README.md
@@ -33,10 +72,13 @@ Versions before V3.3 lack formal git tags; boundaries are estimated from commit 
 ## [V3.4] - 2026-09-19
 
 ### Changed
-- Ahmad et al. (2024) retraction confirmed (Healthc Technol Lett, 17 Aug 2026); eligible corpus finalized at N=23.
+- Ahmad et al. (2024) retraction confirmed (Healthc Technol Lett, 17 Aug 2026);
+  eligible corpus finalized at N=23.
 - Figures 1-8 regenerated; S1, S3 updated to reflect N=23.
-- ACM Digital Library (n=5, all excluded CI(4)) and citation chasing (n=5, all excluded full-text Sep 2026) added to PRISMA flow and reverse_engineering.xlsx.
-- S1 Scopus range corrected to >= / <=; CT replaced by ND throughout S2; Ahmad #18 excluded row added.
+- ACM Digital Library (n=5, all excluded CI(4)) and citation chasing (n=5, all
+  excluded full-text Sep 2026) added to PRISMA flow and reverse_engineering.xlsx.
+- S1 Scopus range corrected to >= / <=; CT replaced by ND throughout S2;
+  Ahmad #18 excluded row added.
 - Total identified updated to 1,920.
 
 ### Commits
@@ -58,8 +100,10 @@ Versions before V3.3 lack formal git tags; boundaries are estimated from commit 
 
 ### Changed
 - PRISMA-ScR + PRISMA 2020 methodology adopted as framework.
-- Initial eligible corpus set at N=24, subsequently refined to N=23 after split from contextual evidence (N=7).
-- Denomination "definitive corpus of 31" replaced by eligible corpus N=24 + contextual evidence N=7.
+- Initial eligible corpus set at N=24, subsequently refined to N=23 after split
+  from contextual evidence (N=7).
+- Denomination "definitive corpus of 31" replaced by eligible corpus N=24 +
+  contextual evidence N=7.
 - S1-S4 translated to English; section cross-references aligned with manuscript.
 - S4 full 31-study synthesis added; S2 ML-base column added; appraisal domains renamed.
 - Architecture distribution updated to n=21 base.
@@ -153,7 +197,8 @@ Versions before V3.3 lack formal git tags; boundaries are estimated from commit 
 ## [V1.0] - 2025-11-04
 
 ### Added
-- Initial repository with systematic review data, scripts, and analysis for ASD emotion recognition research.
+- Initial repository with systematic review data, scripts, and analysis for ASD
+  emotion recognition research.
 - Datasets.R script; results figures.
 - README focused on children with ASD.
 
