@@ -2,8 +2,6 @@
 
 ## A Systematic Scoping Review of Open-Access Computational Evidence and of the Gaps Toward Therapeutic Monitoring
 
-**Version:** V3.5 (19 October 2026)
-
 ## Overview
 
 This repository contains all data, scripts, supplementary materials, and analysis files for the systematic scoping review on machine learning applications for facial emotion recognition in children with Autism Spectrum Disorder (ASD), with potential relevance to therapeutic monitoring.
@@ -44,9 +42,9 @@ systematic-review-data-analysis/
 │   ├── fig_3_challenges.png             # Methodological challenges (n = 23 eligible)
 │   ├── fig_4_architectures.png          # Architectural families by configuration (n = 18)
 │   ├── fig_5_metrics.png                # Metric reporting frequency (n = 12)
-│   ├── fig_6_datasets.png               # Dataset treemap by provenance (n = 23)
-│   ├── fig_7_input.png                  # Input representation approach (n = 23)
-│   └── fig_8_temporal.png               # Annual distribution by model family (n = 23)
+│   ├── fig_6_datasets.png               # Dataset treemap by provenance (n = 23 eligible)
+│   ├── fig_7_input.png                  # Input representation approach (n = 23 eligible)
+│   └── fig_8_temporal.png               # Annual distribution by model family (n = 23 eligible)
 │
 ├── scripts/
 │   ├── fig_2_mmat.html                  # Chart.js: MMAT stacked bar chart
@@ -70,28 +68,15 @@ systematic-review-data-analysis/
 
 | Database | Records | Role |
 |----------|---------|------|
-| Scopus | 935 | Primary academic database (2018–2026) |
-| Web of Science Core Collection | 942 | Secondary academic database (2018–2026) |
-| IEEE Xplore Digital Library | 38 | Technical publications (2018–2026) |
-| ACM Digital Library | 5 | Complementary search (2018–2026); excluded pre-screening per CI(4) |
+| Scopus | 935 | Primary academic database (2018-2026) |
+| Web of Science Core Collection | 942 | Secondary academic database (2018-2026) |
+| IEEE Xplore Digital Library | 38 | Technical publications (2018-2026) |
+| ACM Digital Library | 5 | Complementary search (2018-2026); excluded before screening (CI(4)) |
 | **Total identified** | **1,920** | |
 
-All four searches were executed on February 15, 2026, and updated on September 12, 2026; the update identified no additional eligible studies. Final corpus publication range: 2018 to 2026.
+All three main searches were executed on February 15, 2026. Updated on September 12, 2026; no additional eligible studies identified.
 
-The 5 ACM records are included in the identification total (1,920) but excluded before title/abstract screening for non-compliance with CI(4) (open-access availability). They are counted as a separate pre-screening exclusion category, independent of the 1,002 duplicates.
-
-## PRISMA Selection Flow
-
-| Stage | N | Note |
-|-------|---|------|
-| Records identified | 1,920 | Three databases + ACM complementary search |
-| After deduplication and pre-screening exclusions | 913 | 1,002 duplicates + 5 ACM (CI(4)) removed |
-| Evaluated at full text | 85 | Pass title/abstract screening |
-| Candidates for integrity and eligibility verification | 34 | Pass initial full-text review; 51 excluded (CI/CE mapping in Section 2.4) |
-| Non-retracted after integrity verification | 30 | 4 retracted excluded (Section 2.7) |
-| Eligible for primary synthesis | 23 | 7 contextual excluded (CE(3) or age criterion) |
-
-The label "candidates for integrity and eligibility verification" (N=34) reflects that these records passed initial full-text screening but had not yet undergone integrity verification (Section 2.7) or full eligibility verification (Section 2.4). Eligibility was confirmed only after both verification stages, yielding N=23.
+Final corpus publication range: 2018 to 2026.
 
 ## Corpus Composition
 
@@ -104,7 +89,7 @@ The label "candidates for integrity and eligibility verification" (N=34) reflect
 
 The 7 contextual studies infringe CE(3) by employing exclusively non-facial modalities (EDA, EEG, VBM, speech diarization) or the age criterion by including exclusively adult participants. They do not participate in any denominator of the manuscript.
 
-The 4 retracted studies were excluded following post-search integrity verification: Güngör et al. (2025), Mahmood et al. (2025), and Kumar et al. (2024) were retracted in December 2025 due to use of minor images without documented consent or verified diagnosis; Ahmad et al. (2024) was retracted on 17 August 2026 (Healthc Technol Lett 2026;13(1):e70095) and is excluded for the same reason. All four are documented in Section 2.7.
+The 4 retracted studies were excluded following post-search integrity verification. Three (Güngör et al. 2025, Mahmood et al. 2025, Kumar et al. 2024) were identified in the pre-synthesis integrity check (December 2025, retracted due to use of minor images without documented consent or verified diagnosis). A fourth retraction, Ahmad et al. (2024), was identified after corpus finalisation and confirmed on 17 August 2026 (Healthcare Technology Letters, DOI: 10.1049/htl2.70095), under the same causes as the prior three.
 
 ## Clinical Domain Taxonomy
 
@@ -132,23 +117,21 @@ AND (LIMIT-TO(OA,"all"))
 AND (LIMIT-TO(LANGUAGE,"English"))
 ```
 
-Executed on **February 15, 2026** (initial) and **September 12, 2026** (update). Search strings for IEEE Xplore and Web of Science, with platform-specific syntax, temporal ranges, execution dates, and record counts, are provided in Supplementary Material S1.
+Search strings for IEEE Xplore and Web of Science, with platform-specific syntax, temporal ranges, execution dates, and record counts, are provided in Supplementary Material S1.
 
 ## Methodology
 
 **Design:** Systematic scoping review following PRISMA-ScR and PRISMA 2020.
 
-**Framework:** Population, Concept and Context (PCC): population (children with ASD, 0–18 years), concept (ML systems for facial emotional expressiveness recognition), context (therapeutic monitoring in clinical and mobile settings with limited resources).
+**Framework:** Population, Concept and Context (PCC): population (children with ASD, 0-18 years), concept (ML systems for facial emotional expressiveness recognition), context (therapeutic monitoring in clinical and mobile settings with limited resources).
 
-**Inclusion criteria:** (1) Studies on facial emotion recognition via ML in children with ASD, with primary focus on therapeutic monitoring; as secondary comparative context, studies on ASD detection or classification were also included; (2) quantitative evaluation metrics reported (ACC, F1, AUC, effect sizes, or usability metrics); (3) published in peer-reviewed journals or conference proceedings indexed in SJR Q1–Q4 (no study was excluded solely on this criterion); (4) open-access full-text available; (5) written in English.
+**Inclusion criteria:** (1) Studies on facial emotion recognition via ML in children with ASD, with primary focus on therapeutic monitoring; as secondary comparative context, studies on ASD detection or classification were also included; (2) quantitative evaluation metrics reported (ACC, F1, AUC, effect sizes, or usability metrics); (3) published in peer-reviewed journals or conference proceedings indexed in SJR Q1-Q4; (4) open-access full-text available; (5) written in English.
 
 **Exclusion criteria:** (1) Review articles and meta-analyses; (2) studies without any quantitative empirical validation; (3) studies focused exclusively on non-facial modalities; (4) duplicate publications.
 
 **Inter-rater reliability:** Cohen's kappa = 0.82 (Phase 1, title/abstract screening), 0.89 (Phase 2, full-text review).
 
-**Quality assessment:** Mixed Methods Appraisal Tool (MMAT) version 2018, applied to 22 of 23 eligible studies (1 study falls outside MMAT scope). No aggregate scores computed. A supplementary dataset quality instrument with 8 domains (provenance, consent, diagnosis, representativeness, license, re-identification, subject-level partitioning, clinical applicability) was constructed and applied independently.
-
-**N<10 analytical note:** During full-text screening, studies where the test or validation phase involved fewer than 10 participants were identified and flagged with the inferido marker ($^{i}$) in the risk-of-bias table. This decision was adopted during screening and is reported as a post-hoc analytical note, not a pre-specified exclusion criterion. Two studies are affected: Sholikah et al. (2024), with N=3 ASD participants in the test phase (usability evaluation, not metric computation), and Sariyanidi et al. (2025), with N=42 CHOP clinical participants (limited subset with uncertain partition). Metrics from these studies are not aggregated with the rest of the corpus due to instability of point estimates at small sample sizes.
+**Quality assessment:** Mixed Methods Appraisal Tool (MMAT) version 2018, applied to 22 of 23 eligible studies (1 systems design study falls outside MMAT scope). No aggregate scores computed. A supplementary dataset quality instrument with 8 domains (provenance, consent, diagnosis, representativeness, license, re-identification, subject-level partitioning, clinical applicability) was constructed and applied independently.
 
 ## Key Findings
 
@@ -156,9 +139,8 @@ Executed on **February 15, 2026** (initial) and **September 12, 2026** (update).
 
 | Family | Ensemble | Non-ensemble | Total | % |
 |--------|----------|-------------|-------|---|
-| CNN / Deep Learning | 3 | 7 | 10 | 55.6% |
-| Traditional ML | 0 | 2 | 2 | 11.1% |
-| Multimodal / Wearable | 2 | 2 | 4 | 22.2% |
+| CNN / Deep Learning | 4 | 9 | 13 | 72.2% |
+| Traditional ML | 1 | 2 | 3 | 16.7% |
 | Computer Vision / Eye-tracking | 0 | 2 | 2 | 11.1% |
 | **Total** | **5** | **13** | **18** | **100%** |
 
@@ -187,12 +169,12 @@ Critical gap: no validated datasets representing Latin American pediatric popula
 
 | Group | Studies | % |
 |-------|---------|---|
-| Facial Features | 14 | 60.9% |
-| CNN Architectures | 3 | 13.0% |
-| Input Modalities | 2 | 8.7% |
-| Optimization Methods | 2 | 8.7% |
-| Physiological Signals | 1 | 4.3% |
-| Diseño de sistema sin clasificación supervisada | 1 | 4.3% |
+| Facial descriptor extraction | 14 | 60.9% |
+| Algorithmic descriptor selection | 2 | 8.7% |
+| End-to-end learning (CNN) | 3 | 13.0% |
+| Capture format definition | 2 | 8.7% |
+| Physiological signal derivation | 1 | 4.3% |
+| System design (no supervised classification) | 1 | 4.3% |
 
 ### Methodological Limitations (n = 23 eligible corpus)
 
@@ -216,16 +198,16 @@ Critical gap: no validated datasets representing Latin American pediatric popula
 
 ### Principal Finding
 
-No study in the eligible corpus reports session-to-session longitudinal tracking variables as defined in Section 1 (quantitative intraindividual tracking of facial emotional expressiveness across intervention sessions). The available evidence is confined to cross-sectional classification, diagnostic screening, or emotion recognition under largely controlled conditions. Studies with multiple recorded sessions, Rudovic et al. (2018) (35 children, repeated interactions with a robot) and Hassan et al. (2025) (61 children, 3,121 sessions in the DREAM dataset), measure emotional state or engagement per session independently, without quantifying intraindividual change trajectories, test-retest reliability, or responsiveness. Lecciso et al. (2021), the only study with a pre-post design, compares two time points without intraindividual session-by-session series. Longitudinal therapeutic monitoring therefore remains an open gap rather than a consolidated result. The systematic longitudinal audit (session count, intraindividual series, test-retest, responsiveness) for all 23 eligible studies is presented in Supplementary Material S4, Section C.
+No study in the eligible corpus reports session-to-session longitudinal tracking variables. The available evidence is confined to cross-sectional classification, diagnostic screening, or emotion recognition under largely controlled conditions. Longitudinal therapeutic monitoring remains an open gap rather than a consolidated result.
 
 ## Supplementary Materials
 
 | File | Content |
 |------|---------|
-| S1 | Platform-specific search strings with syntax, temporal ranges, and record counts |
-| S2 | MMAT appraisal by study and domain: Section A (22 appraised of 23 eligible), Section B (7 contextual, appraised for reference only) |
+| S1 | Platform-specific search strings with syntax, temporal ranges, and record counts (updated September 12, 2026) |
+| S2 | MMAT appraisal by study and domain: Section A (22 eligible appraised, 1 system-design outside MMAT scope), Section B (7 contextual) |
 | S3 | Documentary sources for the 8-domain dataset quality evaluation |
-| S4 | Complete stratified synthesis of the corpus |
+| S4 | Complete stratified synthesis: Section A (23 eligible by D1-D4), Section B (7 contextual) |
 
 ## Technical Requirements
 
@@ -257,7 +239,6 @@ https://github.com/Cris223511/systematic-review-data-analysis
 
 | Author | Affiliation | Email |
 |--------|------------|-------|
-| Jorge Eduardo Castañeda Alban | USIL / Universidad Complutense de Madrid | jorge.castanedaa@usil.pe |
 | Christopher Antonio Pillihuamán Santiago | USIL | c.pillihuaman@usil.pe |
 | Jhafet Martín Cánepa Maceda | USIL | jhafet.canepa@usil.pe |
 | Jomark Pablo Noriega Zapata | UNMSM | jnoriegaz@usil.edu.pe |
@@ -275,8 +256,8 @@ This research was funded by Universidad San Ignacio de Loyola (USIL), Lima, Peru
 ## Citation
 
 ```
-Castañeda Alban, J.E., Pillihuamán Santiago, C.A., Cánepa Maceda, J.M.,
-Noriega Zapata, J.P., Salazar Campos, J.O., & Neira Neira, K.D. (2026).
+Pillihuamán Santiago, C.A., Cánepa Maceda, J.M., Noriega Zapata, J.P.,
+Salazar Campos, J.O., & Neira Neira, K.D. (2026).
 Facial Emotion Recognition through Machine Learning in Children with Autism
 Spectrum Disorder: A Systematic Scoping Review of Open-Access Computational
 Evidence and of the Gaps Toward Therapeutic Monitoring.
