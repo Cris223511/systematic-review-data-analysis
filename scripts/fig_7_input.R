@@ -58,5 +58,5 @@ p <- ggplot(df_input, aes(x = Studies, y = Group)) +
     panel.grid.major.x = element_line(colour = "gray90")
   )
 
-ggsave("../images/fig_7.png", plot = p, width = 9, height = 4.8, dpi = 300)
-ggsave("../images/fig_7.pdf", plot = p, width = 9, height = 4.8)
+ggsave("../results/fig_7_input.png", plot = p, width = 9, height = 4.8, dpi = 300)
+ggsave("../results/fig_7_input.pdf", plot = p, width = 9, height = 4.8)

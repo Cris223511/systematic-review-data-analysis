@@ -95,10 +95,10 @@ draw_treemap <- function() {
   )
 }
 
-png("../images/fig_6.png", width = 9, height = 6, units = "in", res = 300)
+png("../results/fig_6_datasets.png", width = 9, height = 6, units = "in", res = 300)
 draw_treemap()
 dev.off()
 
-pdf("../images/fig_6.pdf", width = 9, height = 6)
+pdf("../results/fig_6_datasets.pdf", width = 9, height = 6)
 draw_treemap()
 dev.off()
