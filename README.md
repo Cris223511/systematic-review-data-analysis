@@ -240,6 +240,7 @@ https://github.com/Cris223511/systematic-review-data-analysis
 
 | Author | Affiliation | Email |
 |--------|------------|-------|
+| Jorge Eduardo Castañeda Alban | USIL / UCM | jorge.castanedaa@usil.pe |
 | Christopher Antonio Pillihuamán Santiago | USIL | c.pillihuaman@usil.pe |
 | Jhafet Martín Cánepa Maceda | USIL | jhafet.canepa@usil.pe |
 | Jomark Pablo Noriega Zapata | UNMSM | jnoriegaz@usil.edu.pe |
@@ -248,7 +249,7 @@ https://github.com/Cris223511/systematic-review-data-analysis
 
 ## Institution
 
-Universidad San Ignacio de Loyola (USIL), Faculty of Engineering, Lima, Peru.
+Universidad San Ignacio de Loyola (USIL), Faculty of Engineering, Lima, Peru. Universidad Complutense de Madrid (UCM), Doctoral Programme in Computer Science, Madrid, Spain (J.E.C.A.).
 
 ## Funding
 
@@ -257,8 +258,8 @@ This research was funded by Universidad San Ignacio de Loyola (USIL), Lima, Peru
 ## Citation
 
 ```
-Pillihuamán Santiago, C.A., Cánepa Maceda, J.M., Noriega Zapata, J.P.,
-Salazar Campos, J.O., & Neira Neira, K.D. (2026).
+Castañeda Alban, J.E., Pillihuamán Santiago, C.A., Cánepa Maceda, J.M.,
+Noriega Zapata, J.P., Salazar Campos, J.O., & Neira Neira, K.D. (2026).
 Facial Emotion Recognition through Machine Learning in Children with Autism
 Spectrum Disorder: A Systematic Scoping Review of Open-Access Computational
 Evidence and of the Gaps Toward Therapeutic Monitoring.
