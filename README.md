@@ -34,7 +34,7 @@ systematic-review-data-analysis/
 ├── prisma/
 │   ├── PRISMA.xlsx                      # Selection tracking spreadsheet
 │   ├── PRISMA_2020.docx                 # PRISMA 2020 checklist (completed)
-│   ├── PRISMA_2020.jpeg                 # PRISMA flow diagram image
+│   ├── PRISMA_2020.jpg                  # PRISMA flow diagram image
 │   └── reverse-engineering.xlsm         # Data extraction and reverse-engineering workbook
 │
 ├── results/
@@ -61,6 +61,7 @@ systematic-review-data-analysis/
 │   ├── S3_dataset_sources.pdf           # Documentary sources for dataset evaluation
 │   └── S4_stratified_synthesis.pdf      # Complete stratified synthesis of the corpus
 │
+├── CHANGELOG.md
 └── README.md
 ```
 
@@ -228,7 +229,7 @@ import matplotlib.pyplot as plt
 
 ### HTML Figures
 
-Figures 2, 3, and 8 use Chart.js 4.4.0 with the datalabels plugin. Open the HTML files in any modern browser to render.
+Figures 2 and 3 use Chart.js 4.4.0 with the chartjs-plugin-datalabels 2.2.0. Figure 8 uses Chart.js 4.4.0 without additional plugins. Open the HTML files in any modern browser to render.
 
 ## Data Availability
 
