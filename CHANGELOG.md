@@ -6,6 +6,19 @@ Versions before V3.3 lack formal git tags; boundaries are estimated from commit 
 
 ---
 
+## [V3.6] - 2026-10-29
+
+### Changed
+- wileyNJD-Chicago.bib: cite key renamed from `Ramachandran2025` to `Vedantham2025`;
+  first author of the referenced article is R. Vedantham (not Ramachandran).
+  All `\cite{Ramachandran2025}` occurrences in the manuscript replaced globally
+  by `\cite{Vedantham2025}`. Addresses naming note identified in V3.5 (advisory I-12).
+
+### Commits
+- `PENDING` 2026-10-29 fix(bib): rename cite key Ramachandran2025 to Vedantham2025; global replace in .tex
+
+---
+
 ## [V3.5] - 2026-10-20
 
 ### Changed
@@ -205,7 +218,7 @@ Versions before V3.3 lack formal git tags; boundaries are estimated from commit 
 ### Commits
 - `a8737db` 2025-11-04 Translate features and update plot labels in R script
 - `7d790df` 2025-11-04 Add files via upload
-- `c0941a0` 2025-11-04 Delete results/datasets.jpeg
+- `c0941a0` 2025-11-04 Delete results/fig_2_mmat.png
 - `dc2d2a5` 2025-11-04 Delete results/characteristics.jpeg
 - `3a6b7fb` 2025-11-04 Delete results/sumburst.png
 - `2046305` 2025-11-04 Update dataset frequencies and categories
