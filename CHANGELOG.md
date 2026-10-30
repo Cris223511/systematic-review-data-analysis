@@ -62,6 +62,13 @@ Versions before V3.3 lack formal git tags; boundaries are estimated from commit 
 - DOI/names audit completed from .bib: one critical key mismatch identified
   (Radocaz2025 vs Radocaj2025 in tabrisk); one naming note (Ramachandran2025 key
   with first author Vedantham). Addresses advisory I-12.
+- fig_4_architectures.R: reclassified to 3-family taxonomy (CNN/Deep Learning,
+  Traditional ML, Computer Vision/Eye-tracking); ggsave output paths corrected for
+  fig_6_datasets.R and fig_7_input.R. fig_8 PNG regenerated. Addresses advisory I-02.
+- scripts/fig_4, fig_6, fig_7: output directory paths updated; figure filenames
+  unified to match results/ structure.
+- fig_8_temporal.html: image extension corrected; Chart.js version details updated.
+- README: authors and institution details updated; license section formatting corrected.
 
 ### Commits
 - `PENDING` 2026-10-20 fix(abstract): condense RESUMEN and ABSTRACT preserving all advisory data points
@@ -69,6 +76,16 @@ Versions before V3.3 lack formal git tags; boundaries are estimated from commit 
 - `PENDING` 2026-10-20 fix(tabdim): convert to table*, reorder cite groups, remove parbox spacers (Wiley + ElsArticle)
 - `PENDING` 2026-10-20 fix(figures): convert fig3 and fig5 to figure* with textwidth (both versions)
 - `PENDING` 2026-10-20 fix(elsarticle): correct Akın-Bülbül encoding D1; add Scopus box header D3
+- `be918c2` 2026-10-29 Fix formatting in README license section
+- `6b1c878` 2026-10-29 Update authors and institution details in README
+- `d92e915` 2026-10-29 Fix image extension and update Chart.js details
+- `dec9a2b` 2026-10-29 Change output directory and figure filenames
+- `1f5ce31` 2026-10-29 fix(I-02): update fig_4 to 3-family arch, fix ggsave paths fig_6/fig_7, regenerate fig_8 PNG
+- `486aede` 2026-10-20 Revise CHANGELOG for version 3.5 updates
+- `56ea893` 2026-10-20 Revise README for clarity and accuracy
+- `eaa6291` 2026-10-20 fix: apply advisory corrections I-01 to I-12, reclassify architectural families
+- `8111c9e` 2026-10-19 Add files via upload
+- `1398350` 2026-10-19 Remove changelog from README.md
 - `8e1a78c` 2026-10-19 Revise changelog for version 3.5
 - `56fa11f` 2026-10-19 Revise README for version V3.5 updates and clarifications
 - `6a56285` 2026-10-19 Fix formatting issue in README.md
