@@ -2,15 +2,15 @@ library(ggplot2)
 
 df_input <- data.frame(
   Group = c(
-    "Facial descriptor extraction",
     "End-to-end learning (CNN)",
-    "Capture format definition",
+    "Facial descriptor extraction",
     "Algorithmic descriptor selection",
     "Physiological signal derivation",
+    "Capture format definition",
     "System design\n(no supervised ML)"
   ),
-  Studies = c(14, 3, 2, 2, 1, 1),
-  Percentage = c(60.9, 13.0, 8.7, 8.7, 4.3, 4.3)
+  Studies = c(8, 7, 2, 2, 1, 1),
+  Percentage = c(38.1, 33.3, 9.5, 9.5, 4.8, 4.8)
 )
 
 df_input$Group <- factor(
@@ -34,12 +34,12 @@ p <- ggplot(df_input, aes(x = Studies, y = Group)) +
     colour = "black"
   ) +
   scale_x_continuous(
-    limits = c(0, 18),
-    breaks = seq(0, 16, 4),
+    limits = c(0, 11),
+    breaks = seq(0, 10, 2),
     expand = c(0, 0)
   ) +
   labs(
-    x = "Number of studies (n = 23 eligible corpus)",
+    x = "Number of studies (n = 21 eligible corpus)",
     y = NULL
   ) +
   theme_minimal(base_family = "sans") +

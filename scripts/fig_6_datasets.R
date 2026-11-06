@@ -7,7 +7,6 @@ df_datasets <- data.frame(
     "FERAC",
     "CAFE",
     "DREAM",
-    "Kaggle Screening",
     "Kaggle FER",
     "Own clinical data",
     "Robot therapy data",
@@ -16,23 +15,23 @@ df_datasets <- data.frame(
     "No ML dataset"
   ),
   Studies = c(
-    4, 1, 1, 1, 1, 1, 1,
-    5, 2, 2, 3, 1
+    4, 1, 1, 1, 1, 1,
+    5, 2, 1, 3, 1
   ),
   Access = c(
-    rep("PUBLIC (43.5%)", 7),
-    rep("PRIVATE / SEMI-RESTRICTED (56.5%)", 5)
+    rep("PUBLIC (42.9%)", 6),
+    rep("PRIVATE / SEMI-RESTRICTED (57.1%)", 5)
   ),
   Provenance = c(
     "Web", "Public general", "Partial provenance",
     "Public curated", "Public curated",
-    "Web", "Web",
+    "Web",
     "Clinical", "Clinical", "Clinical",
     "Mixed", "Not applicable"
   )
 )
 
-total_studies <- 23
+total_studies <- 21
 
 df_datasets$Percentage <- round(
   df_datasets$Studies / total_studies * 100, 1

@@ -6,6 +6,93 @@ Versions before V3.3 lack formal git tags; boundaries are estimated from commit 
 
 ---
 
+## [V3.7] - 2026-11-06
+
+### Changed
+- Eligible corpus reclassified from N=23 to N=21. Alsubai (2025) moved to contextual
+  evidence for CE(3): its model consumes tweets, adult dementia records and toddler
+  screening questionnaires, with no facial, video or gaze input. Akın-Bülbül et al.
+  (2024) moved to contextual evidence for CI(3): Türk Psikoloji Dergisi is not indexed
+  in SJR after 2019. Contextual evidence rises from 7 to 9; domain D4 falls from 7 to 5;
+  the architecture base falls from 18 to 17 (Traditional ML from 3 to 2). The subsets of
+  12 (supervised metrics), 13 (primary evidence) and 11 (translational relevance) are
+  unchanged.
+- Vedantham et al. (2025) reassigned from D1 to D4 according to its verified main task
+  (autistic versus non-autistic facial images): D1 falls from 8 to 7, D4 rises from 5 to 6,
+  and the primary evidence base (D1 + D2) falls from 13 to 12.
+- Supervised-metrics subset extended from 12 to 14 studies: Dapogny et al. (2019)
+  (accuracy) and Alam et al. (2025) (accuracy, precision, recall, F1-score and AUC)
+  report extractable metrics and meet the subset definition. Figure 5 and the README
+  metrics table updated (ACC 13, F1 11, precision 5, recall 5, AUC 4), also counting the
+  numeric accuracy and F1-score of Rudovic et al. (2019) (Tables 2 and 3 of the article). README no longer
+  presents the 67.8% of Johnson et al. (2025) as a clinical-data value.
+- Scopus temporal range documented as 2019-2025 (`PUBYEAR > 2018 AND PUBYEAR < 2026`),
+  consistent with the year distribution of `data/scopus-data.csv`; Web of Science and
+  IEEE Xplore remain 2018-2026. Updated in S1 and README.
+- S1: three main searches plus the complementary ACM search; N=21 and 9; limitations
+  cross-reference corrected to Section 2.9.
+- S2: Section A reduced to 21 studies (16 Cat. 3, 3 Cat. 4, 1 Cat. 5, 1 outside MMAT);
+  Section B extended to 9 studies; numbering aligned with S4; Vedantham et al. (2025)
+  added to note 4; Levy et al. (2024) reason limited to adult participants; limitations
+  cross-reference corrected to Section 2.9; MMAT domain for criteria 3.5/4.1 renamed
+  "Intervention as intended and sampling strategy" (column Int.) to match the MMAT 2018
+  wording.
+- S3: "CT" replaced by "ND" throughout to match Table 18; ABIDE attributed to a
+  contextual study (Xu & Ju, 2023); Kaggle withdrawal attributed to a comment by the
+  dataset creator (10 May 2022); JEMImE corrected after verification against Grossard
+  et al. (2018) and Dapogny et al. (2019): typically developing children only, with no ASD
+  subgroup (D3 N/A, D7 157 children, D8 P), and both reported video counts stated
+  (3,875 and 3,768); DREAM licence and DOI corrected to CC BY-NC-SA 4.0 and
+  10.5878/17p8-6k13 (Swedish National Data Service).
+- S4: Sections A, B and C updated to N=21 and 9; shared numbering with S2 and removal of
+  the contradictory #18 statement; internal planning language removed; verified values
+  corrected: Shaik F1 84.2%; Aljbori accuracy 99.01% (table value, abstract reports
+  99.82%) and 6 classes; Alam datasets (Kaggle + YTUIA, UIFID test), CNN ensemble and
+  subject-independent split; Dapogny accuracy 81.9% and 4 classes; Hwang binary task
+  (33 DD, 56 TD) with stratified validation; Leo without child-level partition;
+  Vedantham et al. (2025) moved from D1 to D4 because its main task is autistic versus
+  non-autistic classification (auxiliary emotion data relabelled into three classes);
+  "CK++" typo corrected; Rudovic et al. (2019) reported with its numeric accuracy (82.3%)
+  and F1-score (52.6%) for three engagement levels instead of graphical-only metrics;
+  note added on Hassan et al. (2025) (95.6% corresponds to the 3D biomarker approach;
+  97.36% and F1 95.56% with saliency maps); notes added on Johnson et al. (2025) (67.8% measured on
+  AffectNet, seven classes) and Radočaj and Martinović (2025) (four FERAC classes;
+  stated 80/20 stratified split versus inconsistent reported image counts).
+- PRISMA flow diagram (`prisma/PRISMA_2020.docx` and `.jpg`): eligible corpus 21,
+  contextual evidence 9 with the CI(3) reason.
+- Figures 2, 3, 4, 6, 7 and 8 regenerated for N=21 (Figure 2: n=20 appraised, domain
+  label aligned with the MMAT 2018 wording;
+  Figure 4: n=17). Figure 7 reflects the input-representation recoding of the 21
+  eligible studies against the manuscript definitions.
+- README: target journal corrected to Elsevier; `PRISMA_2020.docx` described as the
+  editable flow diagram; exclusion criterion CE(5) added; technological readiness level 3
+  renamed "Deployed prototype"; all tables and denominators updated to N=21.
+
+
+### Commits
+- `PENDING` 2026-11-06 docs(S1): document Scopus range 2019-2025, three main searches plus ACM, eligible N=21
+- `PENDING` 2026-11-06 docs(S2): update MMAT appraisal to N=21, align numbering with S4, rename domain 3.5/4.1
+- `PENDING` 2026-11-06 docs(S3): replace CT with ND, correct JEMImE and DREAM sources
+- `PENDING` 2026-11-06 docs(S4): update stratified synthesis to N=21 with verified study values
+- `PENDING` 2026-11-06 fix(prisma): update flow diagram to eligible N=21 and contextual N=9
+- `PENDING` 2026-11-06 fix(figures): regenerate figures 2 to 8 for N=21 and metrics subset N=14
+- `PENDING` 2026-11-06 docs(readme): update README to V3.7
+- `PENDING` 2026-11-06 docs(changelog): add V3.7 entry and correct V3.3 note
+---
+
+## [V3.6] - 2026-10-29
+
+### Changed
+- wileyNJD-Chicago.bib: cite key renamed from `Ramachandran2025` to `Vedantham2025`;
+  first author of the referenced article is R. Vedantham (not Ramachandran).
+  All `\cite{Ramachandran2025}` occurrences in the manuscript replaced globally
+  by `\cite{Vedantham2025}`. Addresses naming note identified in V3.5 (advisory I-12).
+
+### Commits
+- `PENDING` 2026-10-29 fix(bib): rename cite key Ramachandran2025 to Vedantham2025; global replace in .tex
+
+---
+
 ## [V3.5] - 2026-10-20
 
 ### Changed
@@ -49,6 +136,13 @@ Versions before V3.3 lack formal git tags; boundaries are estimated from commit 
 - DOI/names audit completed from .bib: one critical key mismatch identified
   (Radocaz2025 vs Radocaj2025 in tabrisk); one naming note (Ramachandran2025 key
   with first author Vedantham). Addresses advisory I-12.
+- fig_4_architectures.R: reclassified to 3-family taxonomy (CNN/Deep Learning,
+  Traditional ML, Computer Vision/Eye-tracking); ggsave output paths corrected for
+  fig_6_datasets.R and fig_7_input.R. fig_8 PNG regenerated. Addresses advisory I-02.
+- scripts/fig_4, fig_6, fig_7: output directory paths updated; figure filenames
+  unified to match results/ structure.
+- fig_8_temporal.html: image extension corrected; Chart.js version details updated.
+- README: authors and institution details updated; license section formatting corrected.
 
 ### Commits
 - `PENDING` 2026-10-20 fix(abstract): condense RESUMEN and ABSTRACT preserving all advisory data points
@@ -56,6 +150,16 @@ Versions before V3.3 lack formal git tags; boundaries are estimated from commit 
 - `PENDING` 2026-10-20 fix(tabdim): convert to table*, reorder cite groups, remove parbox spacers (Wiley + ElsArticle)
 - `PENDING` 2026-10-20 fix(figures): convert fig3 and fig5 to figure* with textwidth (both versions)
 - `PENDING` 2026-10-20 fix(elsarticle): correct Akın-Bülbül encoding D1; add Scopus box header D3
+- `be918c2` 2026-10-29 Fix formatting in README license section
+- `6b1c878` 2026-10-29 Update authors and institution details in README
+- `d92e915` 2026-10-29 Fix image extension and update Chart.js details
+- `dec9a2b` 2026-10-29 Change output directory and figure filenames
+- `1f5ce31` 2026-10-29 fix(I-02): update fig_4 to 3-family arch, fix ggsave paths fig_6/fig_7, regenerate fig_8 PNG
+- `486aede` 2026-10-20 Revise CHANGELOG for version 3.5 updates
+- `56ea893` 2026-10-20 Revise README for clarity and accuracy
+- `eaa6291` 2026-10-20 fix: apply advisory corrections I-01 to I-12, reclassify architectural families
+- `8111c9e` 2026-10-19 Add files via upload
+- `1398350` 2026-10-19 Remove changelog from README.md
 - `8e1a78c` 2026-10-19 Revise changelog for version 3.5
 - `56fa11f` 2026-10-19 Revise README for version V3.5 updates and clarifications
 - `6a56285` 2026-10-19 Fix formatting issue in README.md
@@ -100,8 +204,8 @@ Versions before V3.3 lack formal git tags; boundaries are estimated from commit 
 
 ### Changed
 - PRISMA-ScR + PRISMA 2020 methodology adopted as framework.
-- Initial eligible corpus set at N=24, subsequently refined to N=23 after split
-  from contextual evidence (N=7).
+- Eligible corpus set at N=24 after separating 7 contextual studies from the former
+  31-study corpus; reduced to N=23 in V3.4 after the retraction of Ahmad et al. (2024).
 - Denomination "definitive corpus of 31" replaced by eligible corpus N=24 +
   contextual evidence N=7.
 - S1-S4 translated to English; section cross-references aligned with manuscript.
@@ -205,7 +309,7 @@ Versions before V3.3 lack formal git tags; boundaries are estimated from commit 
 ### Commits
 - `a8737db` 2025-11-04 Translate features and update plot labels in R script
 - `7d790df` 2025-11-04 Add files via upload
-- `c0941a0` 2025-11-04 Delete results/datasets.jpeg
+- `c0941a0` 2025-11-04 Delete results/fig_2_mmat.png
 - `dc2d2a5` 2025-11-04 Delete results/characteristics.jpeg
 - `3a6b7fb` 2025-11-04 Delete results/sumburst.png
 - `2046305` 2025-11-04 Update dataset frequencies and categories

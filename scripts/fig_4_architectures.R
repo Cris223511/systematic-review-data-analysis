@@ -10,7 +10,7 @@ df_arch <- data.frame(
   Configuration = rep(c("Non-ensemble", "Ensemble"), times = 3),
   Studies = c(
     9, 4,
-    2, 1,
+    1, 1,
     2, 0
   )
 )
@@ -76,7 +76,7 @@ p <- ggplot(df_arch, aes(x = Studies, y = Family, fill = Configuration)) +
   ) +
   coord_cartesian(clip = "off") +
   labs(
-    x = "Number of studies (n = 18 eligible with identifiable ML architecture)",
+    x = "Number of studies (n = 17 eligible with identifiable ML architecture)",
     y = NULL
   ) +
   theme_minimal(base_family = "sans") +

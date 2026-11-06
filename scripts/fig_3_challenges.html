@@ -39,7 +39,7 @@
     </div>
     <script>
         const ctx = document.getElementById('challengesChart').getContext('2d');
-        const pct = [21.7, 13.0, 13.0, 13.0, 8.7];
+        const pct = [23.8, 14.3, 14.3, 14.3, 9.5];
         const data = {
             labels: [
                 ['Classification uncertainty', 'and low predictive robustness'],
@@ -73,7 +73,7 @@
                         bodyFont: { size: 13 },
                         callbacks: {
                             label: function (context) {
-                                return context.parsed.x + ' of 23 studies ('
+                                return context.parsed.x + ' of 21 studies ('
                                     + pct[context.dataIndex].toFixed(1) + '%)';
                             }
                         }
@@ -95,7 +95,7 @@
                         ticks: { stepSize: 1, font: { size: 13 } },
                         title: {
                             display: true,
-                            text: 'Number of studies (n = 23 eligible)',
+                            text: 'Number of studies (n = 21 eligible)',
                             font: { size: 13, weight: 'bold' },
                             color: '#000000'
                         },

@@ -43,28 +43,28 @@
             labels: [
                 'Outcome data completeness',
                 'Appropriateness of measurements',
-                'Protocol and sampling strategy',
+                ['Intervention as intended', 'and sampling strategy'],
                 'Sample representativeness',
                 'Confounding control and analysis'
             ],
             datasets: [
                 {
                     label: 'Yes',
-                    data: [22, 22, 15, 15, 11],
+                    data: [20, 20, 14, 14, 11],
                     backgroundColor: 'rgba(47, 72, 88, 0.90)',
                     borderColor: 'rgba(47, 72, 88, 1)',
                     borderWidth: 2
                 },
                 {
                     label: 'Cannot tell',
-                    data: [0, 0, 4, 3, 4],
+                    data: [0, 0, 4, 3, 3],
                     backgroundColor: 'rgba(160, 174, 182, 0.90)',
                     borderColor: 'rgba(90, 105, 115, 1)',
                     borderWidth: 2
                 },
                 {
                     label: 'No',
-                    data: [0, 0, 3, 4, 7],
+                    data: [0, 0, 2, 3, 6],
                     backgroundColor: 'rgba(236, 240, 243, 0.95)',
                     borderColor: 'rgba(47, 72, 88, 1)',
                     borderWidth: 2
@@ -97,7 +97,7 @@
                         bodyFont: { size: 13 },
                         callbacks: {
                             label: function (context) {
-                                return context.dataset.label + ': ' + context.parsed.x + ' of 22';
+                                return context.dataset.label + ': ' + context.parsed.x + ' of 20';
                             }
                         }
                     },
@@ -115,11 +115,11 @@
                     x: {
                         stacked: true,
                         beginAtZero: true,
-                        max: 22,
+                        max: 20,
                         ticks: { stepSize: 5, font: { size: 13 } },
                         title: {
                             display: true,
-                            text: 'Number of studies (n = 22 appraised)',
+                            text: 'Number of studies (n = 20 appraised)',
                             font: { size: 13, weight: 'bold' },
                             color: '#000000'
                         },
