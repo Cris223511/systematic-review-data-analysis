@@ -70,14 +70,7 @@ Versions before V3.3 lack formal git tags; boundaries are estimated from commit 
 
 
 ### Commits
-- `PENDING` 2026-11-06 docs(S1): document Scopus range 2019-2025, three main searches plus ACM, eligible N=21
-- `PENDING` 2026-11-06 docs(S2): update MMAT appraisal to N=21, align numbering with S4, rename domain 3.5/4.1
-- `PENDING` 2026-11-06 docs(S3): replace CT with ND, correct JEMImE and DREAM sources
-- `PENDING` 2026-11-06 docs(S4): update stratified synthesis to N=21 with verified study values
-- `PENDING` 2026-11-06 fix(prisma): update flow diagram to eligible N=21 and contextual N=9
-- `PENDING` 2026-11-06 fix(figures): regenerate figures 2 to 8 for N=21 and metrics subset N=14
-- `PENDING` 2026-11-06 docs(readme): update README to V3.7
-- `PENDING` 2026-11-06 docs(changelog): add V3.7 entry and correct V3.3 note
+- `e3bd31c` 2026-11-06 fix: reclassify corpus to N=21, update S1-S4, regenerate figures 2-8, update PRISMA, README and CHANGELOG
 ---
 
 ## [V3.6] - 2026-10-29
