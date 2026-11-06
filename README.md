@@ -99,11 +99,11 @@ Each eligible study is assigned to exactly one domain (mutually exclusive, sum =
 | Domain | Description | N | Role |
 |--------|-------------|---|------|
 | D1 | Automated facial expression | 7 | Primary evidence |
-| D2 | Affect and therapeutic engagement | 5 | Primary evidence |
+| D2 | Affect and therapeutic engagement | 4 | Primary evidence |
 | D3 | Emotion recognition intervention | 3 | Clinical reference |
-| D4 | Screening or diagnosis of ASD | 6 | Comparative context |
+| D4 | Screening or diagnosis of ASD | 7 | Comparative context |
 
-Domains D1 and D2 (12 studies) constitute the primary evidence base closest to the review's objective.
+Domains D1 and D2 (11 studies) constitute the primary evidence base closest to the review's objective.
 
 ## Search String (Scopus)
 
@@ -155,7 +155,7 @@ Search strings for IEEE Xplore and Web of Science, with platform-specific syntax
 | Recall | 5 | 36% |
 | AUC | 4 | 29% |
 
-Values are reported stratified by clinical domain and do not admit comparison across distinct tasks. Studies on clinically sourced datasets report values that vary substantially by domain (79.1% balanced accuracy in D1, 88.0% in D4 screening); the 67.8% of Johnson et al. (2025) corresponds to seven-class classification on AffectNet. Studies on web-sourced datasets without clinical traceability report 96.5% to 99.01%, values not transferable to therapeutic context.
+Values are reported stratified by clinical domain and do not admit comparison across distinct tasks. Studies on clinically sourced datasets report values that vary substantially by domain (79.1% balanced accuracy in D1, 88.0% in D4 screening); the 67.8% of Johnson et al. (2025) corresponds to seven-class classification on AffectNet. Studies on web-sourced datasets without clinical traceability report 84.0% to 99.01%, and four of the five highest accuracy values in the corpus (99.01%, 97.2%, 96.5% and 96.0%) come from these datasets; these values are not transferable to therapeutic context.
 
 ### Datasets (n = 21 eligible corpus)
 

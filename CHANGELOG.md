@@ -20,6 +20,12 @@ Versions before V3.3 lack formal git tags; boundaries are estimated from commit 
 - Vedantham et al. (2025) reassigned from D1 to D4 according to its verified main task
   (autistic versus non-autistic facial images): D1 falls from 8 to 7, D4 rises from 5 to 6,
   and the primary evidence base (D1 + D2) falls from 13 to 12.
+- Hassan et al. (2025) reassigned from D2 to D4: its verified outcome is the ASD level
+  (classification) and the ADOS score (regression) of each child, that is, severity of the
+  condition, which the manuscript defines as detection and not as therapeutic monitoring.
+  D2 falls from 5 to 4, D4 rises from 6 to 7, and the primary evidence base (D1 + D2)
+  falls from 12 to 11. Updated in S4 (Sections A, C.1 and C.2, note g and Section C text)
+  and README.
 - Supervised-metrics subset extended from 12 to 14 studies: Dapogny et al. (2019)
   (accuracy) and Alam et al. (2025) (accuracy, precision, recall, F1-score and AUC)
   report extractable metrics and meet the subset definition. Figure 5 and the README
@@ -43,7 +49,8 @@ Versions before V3.3 lack formal git tags; boundaries are estimated from commit 
   et al. (2018) and Dapogny et al. (2019): typically developing children only, with no ASD
   subgroup (D3 N/A, D7 157 children, D8 P), and both reported video counts stated
   (3,875 and 3,768); DREAM licence and DOI corrected to CC BY-NC-SA 4.0 and
-  10.5878/17p8-6k13 (Swedish National Data Service).
+  10.5878/17p8-6k13 (Swedish National Data Service); CK+ age range in D4 corrected from
+  18-30 to 18-50 years (Lucey et al., 2010).
 - S4: Sections A, B and C updated to N=21 and 9; shared numbering with S2 and removal of
   the contradictory #18 statement; internal planning language removed; verified values
   corrected: Shaik F1 84.2%; Aljbori accuracy 99.01% (table value, abstract reports
@@ -62,14 +69,18 @@ Versions before V3.3 lack formal git tags; boundaries are estimated from commit 
   contextual evidence 9 with the CI(3) reason.
 - Figures 2, 3, 4, 6, 7 and 8 regenerated for N=21 (Figure 2: n=20 appraised, domain
   label aligned with the MMAT 2018 wording;
-  Figure 4: n=17). Figure 7 reflects the input-representation recoding of the 21
+  Figure 4: n=17; Figure 8: y-axis maximum set to 10 so the 10 and 11 tick labels no
+  longer overlap). Figure 7 reflects the input-representation recoding of the 21
   eligible studies against the manuscript definitions.
 - README: target journal corrected to Elsevier; `PRISMA_2020.docx` described as the
   editable flow diagram; exclusion criterion CE(5) added; technological readiness level 3
-  renamed "Deployed prototype"; all tables and denominators updated to N=21.
+  renamed "Deployed prototype"; all tables and denominators updated to N=21; accuracy
+  range of web-sourced studies corrected to 84.0% to 99.01% (five studies: Shaik, Alam,
+  Vedantham, Hosney and Aljbori), four of which hold the four highest values of the corpus.
 
 
 ### Commits
+- `PENDING` 2026-11-06 fix: move Hassan to D4 (ASD level task), correct CK+ age range in S3, web accuracy range in README, fig_8 y-axis
 - `e3bd31c` 2026-11-06 fix: reclassify corpus to N=21, update S1-S4, regenerate figures 2-8, update PRISMA, README and CHANGELOG
 ---
 
