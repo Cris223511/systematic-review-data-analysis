@@ -7,7 +7,6 @@ df_datasets <- data.frame(
     "FERAC",
     "CAFE",
     "DREAM",
-    "Kaggle FER",
     "Own clinical data",
     "Robot therapy data",
     "Clinical eye-tracking",
@@ -15,17 +14,16 @@ df_datasets <- data.frame(
     "No ML dataset"
   ),
   Studies = c(
-    4, 1, 1, 1, 1, 1,
+    5, 1, 1, 1, 1,
     5, 2, 1, 3, 1
   ),
   Access = c(
-    rep("PUBLIC (42.9%)", 6),
+    rep("PUBLIC (42.9%)", 5),
     rep("PRIVATE / SEMI-RESTRICTED (57.1%)", 5)
   ),
   Provenance = c(
     "Web", "Public general", "Partial provenance",
     "Public curated", "Public curated",
-    "Web",
     "Clinical", "Clinical", "Clinical",
     "Mixed", "Not applicable"
   )

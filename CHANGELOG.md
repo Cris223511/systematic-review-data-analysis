@@ -65,6 +65,16 @@ Versions before V3.3 lack formal git tags; boundaries are estimated from commit 
   97.36% and F1 95.56% with saliency maps); notes added on Johnson et al. (2025) (67.8% measured on
   AffectNet, seven classes) and Radočaj and Martinović (2025) (four FERAC classes;
   stated 80/20 stratified split versus inconsistent reported image counts).
+- S4 Section C.2 validation column checked against the full texts: Shaik et al. (2025)
+  No to Yes (stratified 5-fold cross-validation), Sariyanidi et al. (2025) N/A to Yes
+  (leave-one-out by participant with nested cross-validation), Rudovic et al. (2018) N/A
+  to No (per-child 40/20/40 split); Hassan et al. (2025) validation set to ND because
+  the full text could not be accessed (note g); new note p.
+- Figure 6: the five web-sourced studies (Shaik, Alam, Aljbori, Vedantham and Hosney)
+  all train their main model on Kaggle autism collections, so "Kaggle ASD collections"
+  rises from 4 to 5 and the "Kaggle FER" tile is removed; Vedantham et al. (2025) uses a
+  generic Kaggle facial expression dataset only as auxiliary data. Totals unchanged
+  (9 public, 12 private).
 - PRISMA flow diagram (`prisma/PRISMA_2020.docx` and `.jpg`): eligible corpus 21,
   contextual evidence 9 with the CI(3) reason.
 - Figures 2, 3, 4, 6, 7 and 8 regenerated for N=21 (Figure 2: n=20 appraised, domain
@@ -80,7 +90,8 @@ Versions before V3.3 lack formal git tags; boundaries are estimated from commit 
 
 
 ### Commits
-- `PENDING` 2026-11-06 fix: move Hassan to D4 (ASD level task), correct CK+ age range in S3, web accuracy range in README, fig_8 y-axis
+- `PENDING` 2026-11-06 fix: verify S4 validation column, merge Kaggle FER into Kaggle ASD in fig_6
+- `1e75a8b` 2026-11-06 fix: move Hassan to D4 (ASD level task), correct CK+ age range in S3, web accuracy range in README, fig_8 y-axis
 - `e3bd31c` 2026-11-06 fix: reclassify corpus to N=21, update S1-S4, regenerate figures 2-8, update PRISMA, README and CHANGELOG
 ---
 
