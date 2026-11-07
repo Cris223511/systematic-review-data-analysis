@@ -4,10 +4,10 @@ df_input <- data.frame(
   Group = c(
     "End-to-end learning (CNN)",
     "Facial descriptor extraction",
-    "Algorithmic descriptor selection",
     "Physiological signal derivation",
-    "Capture format definition",
-    "System design\n(no supervised ML)"
+    "No computational facial input\n(system design or test scores)",
+    "Algorithmic descriptor selection",
+    "Capture format definition"
   ),
   Studies = c(8, 7, 2, 2, 1, 1),
   Percentage = c(38.1, 33.3, 9.5, 9.5, 4.8, 4.8)

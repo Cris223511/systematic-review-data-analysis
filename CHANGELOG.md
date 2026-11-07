@@ -72,6 +72,12 @@ Versions before V3.3 lack formal git tags; boundaries are estimated from commit 
   the full text could not be accessed (note g); new note p. Hassan et al. (2025) later
   set to Yes after verifying the statement "a stratified cross-validation technique was
   used" in the article; folds and grouping by child remain unreported (note g).
+- Figure 7 and README input features checked against the full texts: Leo et al. (2018)
+  derives action unit intensities from facial landmarks and HOG (facial descriptor
+  extraction, not algorithmic selection); Reed et al. (2021) uses emotion recognition test
+  scores without any computational facial input and joins Almeida et al. (2019) in the
+  renamed category "No computational facial input (system design or test scores)".
+  Groups now 8, 7, 2, 2, 1, 1 (algorithmic descriptor selection 2 to 1).
 - Figure 6: the five web-sourced studies (Shaik, Alam, Aljbori, Vedantham and Hosney)
   all train their main model on Kaggle autism collections, so "Kaggle ASD collections"
   rises from 4 to 5 and the "Kaggle FER" tile is removed; Vedantham et al. (2025) uses a
@@ -92,7 +98,8 @@ Versions before V3.3 lack formal git tags; boundaries are estimated from commit 
 
 
 ### Commits
-- `PENDING` 2026-11-07 fix: set Hassan stratified validation in S4 after full-text check
+- `PENDING` 2026-11-07 fix: verify fig_7 input categories (Leo, Reed) against full texts
+- `919ef7d` 2026-11-07 fix: set Hassan stratified validation in S4 after full-text check
 - `2cd6ee5` 2026-11-06 fix: verify S4 validation column, merge Kaggle FER into Kaggle ASD in fig_6
 - `1e75a8b` 2026-11-06 fix: move Hassan to D4 (ASD level task), correct CK+ age range in S3, web accuracy range in README, fig_8 y-axis
 - `e3bd31c` 2026-11-06 fix: reclassify corpus to N=21, update S1-S4, regenerate figures 2-8, update PRISMA, README and CHANGELOG

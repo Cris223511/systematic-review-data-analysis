@@ -172,10 +172,10 @@ Critical gap: no validated datasets representing Latin American pediatric popula
 |-------|---------|---|
 | End-to-end learning (CNN) | 8 | 38.1% |
 | Facial descriptor extraction | 7 | 33.3% |
-| Algorithmic descriptor selection | 2 | 9.5% |
 | Physiological signal derivation | 2 | 9.5% |
+| No computational facial input (system design or test scores) | 2 | 9.5% |
+| Algorithmic descriptor selection | 1 | 4.8% |
 | Capture format definition | 1 | 4.8% |
-| System design (no supervised classification) | 1 | 4.8% |
 
 ### Methodological Limitations (n = 21 eligible corpus)
 
