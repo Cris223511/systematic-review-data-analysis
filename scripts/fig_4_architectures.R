@@ -1,19 +1,20 @@
 library(ggplot2)
 library(dplyr)
 
-df_arch <- data.frame(
-  Family = rep(c(
-    "CNN / Deep Learning",
-    "Traditional ML",
-    "Computer Vision / Eye-tracking"
-  ), each = 2),
-  Configuration = rep(c("Non-ensemble", "Ensemble"), times = 3),
-  Studies = c(
-    9, 4,
-    1, 1,
-    2, 0
-  )
+master <- read.csv("../data/extraction_master.csv", stringsAsFactors = FALSE, encoding = "UTF-8")
+ml <- subset(master, ml_architecture == 1)
+families <- c("CNN / Deep Learning", "Traditional ML", "Computer Vision / Eye-tracking")
+
+df_arch <- expand.grid(
+  Configuration = c("Non-ensemble", "Ensemble"),
+  Family = families,
+  stringsAsFactors = FALSE
+)[, c("Family", "Configuration")]
+df_arch$Studies <- mapply(
+  function(f, cfg) sum(ml$model_family == f & ml$ensemble == ifelse(cfg == "Ensemble", 1, 0)),
+  df_arch$Family, df_arch$Configuration
 )
+n_ml <- nrow(ml)
 
 df_arch$Family <- factor(
   df_arch$Family,
@@ -76,7 +77,7 @@ p <- ggplot(df_arch, aes(x = Studies, y = Family, fill = Configuration)) +
   ) +
   coord_cartesian(clip = "off") +
   labs(
-    x = "Number of studies (n = 17 eligible with identifiable ML architecture)",
+    x = paste0("Number of studies (n = ", n_ml, " eligible with identifiable ML architecture)"),
     y = NULL
   ) +
   theme_minimal(base_family = "sans") +

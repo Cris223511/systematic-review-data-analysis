@@ -37,7 +37,9 @@
     <div class="chart-container">
         <canvas id="riskChart"></canvas>
     </div>
+    <script src="figure_data.js"></script>
     <script>
+        const D = window.FIGURE_DATA;
         const ctx = document.getElementById('riskChart').getContext('2d');
         const data = {
             labels: [
@@ -50,21 +52,21 @@
             datasets: [
                 {
                     label: 'Yes',
-                    data: [20, 20, 14, 14, 11],
+                    data: Object.values(D.mmat).map(m => m.yes),
                     backgroundColor: 'rgba(47, 72, 88, 0.90)',
                     borderColor: 'rgba(47, 72, 88, 1)',
                     borderWidth: 2
                 },
                 {
                     label: 'Cannot tell',
-                    data: [0, 0, 4, 3, 3],
+                    data: Object.values(D.mmat).map(m => m.cannot_tell),
                     backgroundColor: 'rgba(160, 174, 182, 0.90)',
                     borderColor: 'rgba(90, 105, 115, 1)',
                     borderWidth: 2
                 },
                 {
                     label: 'No',
-                    data: [0, 0, 2, 3, 6],
+                    data: Object.values(D.mmat).map(m => m.no),
                     backgroundColor: 'rgba(236, 240, 243, 0.95)',
                     borderColor: 'rgba(47, 72, 88, 1)',
                     borderWidth: 2

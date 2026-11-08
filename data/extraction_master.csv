@@ -1,0 +1,22 @@
+id,study,cite_key,year,domain,mmat_category,mmat_representativeness,mmat_measurements,mmat_intervention_sampling,mmat_confounding,mmat_outcome_completeness,ml_architecture,model_family,ensemble,supervised_metrics,metrics_numeric,acc,f1,precision,recall,auc,dataset_category,input_group,ch_uncertainty,ch_generalization,ch_multicollinearity,ch_imbalance,ch_interpretability,primary_evidence,translational
+1,Johnson et al. (2025),Johnson2025,2025,D1,3,Y,Y,Y,ND,Y,1,CNN / Deep Learning,0,1,1,1,0,0,0,0,Own clinical data,End-to-end learning (CNN),1,0,0,0,1,1,1
+2,He et al. (2019),He2019,2019,D3,4,Y,Y,Y,Y,Y,0,Other designs (clinical / conceptual),,0,0,0,0,0,0,0,Clinical eye-tracking,Facial descriptor extraction,0,0,0,0,0,0,0
+3,Reed et al. (2021),Reed2021,2021,D3,4,Y,Y,Y,Y,Y,0,Other designs (clinical / conceptual),,0,0,0,0,0,0,0,Semi-public on request,No computational facial input,0,1,1,0,0,0,0
+4,Lecciso et al. (2021),Lecciso2021,2021,D2,5,Y,Y,Y,ND,Y,0,Other designs (clinical / conceptual),,0,0,0,0,0,0,0,Own clinical data,Facial descriptor extraction,0,0,1,0,0,1,1
+5,Shaik et al. (2025),Shaik2025,2025,D4,3,ND,Y,ND,N,Y,1,CNN / Deep Learning,1,1,1,1,1,1,1,1,Kaggle ASD collections,End-to-end learning (CNN),0,0,0,0,0,0,0
+8,Radočaj and Martinović (2025),Radocaj2025,2025,D1,3,Y,Y,Y,Y,Y,1,CNN / Deep Learning,0,1,1,1,1,0,0,0,FERAC,End-to-end learning (CNN),0,1,0,1,0,1,1
+9,Washington et al. (2022),Washington2022,2022,D1,3,Y,Y,Y,Y,Y,1,CNN / Deep Learning,0,1,1,1,1,0,0,0,CAFE,End-to-end learning (CNN),1,0,0,0,0,1,1
+10,Sholikah et al. (2024),Sholikah2024,2024,D1,3,ND,Y,ND,N,Y,1,CNN / Deep Learning,0,1,1,1,1,0,0,0,FER-2013,Capture format definition,1,0,0,0,0,1,0
+12,Sariyanidi et al. (2025),Sariyanidi2025,2025,D4,3,Y,Y,Y,Y,Y,1,Computer Vision / Eye-tracking,0,1,0,0,0,0,0,0,Semi-public on request,Facial descriptor extraction,1,0,0,0,0,0,0
+13,Hassan et al. (2025),Hassan2025,2025,D4,3,Y,Y,Y,Y,Y,1,Traditional ML,1,1,1,1,1,0,0,0,DREAM,Physiological signal derivation,0,0,0,0,0,0,1
+15,Rudovic et al. (2018),Rudovic2018,2018,D2,3,Y,Y,Y,Y,Y,1,CNN / Deep Learning,0,0,0,0,0,0,0,0,Robot therapy data,Facial descriptor extraction,0,0,0,0,0,1,1
+16,Cicceri et al. (2026),Cicceri2026,2026,D2,3,Y,Y,Y,ND,Y,1,CNN / Deep Learning,0,0,0,0,0,0,0,0,Own clinical data,Physiological signal derivation,0,0,0,0,0,1,1
+17,Rudovic et al. (2019),Rudovic2019,2019,D2,3,Y,Y,Y,Y,Y,1,CNN / Deep Learning,1,1,1,1,1,0,0,0,Robot therapy data,Facial descriptor extraction,0,0,1,0,0,1,1
+18,Almeida et al. (2019),Almeida2019,2019,D3,outside,,,,,,0,Other designs (clinical / conceptual),,0,0,0,0,0,0,0,No ML dataset,No computational facial input,0,0,0,0,0,0,0
+19,Alam et al. (2025),Alam2025,2025,D4,3,ND,Y,ND,N,Y,1,CNN / Deep Learning,1,1,1,1,1,1,1,1,Kaggle ASD collections,End-to-end learning (CNN),0,0,0,1,1,0,0
+20,Hwang et al. (2024),Hwang2024,2024,D4,3,Y,Y,Y,Y,Y,1,CNN / Deep Learning,0,1,1,1,1,1,0,0,Own clinical data,Facial descriptor extraction,0,0,0,0,0,0,1
+21,Aljbori et al. (2025),Aljbori2025,2025,D1,3,N,Y,N,N,Y,1,CNN / Deep Learning,0,1,1,1,1,1,1,1,Kaggle ASD collections,End-to-end learning (CNN),0,0,0,0,0,1,0
+23,Vedantham et al. (2025),Vedantham2025,2025,D4,3,N,Y,ND,N,Y,1,CNN / Deep Learning,1,1,1,1,1,0,1,1,Kaggle ASD collections,End-to-end learning (CNN),0,1,0,0,0,0,0
+24,Hosney et al. (2024),Hosney2024,2024,D4,3,N,Y,N,N,Y,1,CNN / Deep Learning,0,1,1,1,1,1,1,0,Kaggle ASD collections,End-to-end learning (CNN),1,0,0,1,0,0,0
+27,Dapogny et al. (2019),Dapogny2019,2019,D1,4,Y,Y,Y,Y,Y,1,Traditional ML,0,1,1,1,0,0,0,0,Semi-public on request,Algorithmic descriptor selection,0,0,0,0,0,1,1
+28,Leo et al. (2018),Leo2018,2018,D1,3,Y,Y,Y,Y,Y,1,Computer Vision / Eye-tracking,0,0,0,0,0,0,0,0,Own clinical data,Facial descriptor extraction,0,0,0,0,0,1,1

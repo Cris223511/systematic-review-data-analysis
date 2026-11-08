@@ -1,5 +1,7 @@
 library(treemap)
 
+master <- read.csv("../data/extraction_master.csv", stringsAsFactors = FALSE, encoding = "UTF-8")
+
 df_datasets <- data.frame(
   Dataset = c(
     "Kaggle ASD collections",
@@ -13,14 +15,7 @@ df_datasets <- data.frame(
     "Semi-public on request",
     "No ML dataset"
   ),
-  Studies = c(
-    5, 1, 1, 1, 1,
-    5, 2, 1, 3, 1
-  ),
-  Access = c(
-    rep("PUBLIC (42.9%)", 5),
-    rep("PRIVATE / SEMI-RESTRICTED (57.1%)", 5)
-  ),
+  Access = c(rep("PUBLIC", 5), rep("PRIVATE / SEMI-RESTRICTED", 5)),
   Provenance = c(
     "Web", "Public general", "Partial provenance",
     "Public curated", "Public curated",
@@ -29,7 +24,12 @@ df_datasets <- data.frame(
   )
 )
 
-total_studies <- 21
+df_datasets$Studies <- sapply(df_datasets$Dataset, function(d) sum(master$dataset_category == d))
+total_studies <- nrow(master)
+stopifnot(sum(df_datasets$Studies) == total_studies)
+
+access_pct <- tapply(df_datasets$Studies, df_datasets$Access, sum) / total_studies * 100
+df_datasets$Access <- paste0(df_datasets$Access, " (", sprintf("%.1f", access_pct[df_datasets$Access]), "%)")
 
 df_datasets$Percentage <- round(
   df_datasets$Studies / total_studies * 100, 1

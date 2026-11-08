@@ -35,38 +35,37 @@
     <div class="chart-container">
         <canvas id="temporalChart"></canvas>
     </div>
+    <script src="figure_data.js"></script>
     <script>
+        const D = window.FIGURE_DATA;
         const ctx = document.getElementById('temporalChart').getContext('2d');
         const data = {
-            labels: [
-                '2018', '2019', '2020', '2021', '2022',
-                '2023', '2024', '2025', '2026*'
-            ],
+            labels: D.years,
             datasets: [
                 {
                     label: 'CNN / Deep Learning',
-                    data: [1, 1, 0, 0, 1, 0, 3, 6, 1],
+                    data: D.temporal['CNN / Deep Learning'],
                     backgroundColor: 'rgba(47, 72, 88, 0.90)',
                     borderColor: 'rgba(47, 72, 88, 1)',
                     borderWidth: 2
                 },
                 {
                     label: 'Traditional ML',
-                    data: [0, 1, 0, 0, 0, 0, 0, 1, 0],
+                    data: D.temporal['Traditional ML'],
                     backgroundColor: 'rgba(74, 108, 127, 0.90)',
                     borderColor: 'rgba(47, 72, 88, 1)',
                     borderWidth: 2
                 },
                 {
                     label: 'Computer Vision / Eye-tracking',
-                    data: [1, 0, 0, 0, 0, 0, 0, 1, 0],
+                    data: D.temporal['Computer Vision / Eye-tracking'],
                     backgroundColor: 'rgba(126, 155, 170, 0.90)',
                     borderColor: 'rgba(47, 72, 88, 1)',
                     borderWidth: 2
                 },
                 {
                     label: 'Other designs (clinical / conceptual)',
-                    data: [0, 2, 0, 2, 0, 0, 0, 0, 0],
+                    data: D.temporal['Other designs (clinical / conceptual)'],
                     backgroundColor: 'rgba(232, 182, 73, 0.90)',
                     borderColor: 'rgba(138, 106, 31, 1)',
                     borderWidth: 2

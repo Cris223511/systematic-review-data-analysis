@@ -27,6 +27,7 @@ The research follows PRISMA-ScR and PRISMA 2020 methodology and analyzes machine
 systematic-review-data-analysis/
 │
 ├── data/
+│   ├── extraction_master.csv            # Study-level extraction matrix (21 eligible studies)
 │   ├── IEEE-data.csv                    # Raw export from IEEE Xplore (38 records)
 │   ├── scopus-data.csv                  # Raw export from Scopus (935 records)
 │   └── web-of-science-data.csv          # Raw export from Web of Science (942 records)
@@ -47,6 +48,8 @@ systematic-review-data-analysis/
 │   └── fig_8_temporal.png               # Annual distribution by model family (n = 21 eligible)
 │
 ├── scripts/
+│   ├── compute_frequencies.py           # Computes all figure frequencies and checks denominators
+│   ├── figure_data.js                   # Frequencies generated for the HTML figures
 │   ├── fig_2_mmat.html                  # Chart.js: MMAT stacked bar chart
 │   ├── fig_3_challenges.html            # Chart.js: challenges horizontal bar chart
 │   ├── fig_4_architectures.R            # ggplot2: architectural families stacked bar
@@ -62,6 +65,8 @@ systematic-review-data-analysis/
 │   └── S4_stratified_synthesis.pdf      # Complete stratified synthesis of the corpus
 │
 ├── CHANGELOG.md
+├── LICENSE                              # MIT license for the code
+├── LICENSE-DATA.md                      # CC BY 4.0 license for data and documentation
 └── README.md
 ```
 
@@ -210,6 +215,21 @@ No study in the eligible corpus reports session-to-session longitudinal tracking
 | S3 | Documentary sources for the 8-domain dataset quality evaluation |
 | S4 | Complete stratified synthesis: Section A (21 eligible by D1-D4), Section B (9 contextual), Section C (longitudinal tracking audit and coding matrix) |
 
+## Reproducing the Figures
+
+All figure frequencies are computed from `data/extraction_master.csv`, which holds one row per eligible study with its domain, MMAT judgements, model family, ensemble configuration, reported metrics, dataset category, input representation and methodological challenges. No script contains precomputed frequencies.
+
+```bash
+cd scripts
+python3 compute_frequencies.py   # checks denominators (21, 20, 17, 14, 13, 11) and writes figure_data.js
+Rscript fig_4_architectures.R
+Rscript fig_6_datasets.R
+Rscript fig_7_input.R
+python3 fig_5_metrics.py
+```
+
+Figures 2, 3 and 8 are rendered by opening their HTML files in a browser; they read `figure_data.js`. The denominator check stops with an error if any total in the extraction matrix departs from the manuscript.
+
 ## Technical Requirements
 
 ### R Environment
@@ -233,8 +253,10 @@ Figures 2 and 3 use Chart.js 4.4.0 with the chartjs-plugin-datalabels 2.2.0. Fig
 
 ## Data Availability
 
-All data, scripts, and supplementary materials are publicly available in this repository:
+The extraction matrix, scripts, figures and supplementary materials are available in this repository:
 https://github.com/Cris223511/systematic-review-data-analysis
+
+The raw exports from Scopus, Web of Science and IEEE Xplore are included only to document the selection process and remain subject to the terms of use of their providers.
 
 ## Authors
 
@@ -263,9 +285,13 @@ Noriega Zapata, J.P., Salazar Campos, J.O., & Neira Neira, K.D. (2026).
 Facial Emotion Recognition through Machine Learning in Children with Autism
 Spectrum Disorder: A Systematic Scoping Review of Open-Access Computational
 Evidence and of the Gaps Toward Therapeutic Monitoring.
-Cognitive Systems Research. [Submitted for publication]
+Manuscript in preparation.
 ```
 
 ## License
 
-Academic use only. All extracted data are available in this repository.
+| Object | License |
+|--------|---------|
+| Code (`scripts/`) | MIT, see [LICENSE](LICENSE) |
+| Extraction matrix, figures, supplementary materials, PRISMA diagram and documentation | CC BY 4.0, see [LICENSE-DATA.md](LICENSE-DATA.md) |
+| Raw exports from Scopus, Web of Science and IEEE Xplore, and the workbooks that contain them | Not licensed by the authors; subject to the terms of use of Elsevier, Clarivate and IEEE |

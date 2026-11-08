@@ -6,6 +6,42 @@ Versions before V3.3 lack formal git tags; boundaries are estimated from commit 
 
 ---
 
+## [V3.6] - 2026-11-07
+
+Responds to the advisory review of 2026-11-04 (observations I-01 to I-12, N35-01 to N35-06,
+N36-01 to N36-06 and the closure plan).
+
+### Added
+- `data/extraction_master.csv`: study-level extraction matrix for the 21 eligible studies
+  (domain, MMAT judgements, ML architecture, model family, ensemble configuration,
+  supervised metrics, dataset category, input representation, methodological challenges,
+  primary evidence and translational relevance). Addresses advisory I-12, N36-02 and
+  closure plan item 05.
+- `scripts/compute_frequencies.py`: computes every figure frequency from the extraction
+  matrix, checks the manuscript denominators (21 eligible, 20 MMAT-appraised, 17 with ML
+  architecture, 14 with supervised metrics, 13 with numeric values, 11 primary evidence,
+  11 translational, 11 with at least one stated challenge) and writes
+  `scripts/figure_data.js`.
+- `LICENSE` (MIT, code) and `LICENSE-DATA.md` (CC BY 4.0, extraction data, figures,
+  supplementary materials and documentation), with the raw database exports explicitly
+  excluded. Addresses advisory N36-04.
+
+### Changed
+- All seven figure scripts now read the extraction matrix instead of embedded counts:
+  `fig_2_mmat.html`, `fig_3_challenges.html` and `fig_8_temporal.html` read
+  `figure_data.js`; `fig_4_architectures.R`, `fig_6_datasets.R` and `fig_7_input.R` read
+  the CSV in R; `fig_5_metrics.py` reads it in Python. Axis denominators are also computed.
+  The regenerated figures are pixel-identical to the published ones (verified for
+  Figures 2, 3, 4, 5, 7 and 8; Figure 6 verified on its data frame).
+- README: repository structure, figure reproduction steps, data availability statement
+  and per-object license table added; citation status changed from "[Submitted for
+  publication]" to "Manuscript in preparation". Addresses advisory N36-05.
+
+### Commits
+- `PENDING` 2026-11-07 feat: add extraction master and compute all figures from it, add licenses, update README
+
+---
+
 ## [V3.5] - 2026-10-20
 
 V3.5 groups the advisory corrections of 2026-10-20 and two later minor revisions of the
@@ -157,7 +193,7 @@ file labelled v3.6, repository up to commit `7d3c607`) corresponds to V3.5 inclu
 - README: authors and institution details updated; license section formatting corrected.
 
 ### Commits
-- `PENDING` 2026-11-07 docs(changelog): merge minor revisions of 2026-10-29 and 2026-11-06 into V3.5
+- `b9b5860` 2026-11-07 docs(changelog): merge minor revisions of 2026-10-29 and 2026-11-06 into V3.5
 - `083b802` 2026-11-07 fix: verify fig_7 input categories (Leo, Reed) against full texts
 - `919ef7d` 2026-11-07 fix: set Hassan stratified validation in S4 after full-text check
 - `2cd6ee5` 2026-11-06 fix: verify S4 validation column, merge Kaggle FER into Kaggle ASD in fig_6

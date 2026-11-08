@@ -37,20 +37,23 @@
     <div class="chart-container">
         <canvas id="challengesChart"></canvas>
     </div>
+    <script src="figure_data.js"></script>
     <script>
+        const D = window.FIGURE_DATA;
         const ctx = document.getElementById('challengesChart').getContext('2d');
-        const pct = [23.8, 14.3, 14.3, 14.3, 9.5];
+        const pct = D.challenges.map(c => c.pct);
+        const LINES = {
+            'Classification uncertainty and low predictive robustness': ['Classification uncertainty', 'and low predictive robustness'],
+            'Poor generalization in small samples': ['Poor generalization', 'in small samples'],
+            'Multicollinearity in multimodal data': ['Multicollinearity in', 'multimodal data'],
+            'Class imbalance and sampling biases': ['Class imbalance', 'and sampling biases'],
+            'Limited interpretability of black-box models': ['Limited interpretability', 'of black-box models']
+        };
         const data = {
-            labels: [
-                ['Classification uncertainty', 'and low predictive robustness'],
-                ['Poor generalization', 'in small samples'],
-                ['Multicollinearity in', 'multimodal data'],
-                ['Class imbalance', 'and sampling biases'],
-                ['Limited interpretability', 'of black-box models']
-            ],
+            labels: D.challenges.map(c => LINES[c.label]),
             datasets: [{
                 label: 'Number of studies',
-                data: [5, 3, 3, 3, 2],
+                data: D.challenges.map(c => c.n),
                 backgroundColor: 'rgba(47, 72, 88, 0.90)',
                 borderColor: 'rgba(47, 72, 88, 1)',
                 borderWidth: 2

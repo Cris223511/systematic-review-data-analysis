@@ -1,17 +1,27 @@
 library(ggplot2)
 
-df_input <- data.frame(
-  Group = c(
-    "End-to-end learning (CNN)",
-    "Facial descriptor extraction",
-    "Physiological signal derivation",
-    "No computational facial input\n(system design or test scores)",
-    "Algorithmic descriptor selection",
-    "Capture format definition"
-  ),
-  Studies = c(8, 7, 2, 2, 1, 1),
-  Percentage = c(38.1, 33.3, 9.5, 9.5, 4.8, 4.8)
+master <- read.csv("../data/extraction_master.csv", stringsAsFactors = FALSE, encoding = "UTF-8")
+n_total <- nrow(master)
+
+groups <- c(
+  "End-to-end learning (CNN)",
+  "Facial descriptor extraction",
+  "Physiological signal derivation",
+  "No computational facial input",
+  "Algorithmic descriptor selection",
+  "Capture format definition"
 )
+display <- c(
+  "No computational facial input" = "No computational facial input\n(system design or test scores)"
+)
+
+counts <- sapply(groups, function(g) sum(master$input_group == g))
+df_input <- data.frame(
+  Group = ifelse(groups %in% names(display), display[groups], groups),
+  Studies = as.integer(counts),
+  Percentage = round(counts / n_total * 100, 1)
+)
+df_input <- df_input[order(-df_input$Studies, seq_along(groups)), ]
 
 df_input$Group <- factor(
   df_input$Group,
@@ -39,7 +49,7 @@ p <- ggplot(df_input, aes(x = Studies, y = Group)) +
     expand = c(0, 0)
   ) +
   labs(
-    x = "Number of studies (n = 21 eligible corpus)",
+    x = paste0("Number of studies (n = ", n_total, " eligible corpus)"),
     y = NULL
   ) +
   theme_minimal(base_family = "sans") +

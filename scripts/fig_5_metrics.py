@@ -1,3 +1,4 @@
+import csv
 import os
 import matplotlib
 matplotlib.use('Agg')
@@ -17,9 +18,15 @@ print("Font in use:",
 OUTDIR = '../results'
 os.makedirs(OUTDIR, exist_ok=True)
 
-metrics = ['ACC', 'F1-score', 'Precision', 'Recall', 'AUC']
-counts  = [13, 11, 5, 5, 4]
-pcts    = [93, 79, 36, 36, 29]
+MASTER = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'data', 'extraction_master.csv')
+with open(MASTER, encoding='utf-8', newline='') as handle:
+    supervised = [r for r in csv.DictReader(handle) if r['supervised_metrics'] == '1']
+
+columns = [('acc', 'ACC'), ('f1', 'F1-score'), ('precision', 'Precision'), ('recall', 'Recall'), ('auc', 'AUC')]
+metrics = [label for _, label in columns]
+counts  = [sum(r[key] == '1' for r in supervised) for key, _ in columns]
+pcts    = [round(100 * c / len(supervised)) for c in counts]
+n_supervised = len(supervised)
 
 BAR_COLOR  = '#2F4858'
 EDGE_COLOR = '#1B2C36'
@@ -55,7 +62,7 @@ ax.set_xticks(range(0, 16, 3))
 ax.tick_params(axis='x', labelsize=12, colors='black')
 
 ax.set_xlabel(
-    'Number of studies (n = 14 eligible with extractable supervised metrics)',
+    f'Number of studies (n = {n_supervised} eligible with extractable supervised metrics)',
     fontsize=13,
     fontweight='bold',
     color='black',
