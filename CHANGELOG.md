@@ -6,9 +6,14 @@ Versions before V3.3 lack formal git tags; boundaries are estimated from commit 
 
 ---
 
-## [V3.7] - 2026-11-06
+## [V3.5] - 2026-10-20
 
-### Changed
+V3.5 groups the advisory corrections of 2026-10-20 and two later minor revisions of the
+same version (2026-10-29 and 2026-11-06). The advisory review of 2026-11-04 (manuscript
+file labelled v3.6, repository up to commit `7d3c607`) corresponds to V3.5 including the
+2026-10-29 minor revision and precedes the 2026-11-06 minor revision.
+
+### Changed (minor revision, 2026-11-06)
 - Eligible corpus reclassified from N=23 to N=21. Alsubai (2025) moved to contextual
   evidence for CE(3): its model consumes tweets, adult dementia records and toddler
   screening questionnaires, with no facial, video or gaze input. Akın-Bülbül et al.
@@ -96,29 +101,11 @@ Versions before V3.3 lack formal git tags; boundaries are estimated from commit 
   range of web-sourced studies corrected to 84.0% to 99.01% (five studies: Shaik, Alam,
   Vedantham, Hosney and Aljbori), four of which hold the four highest values of the corpus.
 
-
-### Commits
-- `PENDING` 2026-11-07 fix: verify fig_7 input categories (Leo, Reed) against full texts
-- `919ef7d` 2026-11-07 fix: set Hassan stratified validation in S4 after full-text check
-- `2cd6ee5` 2026-11-06 fix: verify S4 validation column, merge Kaggle FER into Kaggle ASD in fig_6
-- `1e75a8b` 2026-11-06 fix: move Hassan to D4 (ASD level task), correct CK+ age range in S3, web accuracy range in README, fig_8 y-axis
-- `e3bd31c` 2026-11-06 fix: reclassify corpus to N=21, update S1-S4, regenerate figures 2-8, update PRISMA, README and CHANGELOG
----
-
-## [V3.6] - 2026-10-29
-
-### Changed
+### Changed (minor revision, 2026-10-29)
 - wileyNJD-Chicago.bib: cite key renamed from `Ramachandran2025` to `Vedantham2025`;
   first author of the referenced article is R. Vedantham (not Ramachandran).
   All `\cite{Ramachandran2025}` occurrences in the manuscript replaced globally
-  by `\cite{Vedantham2025}`. Addresses naming note identified in V3.5 (advisory I-12).
-
-### Commits
-- `PENDING` 2026-10-29 fix(bib): rename cite key Ramachandran2025 to Vedantham2025; global replace in .tex
-
----
-
-## [V3.5] - 2026-10-20
+  by `\cite{Vedantham2025}`. Addresses naming note identified in the 2026-10-20 advisory (I-12).
 
 ### Changed
 - abstract/transabstract (both versions): condensed to remove redundant clauses
@@ -170,6 +157,13 @@ Versions before V3.3 lack formal git tags; boundaries are estimated from commit 
 - README: authors and institution details updated; license section formatting corrected.
 
 ### Commits
+- `PENDING` 2026-11-07 docs(changelog): merge minor revisions of 2026-10-29 and 2026-11-06 into V3.5
+- `083b802` 2026-11-07 fix: verify fig_7 input categories (Leo, Reed) against full texts
+- `919ef7d` 2026-11-07 fix: set Hassan stratified validation in S4 after full-text check
+- `2cd6ee5` 2026-11-06 fix: verify S4 validation column, merge Kaggle FER into Kaggle ASD in fig_6
+- `1e75a8b` 2026-11-06 fix: move Hassan to D4 (ASD level task), correct CK+ age range in S3, web accuracy range in README, fig_8 y-axis
+- `e3bd31c` 2026-11-06 fix: reclassify corpus to N=21, update S1-S4, regenerate figures 2-8, update PRISMA, README and CHANGELOG
+- `PENDING` 2026-10-29 fix(bib): rename cite key Ramachandran2025 to Vedantham2025; global replace in .tex
 - `PENDING` 2026-10-20 fix(abstract): condense RESUMEN and ABSTRACT preserving all advisory data points
 - `PENDING` 2026-10-20 fix(tabrisk): reorder D1 and D4 rows by ascending citation number
 - `PENDING` 2026-10-20 fix(tabdim): convert to table*, reorder cite groups, remove parbox spacers (Wiley + ElsArticle)
