@@ -36,10 +36,10 @@ systematic-review-data-analysis/
 │   └── web-of-science-data.csv          # Raw export from Web of Science (942 records)
 │
 ├── prisma/
-│   ├── PRISMA.xlsx                      # Selection tracking spreadsheet
+│   ├── PRISMA.xlsx                      # V3.5 selection tracking spreadsheet (superseded by data/screening_log.csv)
 │   ├── PRISMA_2020.docx                 # PRISMA 2020 flow diagram (editable source)
 │   ├── PRISMA_2020.jpg                  # PRISMA flow diagram image
-│   └── reverse-engineering.xlsm         # Data extraction and reverse-engineering workbook
+│   └── reverse-engineering.xlsm         # V3.5 extraction and reverse-engineering workbook (kept for traceability)
 │
 ├── results/
 │   ├── fig_2_mmat.png                   # MMAT judgement distribution (n = 36 appraised)
@@ -260,7 +260,7 @@ All supplementary materials describe the V3.6 corpus of 36 eligible studies. Row
 
 ## Reproducing the Figures
 
-All figure frequencies are computed from `data/extraction_master.csv`, which holds one row per eligible study with its domain, MMAT judgements, model family, ensemble configuration, reported metrics, dataset category, input representation and methodological challenges. No script contains precomputed frequencies.
+All figure frequencies are computed from `data/extraction_master.csv`, which holds one row per eligible study with its record identifier and DOI (linking it to `data/screening_log.csv`), domain, MMAT judgements, model family, ensemble configuration, reported metrics, dataset category, input representation and methodological challenges. No script contains precomputed frequencies.
 
 ```bash
 cd scripts

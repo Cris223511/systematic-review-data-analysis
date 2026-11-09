@@ -93,4 +93,4 @@ plt.savefig(
 )
 
 plt.close()
-print("Guardado en:", os.path.abspath(OUTDIR))
+print("Saved to:", os.path.abspath(OUTDIR))

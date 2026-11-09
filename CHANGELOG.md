@@ -96,10 +96,25 @@ N36-01 to N36-06 and the closure plan).
   and S5 regenerated. Architecture families: CNN 19, Traditional ML 6, Computer Vision /
   Eye-tracking 3 (7 ensemble). Metrics: Recall 8, AUC 7.
 
+### Changed (final repository audit, 2026-11-09)
+- `data/extraction_master.csv`: `record_id` and `doi` columns added, linking each eligible
+  study to its row in `data/screening_log.csv`; coding note added to Sariyanidi et al.
+  (2025), whose supervised metrics are reported only in graphical form.
+- `data/screening_log.csv`: the 19 studies kept from V3.5 now name the study in their
+  inclusion reason, and the 9 contextual studies name the study and the criterion that
+  places them outside the eligible set (adult sample, CE(3) or CI(3)).
+- `scripts/fig_5_metrics.py`: console message translated to English.
+- `.gitignore` added so that the PDF copies written by the figure scripts, Python caches
+  and R session files are not committed.
+- Supplementary Material S5: extraction note updated after the full-text verification.
+- README: description of the extraction matrix updated; the two workbooks in `prisma/`
+  are identified as V3.5 records kept for traceability.
+
 ### Commits
 - `d1fb7e6` 2026-11-07 feat: add extraction master and compute all figures from it, add licenses, update README
 - `3791adb` 2026-11-08 feat: reconstruct screening flow with reproducible deduplication and explicit scope criterion
-- `PENDING` 2026-11-09 fix: verify coding of added studies against full texts
+- `9c57aba` 2026-11-09 fix: verify coding of added studies against full texts
+- `PENDING` 2026-11-09 chore: link extraction matrix to screening log and finalize repository audit
 
 ---
 
