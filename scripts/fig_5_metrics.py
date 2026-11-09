@@ -57,8 +57,9 @@ for yi, c, p in zip(y, counts, pcts):
 ax.set_yticks(y)
 ax.set_yticklabels(metrics, fontsize=13, fontweight='bold', color='black')
 
-ax.set_xlim(0, 15)
-ax.set_xticks(range(0, 16, 3))
+x_upper = -(-int(max(counts) * 1.3) // 3) * 3
+ax.set_xlim(0, x_upper)
+ax.set_xticks(range(0, x_upper + 1, 3))
 ax.tick_params(axis='x', labelsize=12, colors='black')
 
 ax.set_xlabel(

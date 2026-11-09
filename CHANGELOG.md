@@ -37,8 +37,53 @@ N36-01 to N36-06 and the closure plan).
   and per-object license table added; citation status changed from "[Submitted for
   publication]" to "Manuscript in preparation". Addresses advisory N36-05.
 
+### Added (screening reconstruction, 2026-11-08)
+- `scripts/deduplicate_records.py` and `data/records_deduplicated.csv`: reproducible
+  deduplication of the four exports (DOI first, then normalized title and year). Result:
+  1,920 records, 524 duplicates, 1,396 unique records. The V3.5 flow reported 1,002
+  duplicates and 913 screened records; 479 unique records had been removed without a
+  documented reason. Addresses advisory 1-B, N35-05 and closure plan item 01.
+- `data/ACM-data.csv`: the five ACM records, previously only inside the workbook, with
+  their V3.6 decision. CI(4) no longer applies because the ACM Digital Library has been
+  fully open access since 2026-01-01. Addresses advisory 2-B and 2-C.
+- `data/screening_log.csv`: stage, decision, criterion and reason for each of the 1,396
+  unique records, including the 99 full-text decisions. Addresses advisory 1-C.
+- `supplementary/S5_screening_reconstruction.pdf`: deduplication method, screening counts,
+  full-text decision table, explicit scope criterion, extraction and MMAT of the added
+  studies, data provenance risk of Kaggle and web collections and technological readiness
+  of the added studies. Addresses advisory I-01, I-11 and 5.3.
+
+### Changed (screening reconstruction, 2026-11-08)
+- Eligible corpus updated from 21 to 36 studies after screening the 479 omitted records
+  and re-assessing the 51 full-text exclusions of V3.5 with recorded reasons. The former
+  criterion of fewer than 10 participants was removed. The scope criterion CI(1) was made
+  explicit (the study must use or evaluate an automated analysis of the face or gaze) and
+  applied to all studies: it removed Reed et al. (2021) and Almeida et al. (2019) from the
+  V3.5 corpus and six re-screened studies without automated facial or gaze analysis.
+  Domains: D1 12, D2 6, D3 6, D4 12. Denominators: 36 MMAT-appraised, 28 with ML
+  architecture, 25 with supervised metrics, 24 with numeric values, 18 primary evidence,
+  21 translational, 21 with at least one stated challenge. The V3.6 coding of the 17
+  added studies is first-reviewer coding pending a second reviewer.
+- `data/extraction_master.csv`: 17 rows added, 2 rows removed and a `coding_notes` column;
+  two dataset categories added (web videos, own non-ASD training data). Row ids are kept
+  as stable identifiers and are therefore not consecutive.
+- `scripts/compute_frequencies.py`: expected denominators updated; year axis derived from
+  the data instead of a fixed range.
+- Figure scripts: axis limits computed from the data and empty categories omitted. All
+  seven figures regenerated from the 36-study extraction matrix.
+- `prisma/PRISMA_2020.jpg` and `prisma/PRISMA_2020.docx`: flow diagram redrawn with the
+  reconstructed counts.
+- Supplementary Materials S1 to S4 updated to the 36-study corpus. S1: distribution by
+  platform at each stage, deduplication method, ACM decision and screening reconstruction.
+  S2: MMAT table for the 36 studies, including the randomised trial category. S3: SSBD
+  and web videos appraised, ALSPAC removed. S4: domain tables, longitudinal tracking audit
+  and coding matrix for the 36 studies.
+- README and `LICENSE-DATA.md`: selection flow, corpus, domains, results tables,
+  technological readiness, principal finding, new files and license scope updated.
+
 ### Commits
-- `PENDING` 2026-11-07 feat: add extraction master and compute all figures from it, add licenses, update README
+- `d1fb7e6` 2026-11-07 feat: add extraction master and compute all figures from it, add licenses, update README
+- `PENDING` 2026-11-08 feat: reconstruct screening flow with reproducible deduplication and explicit scope criterion
 
 ---
 

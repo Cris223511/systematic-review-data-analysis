@@ -22,6 +22,8 @@ df_input <- data.frame(
   Percentage = round(counts / n_total * 100, 1)
 )
 df_input <- df_input[order(-df_input$Studies, seq_along(groups)), ]
+df_input <- df_input[df_input$Studies > 0, ]
+x_upper <- ceiling(max(df_input$Studies) * 1.3 / 2) * 2 + 1
 
 df_input$Group <- factor(
   df_input$Group,
@@ -44,8 +46,8 @@ p <- ggplot(df_input, aes(x = Studies, y = Group)) +
     colour = "black"
   ) +
   scale_x_continuous(
-    limits = c(0, 11),
-    breaks = seq(0, 10, 2),
+    limits = c(0, x_upper),
+    breaks = seq(0, x_upper - 1, 2),
     expand = c(0, 0)
   ) +
   labs(

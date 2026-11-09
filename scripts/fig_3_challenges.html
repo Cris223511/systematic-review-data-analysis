@@ -94,11 +94,11 @@
                 scales: {
                     x: {
                         beginAtZero: true,
-                        max: 6,
-                        ticks: { stepSize: 1, font: { size: 13 } },
+                        max: (m => m > 10 ? Math.ceil((m + 2) / 2) * 2 : m + 1)(Math.max(...D.challenges.map(c => c.n))),
+                        ticks: { stepSize: Math.max(...D.challenges.map(c => c.n)) > 10 ? 2 : 1, font: { size: 13 } },
                         title: {
                             display: true,
-                            text: 'Number of studies (n = 21 eligible)',
+                            text: `Number of studies (n = ${D.n_eligible} eligible)`,
                             font: { size: 13, weight: 'bold' },
                             color: '#000000'
                         },

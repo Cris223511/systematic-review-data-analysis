@@ -5,6 +5,7 @@ master <- read.csv("../data/extraction_master.csv", stringsAsFactors = FALSE, en
 df_datasets <- data.frame(
   Dataset = c(
     "Kaggle ASD collections",
+    "Web videos (SSBD and YouTube)",
     "FER-2013",
     "FERAC",
     "CAFE",
@@ -13,20 +14,22 @@ df_datasets <- data.frame(
     "Robot therapy data",
     "Clinical eye-tracking",
     "Semi-public on request",
+    "Own non-ASD training data",
     "No ML dataset"
   ),
-  Access = c(rep("PUBLIC", 5), rep("PRIVATE / SEMI-RESTRICTED", 5)),
+  Access = c(rep("PUBLIC", 6), rep("PRIVATE / SEMI-RESTRICTED", 6)),
   Provenance = c(
-    "Web", "Public general", "Partial provenance",
+    "Web", "Web", "Public general", "Partial provenance",
     "Public curated", "Public curated",
     "Clinical", "Clinical", "Clinical",
-    "Mixed", "Not applicable"
+    "Mixed", "Non-clinical", "Not applicable"
   )
 )
 
 df_datasets$Studies <- sapply(df_datasets$Dataset, function(d) sum(master$dataset_category == d))
 total_studies <- nrow(master)
 stopifnot(sum(df_datasets$Studies) == total_studies)
+df_datasets <- df_datasets[df_datasets$Studies > 0, ]
 
 access_pct <- tapply(df_datasets$Studies, df_datasets$Access, sum) / total_studies * 100
 df_datasets$Access <- paste0(df_datasets$Access, " (", sprintf("%.1f", access_pct[df_datasets$Access]), "%)")
@@ -49,10 +52,12 @@ df_datasets$Provenance <- factor(
     "Partial provenance",
     "Public general",
     "Mixed",
+    "Non-clinical",
     "Web",
     "Not applicable"
   )
 )
+df_datasets$Provenance <- droplevels(df_datasets$Provenance)
 
 palette_prov <- c(
   "Clinical"           = "#2F4858",
@@ -60,6 +65,7 @@ palette_prov <- c(
   "Partial provenance" = "#7E9BAA",
   "Public general"     = "#A9BFC9",
   "Mixed"              = "#C9D6DE",
+  "Non-clinical"       = "#DCE3E8",
   "Web"                = "#E8B649",
   "Not applicable"     = "#F2F2F2"
 )
@@ -71,7 +77,7 @@ draw_treemap <- function() {
     vSize             = "Studies",
     vColor            = "Provenance",
     type              = "categorical",
-    palette           = palette_prov,
+    palette           = palette_prov[levels(df_datasets$Provenance)],
     title             = "",
     title.legend      = "Dataset provenance",
     fontsize.labels   = c(0, 12),

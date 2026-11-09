@@ -15,6 +15,7 @@ df_arch$Studies <- mapply(
   df_arch$Family, df_arch$Configuration
 )
 n_ml <- nrow(ml)
+x_upper <- ceiling(max(tapply(df_arch$Studies, df_arch$Family, sum)) * 1.15 / 2) * 2 + 2
 
 df_arch$Family <- factor(
   df_arch$Family,
@@ -71,8 +72,8 @@ p <- ggplot(df_arch, aes(x = Studies, y = Family, fill = Configuration)) +
     "Ensemble"     = "black"
   )) +
   scale_x_continuous(
-    limits = c(0, 14),
-    breaks = seq(0, 12, 2),
+    limits = c(0, x_upper),
+    breaks = seq(0, x_upper - 2, 2),
     expand = c(0, 0)
   ) +
   coord_cartesian(clip = "off") +

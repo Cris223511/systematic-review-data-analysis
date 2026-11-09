@@ -8,7 +8,6 @@ ROOT = Path(__file__).resolve().parent.parent
 MASTER = ROOT / "data" / "extraction_master.csv"
 OUTPUT = Path(__file__).resolve().parent / "figure_data.js"
 
-YEARS = list(range(2018, 2027))
 FAMILIES = [
     "CNN / Deep Learning",
     "Traditional ML",
@@ -32,16 +31,17 @@ CHALLENGES = [
 METRICS = [("acc", "ACC"), ("f1", "F1-score"), ("precision", "Precision"), ("recall", "Recall"), ("auc", "AUC")]
 
 EXPECTED = {
-    "eligible": 21,
-    "domains": {"D1": 7, "D2": 4, "D3": 3, "D4": 7},
-    "mmat_appraised": 20,
-    "ml_architecture": 17,
-    "supervised_metrics": 14,
-    "metrics_numeric": 13,
-    "primary_evidence": 11,
-    "translational": 11,
-    "challenge_any": 11,
+    "eligible": 36,
+    "domains": {"D1": 12, "D2": 6, "D3": 6, "D4": 12},
+    "mmat_appraised": 36,
+    "ml_architecture": 28,
+    "supervised_metrics": 25,
+    "metrics_numeric": 24,
+    "primary_evidence": 18,
+    "translational": 21,
+    "challenge_any": 21,
 }
+CURRENT_PARTIAL_YEAR = 2026
 
 
 def load(path=MASTER):
@@ -84,9 +84,10 @@ def compute(rows):
         {"label": label, "n": sum(flag(r, key) for r in supervised), "pct": round(100 * sum(flag(r, key) for r in supervised) / len(supervised))}
         for key, label in METRICS
     ]
+    years = list(range(min(int(r["year"]) for r in rows), max(int(r["year"]) for r in rows) + 1))
     datasets = Counter(r["dataset_category"] for r in rows)
     inputs = Counter(r["input_group"] for r in rows)
-    temporal = {fam: [sum(r["model_family"] == fam and int(r["year"]) == y for r in rows) for y in YEARS] for fam in FAMILIES}
+    temporal = {fam: [sum(r["model_family"] == fam and int(r["year"]) == y for r in rows) for y in years] for fam in FAMILIES}
 
     return {
         "n_eligible": n,
@@ -99,7 +100,7 @@ def compute(rows):
         "metrics": metrics,
         "datasets": dict(datasets),
         "inputs": {k: {"n": v, "pct": pct(v, n)} for k, v in inputs.most_common()},
-        "years": [str(y) if y < 2026 else f"{y}*" for y in YEARS],
+        "years": [f"{y}*" if y == CURRENT_PARTIAL_YEAR else str(y) for y in years],
         "temporal": temporal,
         "domains": dict(Counter(r["domain"] for r in rows)),
         "primary_evidence": sum(flag(r, "primary_evidence") for r in rows),

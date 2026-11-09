@@ -1,139 +1,136 @@
 window.FIGURE_DATA = {
-  "n_eligible": 21,
-  "n_appraised": 20,
-  "n_ml": 17,
-  "n_supervised": 14,
+  "n_eligible": 36,
+  "n_appraised": 36,
+  "n_ml": 28,
+  "n_supervised": 25,
   "mmat": {
     "Outcome data completeness": {
-      "yes": 20,
-      "cannot_tell": 0,
-      "no": 0
+      "yes": 25,
+      "cannot_tell": 10,
+      "no": 1
     },
     "Appropriateness of measurements": {
-      "yes": 20,
-      "cannot_tell": 0,
+      "yes": 33,
+      "cannot_tell": 3,
       "no": 0
     },
     "Intervention as intended and sampling strategy": {
-      "yes": 14,
-      "cannot_tell": 4,
-      "no": 2
-    },
-    "Sample representativeness": {
-      "yes": 14,
-      "cannot_tell": 3,
+      "yes": 28,
+      "cannot_tell": 5,
       "no": 3
     },
+    "Sample representativeness": {
+      "yes": 18,
+      "cannot_tell": 9,
+      "no": 9
+    },
     "Confounding control and analysis": {
-      "yes": 11,
-      "cannot_tell": 3,
-      "no": 6
+      "yes": 17,
+      "cannot_tell": 11,
+      "no": 8
     }
   },
   "challenges": [
     {
-      "label": "Classification uncertainty and low predictive robustness",
-      "n": 5,
-      "pct": 23.8
-    },
-    {
       "label": "Poor generalization in small samples",
-      "n": 3,
-      "pct": 14.3
-    },
-    {
-      "label": "Multicollinearity in multimodal data",
-      "n": 3,
-      "pct": 14.3
+      "n": 13,
+      "pct": 36.1
     },
     {
       "label": "Class imbalance and sampling biases",
-      "n": 3,
-      "pct": 14.3
+      "n": 6,
+      "pct": 16.7
+    },
+    {
+      "label": "Classification uncertainty and low predictive robustness",
+      "n": 5,
+      "pct": 13.9
+    },
+    {
+      "label": "Multicollinearity in multimodal data",
+      "n": 2,
+      "pct": 5.6
     },
     {
       "label": "Limited interpretability of black-box models",
       "n": 2,
-      "pct": 9.5
+      "pct": 5.6
     }
   ],
   "families": {
     "CNN / Deep Learning": {
-      "non_ensemble": 9,
-      "ensemble": 4
+      "non_ensemble": 14,
+      "ensemble": 5
     },
     "Traditional ML": {
-      "non_ensemble": 1,
+      "non_ensemble": 4,
       "ensemble": 1
     },
     "Computer Vision / Eye-tracking": {
-      "non_ensemble": 2,
+      "non_ensemble": 4,
       "ensemble": 0
     }
   },
   "metrics": [
     {
       "label": "ACC",
-      "n": 13,
-      "pct": 93
+      "n": 22,
+      "pct": 88
     },
     {
       "label": "F1-score",
-      "n": 11,
-      "pct": 79
+      "n": 13,
+      "pct": 52
     },
     {
       "label": "Precision",
       "n": 5,
-      "pct": 36
+      "pct": 20
     },
     {
       "label": "Recall",
-      "n": 5,
-      "pct": 36
+      "n": 7,
+      "pct": 28
     },
     {
       "label": "AUC",
-      "n": 4,
-      "pct": 29
+      "n": 6,
+      "pct": 24
     }
   ],
   "datasets": {
-    "Own clinical data": 5,
-    "Clinical eye-tracking": 1,
-    "Semi-public on request": 3,
+    "Own clinical data": 13,
+    "Clinical eye-tracking": 5,
     "Kaggle ASD collections": 5,
     "FERAC": 1,
     "CAFE": 1,
-    "FER-2013": 1,
+    "FER-2013": 2,
+    "Semi-public on request": 2,
     "DREAM": 1,
-    "Robot therapy data": 2,
-    "No ML dataset": 1
+    "Robot therapy data": 4,
+    "Web videos (SSBD and YouTube)": 1,
+    "Own non-ASD training data": 1
   },
   "inputs": {
-    "End-to-end learning (CNN)": {
-      "n": 8,
-      "pct": 38.1
-    },
     "Facial descriptor extraction": {
-      "n": 7,
+      "n": 19,
+      "pct": 52.8
+    },
+    "End-to-end learning (CNN)": {
+      "n": 12,
       "pct": 33.3
     },
-    "No computational facial input": {
+    "Capture format definition": {
       "n": 2,
-      "pct": 9.5
+      "pct": 5.6
     },
     "Physiological signal derivation": {
       "n": 2,
-      "pct": 9.5
-    },
-    "Capture format definition": {
-      "n": 1,
-      "pct": 4.8
+      "pct": 5.6
     },
     "Algorithmic descriptor selection": {
       "n": 1,
-      "pct": 4.8
+      "pct": 2.8
     }
   },
   "years": [
@@ -153,27 +150,27 @@ window.FIGURE_DATA = {
       1,
       0,
       0,
-      1,
+      2,
       0,
-      3,
-      6,
+      5,
+      9,
       1
     ],
     "Traditional ML": [
       0,
       1,
       0,
-      0,
-      0,
-      0,
-      0,
       1,
+      1,
+      0,
+      0,
+      2,
       0
     ],
     "Computer Vision / Eye-tracking": [
       1,
-      0,
-      0,
+      1,
+      1,
       0,
       0,
       0,
@@ -184,23 +181,23 @@ window.FIGURE_DATA = {
     "Other designs (clinical / conceptual)": [
       0,
       2,
+      1,
+      3,
+      0,
+      0,
       0,
       2,
-      0,
-      0,
-      0,
-      0,
       0
     ]
   },
   "domains": {
-    "D1": 7,
-    "D3": 3,
-    "D2": 4,
-    "D4": 7
+    "D1": 12,
+    "D3": 6,
+    "D2": 6,
+    "D4": 12
   },
-  "primary_evidence": 11,
-  "translational": 11,
-  "metrics_numeric": 13,
-  "challenge_any": 11
+  "primary_evidence": 18,
+  "translational": 21,
+  "metrics_numeric": 24,
+  "challenge_any": 21
 };
