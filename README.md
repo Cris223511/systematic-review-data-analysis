@@ -171,9 +171,9 @@ Search strings for IEEE Xplore and Web of Science, with platform-specific syntax
 | Family | Ensemble | Non-ensemble | Total | % |
 |--------|----------|-------------|-------|---|
 | CNN / Deep Learning | 5 | 14 | 19 | 67.9% |
-| Traditional ML | 1 | 4 | 5 | 17.9% |
-| Computer Vision / Eye-tracking | 0 | 4 | 4 | 14.3% |
-| **Total** | **6** | **22** | **28** | **100%** |
+| Traditional ML | 1 | 5 | 6 | 21.4% |
+| Computer Vision / Eye-tracking | 1 | 2 | 3 | 10.7% |
+| **Total** | **7** | **21** | **28** | **100%** |
 
 ### Performance Metrics (n = 25 eligible with extractable supervised metrics)
 
@@ -181,8 +181,8 @@ Search strings for IEEE Xplore and Web of Science, with platform-specific syntax
 |--------|---------|---|
 | Accuracy (ACC) | 22 | 88% |
 | F1-score | 13 | 52% |
-| Recall | 7 | 28% |
-| AUC | 6 | 24% |
+| Recall | 8 | 32% |
+| AUC | 7 | 28% |
 | Precision | 5 | 20% |
 
 Values are reported stratified by clinical domain and do not admit comparison across distinct tasks. Studies on clinically sourced datasets report values that vary substantially by domain (79.1% balanced accuracy in D1, 88.0% in D4 screening); the 67.8% of Johnson et al. (2025) corresponds to seven-class classification on AffectNet. Studies on web-sourced datasets without clinical traceability report 84.0% to 99.01%, and four of the five highest accuracy values in the corpus (99.01%, 97.2%, 96.5% and 96.0%) come from these datasets; these values are not transferable to therapeutic context.

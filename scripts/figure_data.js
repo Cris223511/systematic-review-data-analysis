@@ -63,12 +63,12 @@ window.FIGURE_DATA = {
       "ensemble": 5
     },
     "Traditional ML": {
-      "non_ensemble": 4,
+      "non_ensemble": 5,
       "ensemble": 1
     },
     "Computer Vision / Eye-tracking": {
-      "non_ensemble": 4,
-      "ensemble": 0
+      "non_ensemble": 2,
+      "ensemble": 1
     }
   },
   "metrics": [
@@ -89,13 +89,13 @@ window.FIGURE_DATA = {
     },
     {
       "label": "Recall",
-      "n": 7,
-      "pct": 28
+      "n": 8,
+      "pct": 32
     },
     {
       "label": "AUC",
-      "n": 6,
-      "pct": 24
+      "n": 7,
+      "pct": 28
     }
   ],
   "datasets": {
@@ -159,7 +159,7 @@ window.FIGURE_DATA = {
     "Traditional ML": [
       0,
       1,
-      0,
+      1,
       1,
       1,
       0,
@@ -170,7 +170,7 @@ window.FIGURE_DATA = {
     "Computer Vision / Eye-tracking": [
       1,
       1,
-      1,
+      0,
       0,
       0,
       0,

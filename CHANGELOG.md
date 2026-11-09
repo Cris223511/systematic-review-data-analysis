@@ -81,9 +81,25 @@ N36-01 to N36-06 and the closure plan).
 - README and `LICENSE-DATA.md`: selection flow, corpus, domains, results tables,
   technological readiness, principal finding, new files and license scope updated.
 
+### Changed (coding verification, 2026-11-09)
+- Pending coding of the added studies verified against the full texts. Han et al. (2022):
+  accuracy of the fused model 95.56% (92.5% is its sensitivity), 10-fold subject-independent
+  stratified cross-validation, ROC/AUC reported; recall and AUC flags set. Carpenter et al.
+  (2020): LASSO-selected logistic regression with leave-one-out cross-validation; model
+  family changed from Computer Vision / Eye-tracking to Traditional ML. Kalantarian et al.
+  (2019): 8 boys with ASD, single session, 7 emotion categories, ensemble of commercial
+  classifiers; ensemble flag set. Kurian and Tripathi (2024): 4 classes (happy, sad,
+  neutral, meltdown), SSBD (75 children) plus YouTube videos, hold-out test set of 80
+  samples. Pliska et al. (2025): no cross-validation or hold-out reported. Fan et al.
+  (2025): classifier trained on the 7 FER-2013 classes, evaluated on 4 emotions.
+- Figures 4, 5 and 8, README tables, `scripts/figure_data.js`, Supplementary Materials S4
+  and S5 regenerated. Architecture families: CNN 19, Traditional ML 6, Computer Vision /
+  Eye-tracking 3 (7 ensemble). Metrics: Recall 8, AUC 7.
+
 ### Commits
 - `d1fb7e6` 2026-11-07 feat: add extraction master and compute all figures from it, add licenses, update README
-- `PENDING` 2026-11-08 feat: reconstruct screening flow with reproducible deduplication and explicit scope criterion
+- `3791adb` 2026-11-08 feat: reconstruct screening flow with reproducible deduplication and explicit scope criterion
+- `PENDING` 2026-11-09 fix: verify coding of added studies against full texts
 
 ---
 
