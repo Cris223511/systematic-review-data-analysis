@@ -86,11 +86,5 @@ plt.savefig(
     facecolor='white'
 )
 
-plt.savefig(
-    os.path.join(OUTDIR, 'fig_5_metrics.pdf'),
-    bbox_inches='tight',
-    facecolor='white'
-)
-
 plt.close()
 print("Saved to:", os.path.abspath(OUTDIR))

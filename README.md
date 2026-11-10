@@ -50,10 +50,12 @@ systematic-review-data-analysis/
 │   ├── fig_7_input.png                  # Input representation approach (n = 36 eligible)
 │   └── fig_8_temporal.png               # Annual distribution by model family (n = 36 eligible)
 │
-├── scripts/
+├── pipeline/
 │   ├── deduplicate_records.py           # Reproducible DOI and title-year deduplication of the four exports
 │   ├── compute_frequencies.py           # Computes all figure frequencies and checks denominators
-│   ├── figure_data.js                   # Frequencies generated for the HTML figures
+│   └── figure_data.js                   # Frequencies generated for the HTML figures
+│
+├── scripts/
 │   ├── fig_2_mmat.html                  # Chart.js: MMAT stacked bar chart
 │   ├── fig_3_challenges.html            # Chart.js: challenges horizontal bar chart
 │   ├── fig_4_architectures.R            # ggplot2: architectural families stacked bar
@@ -102,7 +104,7 @@ ACM records were excluded before screening in V3.5 for lack of open access (CI(4
 | Contextual evidence (no denominators) | 9 |
 | **Studies included** | **36** |
 
-Deduplication is reproducible with `python3 scripts/deduplicate_records.py` (DOI first, then normalized title and year; precedence Scopus, Web of Science, IEEE Xplore, ACM). The V3.5 flow reported 1,002 duplicates and 913 screened records; the reconstruction found 524 duplicates and 1,396 unique records, so 479 unique records had been removed without a documented reason. In V3.6 these 479 records were screened, the 51 full-text exclusions of V3.5 were re-assessed with recorded reasons, and the former criterion of fewer than 10 participants was removed (sample size is charted as a variable). The scope criterion was made explicit (the study must use or evaluate an automated analysis of the face or gaze) and applied to every study, including the V3.5 corpus; it removed eight studies without automated facial or gaze analysis, two of them from the V3.5 corpus (Reed et al. 2021, Almeida et al. 2019). The eligible corpus changes from 21 to 36 studies: 19 from V3.5 and 17 added. Every decision is listed in `data/screening_log.csv`; title/abstract exclusions of the original screening (n = 827) keep their original decision, whose reason was not recorded at the time.
+Deduplication is reproducible with `python3 pipeline/deduplicate_records.py` (DOI first, then normalized title and year; precedence Scopus, Web of Science, IEEE Xplore, ACM). The V3.5 flow reported 1,002 duplicates and 913 screened records; the reconstruction found 524 duplicates and 1,396 unique records, so 479 unique records had been removed without a documented reason. In V3.6 these 479 records were screened, the 51 full-text exclusions of V3.5 were re-assessed with recorded reasons, and the former criterion of fewer than 10 participants was removed (sample size is charted as a variable). The scope criterion was made explicit (the study must use or evaluate an automated analysis of the face or gaze) and applied to every study, including the V3.5 corpus; it removed eight studies without automated facial or gaze analysis, two of them from the V3.5 corpus (Reed et al. 2021, Almeida et al. 2019). The eligible corpus changes from 21 to 36 studies: 19 from V3.5 and 17 added. Every decision is listed in `data/screening_log.csv`; title/abstract exclusions of the original screening (n = 827) keep their original decision, whose reason was not recorded at the time.
 
 The V3.6 re-screening and the extraction of the 17 added studies were performed by one reviewer and are pending confirmation by a second reviewer.
 
@@ -263,16 +265,17 @@ All supplementary materials describe the V3.6 corpus of 36 eligible studies. Row
 All figure frequencies are computed from `data/extraction_master.csv`, which holds one row per eligible study with its record identifier and DOI (linking it to `data/screening_log.csv`), domain, MMAT judgements, model family, ensemble configuration, reported metrics, dataset category, input representation and methodological challenges. No script contains precomputed frequencies.
 
 ```bash
-cd scripts
+cd pipeline
 python3 deduplicate_records.py   # rebuilds data/records_deduplicated.csv (1,920 records, 524 duplicates)
 python3 compute_frequencies.py   # checks denominators (36, 36, 28, 26, 25, 18, 21, 21) and writes figure_data.js
+cd ../scripts
 Rscript fig_4_architectures.R
 Rscript fig_6_datasets.R
 Rscript fig_7_input.R
 python3 fig_5_metrics.py
 ```
 
-Figures 2, 3 and 8 are rendered by opening their HTML files in a browser; they read `figure_data.js`. The denominator check stops with an error if any total in the extraction matrix departs from the manuscript.
+Figures 2, 3 and 8 are rendered by opening their HTML files in a browser; they read `pipeline/figure_data.js`. The denominator check stops with an error if any total in the extraction matrix departs from the manuscript.
 
 ## Technical Requirements
 
@@ -337,6 +340,6 @@ Manuscript in preparation.
 
 | Object | License |
 |--------|---------|
-| Code (`scripts/`) | MIT, see [LICENSE](LICENSE) |
+| Code (`pipeline/` and `scripts/`) | MIT, see [LICENSE](LICENSE) |
 | Extraction matrix, figures, supplementary materials, PRISMA diagram and documentation | CC BY 4.0, see [LICENSE-DATA.md](LICENSE-DATA.md) |
 | Raw exports from Scopus, Web of Science, IEEE Xplore and ACM Digital Library, and the workbooks that contain them | Not licensed by the authors; subject to the terms of use of Elsevier, Clarivate, IEEE and ACM |

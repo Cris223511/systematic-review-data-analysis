@@ -15,7 +15,7 @@ credit is given, a link to the license is provided, and any changes are indicate
 
 | Object | License |
 |--------|---------|
-| `scripts/` | MIT (see `LICENSE`) |
+| `pipeline/` and `scripts/` | MIT (see `LICENSE`) |
 | `data/extraction_master.csv` | CC BY 4.0 |
 | `data/screening_log.csv`, `data/records_deduplicated.csv` | CC BY 4.0 for the decisions, criteria, reasons and duplicate flags; the bibliographic fields (DOI, title, year) come from the third-party records below |
 | `results/` | CC BY 4.0 |

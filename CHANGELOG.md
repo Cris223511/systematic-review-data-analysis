@@ -122,12 +122,27 @@ N36-01 to N36-06 and the closure plan).
   n = 26).
 - README: RQ2 and RQ3 bases, metric table and denominator check updated.
 
+### Changed (repository layout and formats, 2026-11-10)
+- `prisma/PRISMA_2020.docx` and `prisma/PRISMA_2020.jpg`: the official PRISMA 2020
+  template used up to V3.5 is restored, with the V3.6 counts (1,920 identified; 524
+  duplicates; 1,396 screened; 1,297 excluded; 99 assessed; 46 excluded in full text;
+  8 retracted or withdrawn; 9 contextual; 36 eligible).
+- `pipeline/`: new folder for the processing code (`deduplicate_records.py`,
+  `compute_frequencies.py` and the generated `figure_data.js`), so that `scripts/` holds
+  only the figure scripts. The HTML figures read `../pipeline/figure_data.js`.
+- Figure scripts no longer write PDF copies; `results/` holds only the PNG figures.
+- Supplementary Material S4: column widths of Section A fixed so the table fits the page.
+- Supplementary Material S5: rebuilt in LaTeX with the same format as S1 to S4; adds the
+  table of retracted or withdrawn records and the readiness table.
+- README and LICENSE-DATA: paths updated; `.gitignore` excludes Office lock files.
+
 ### Commits
 - `d1fb7e6` 2026-11-07 feat: add extraction master and compute all figures from it, add licenses, update README
 - `3791adb` 2026-11-08 feat: reconstruct screening flow with reproducible deduplication and explicit scope criterion
 - `9c57aba` 2026-11-09 fix: verify coding of added studies against full texts
 - `9e90c18` 2026-11-09 chore: link extraction matrix to screening log and finalize repository audit
-- `PENDING` 2026-11-10 fix: count Voss and Wang metric flags and update metric denominators
+- `67f2a7b` 2026-11-10 fix: count Voss and Wang metric flags and update metric denominators
+- `PENDING` 2026-11-10 refactor: restore PRISMA template, move pipeline code and rebuild S4 and S5
 
 ---
 

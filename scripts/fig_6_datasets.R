@@ -101,7 +101,3 @@ draw_treemap <- function() {
 png("../results/fig_6_datasets.png", width = 9, height = 6, units = "in", res = 300)
 draw_treemap()
 dev.off()
-
-pdf("../results/fig_6_datasets.pdf", width = 9, height = 6)
-draw_treemap()
-dev.off()
