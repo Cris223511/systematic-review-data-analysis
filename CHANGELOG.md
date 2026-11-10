@@ -184,7 +184,7 @@ N36-01 to N36-06 and the closure plan).
 - `67f2a7b` 2026-11-10 fix: count Voss and Wang metric flags and update metric denominators
 - `32c5913` 2026-11-10 refactor: restore PRISMA template, move pipeline code and rebuild S4 and S5
 - `4521e23` 2026-11-10 fix: correct Shi session count, harmonise S4 settings and update README values
-- `PENDING` 2026-11-10 fix: apply CI(3) to every venue, move five studies to contextual evidence and rename the CV family
+- `a5a9b6c` 2026-11-10 fix: apply CI(3) to every venue, move five studies to contextual evidence and rename the CV family
 
 ---
 
