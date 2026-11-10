@@ -110,11 +110,24 @@ N36-01 to N36-06 and the closure plan).
 - README: description of the extraction matrix updated; the two workbooks in `prisma/`
   are identified as V3.5 records kept for traceability.
 
+### Changed (metric flags after manuscript update, 2026-11-10)
+- `data/extraction_master.csv`: Voss et al. (2019) now counts as reporting supervised
+  metrics (embedded emotion classifier with 72% accuracy; on-phone speed of 15-20 frames
+  per second and recognition within 100 ms recorded in the coding note); Wang et al.
+  (2025) now counts as reporting precision and recall (per-class values) and its note
+  records the 95% bootstrap confidence interval of the accuracy.
+- `scripts/compute_frequencies.py`: expected denominators updated to 26 studies with
+  supervised metrics and 25 with numeric values; `scripts/figure_data.js` and
+  `results/fig_5_metrics.png` regenerated (ACC 23, F1 13, Recall 9, AUC 7, Precision 6;
+  n = 26).
+- README: RQ2 and RQ3 bases, metric table and denominator check updated.
+
 ### Commits
 - `d1fb7e6` 2026-11-07 feat: add extraction master and compute all figures from it, add licenses, update README
 - `3791adb` 2026-11-08 feat: reconstruct screening flow with reproducible deduplication and explicit scope criterion
 - `9c57aba` 2026-11-09 fix: verify coding of added studies against full texts
-- `PENDING` 2026-11-09 chore: link extraction matrix to screening log and finalize repository audit
+- `9e90c18` 2026-11-09 chore: link extraction matrix to screening log and finalize repository audit
+- `PENDING` 2026-11-10 fix: count Voss and Wang metric flags and update metric denominators
 
 ---
 

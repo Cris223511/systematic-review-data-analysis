@@ -15,8 +15,8 @@ The research follows PRISMA-ScR and PRISMA 2020 methodology and analyzes machine
 | RQ | Question | Analysis base |
 |----|----------|---------------|
 | RQ1 | What ML architectures and models have been employed for facial emotion recognition in children with ASD in the context of therapeutic monitoring? | 28 eligible studies with identifiable ML architecture |
-| RQ2 | What metrics are used to evaluate the performance of emotion recognition algorithms, methods, or models? | 25 eligible studies with extractable supervised metrics |
-| RQ3 | What are the accuracy, precision, recall, F1-score, and AUC values of these models? | 24 eligible studies with numeric values for those metrics |
+| RQ2 | What metrics are used to evaluate the performance of emotion recognition algorithms, methods, or models? | 26 eligible studies with extractable supervised metrics |
+| RQ3 | What are the accuracy, precision, recall, F1-score, and AUC values of these models? | 25 eligible studies with numeric values for those metrics |
 | RQ4 | What datasets are used for model training and validation, and what are their representativeness limitations? | 36 eligible corpus |
 | RQ5 | What input variables or features do emotion recognition systems employ, and to what extent do they correspond to the dimensions required by therapeutic monitoring? | 36 eligible corpus |
 | RQ6 | What technical and methodological limitations impede ML system implementation in resource-limited contexts? | 36 eligible corpus |
@@ -45,7 +45,7 @@ systematic-review-data-analysis/
 │   ├── fig_2_mmat.png                   # MMAT judgement distribution (n = 36 appraised)
 │   ├── fig_3_challenges.png             # Methodological challenges (n = 36 eligible)
 │   ├── fig_4_architectures.png          # Architectural families by configuration (n = 28)
-│   ├── fig_5_metrics.png                # Metric reporting frequency (n = 25)
+│   ├── fig_5_metrics.png                # Metric reporting frequency (n = 26)
 │   ├── fig_6_datasets.png               # Dataset treemap by provenance (n = 36 eligible)
 │   ├── fig_7_input.png                  # Input representation approach (n = 36 eligible)
 │   └── fig_8_temporal.png               # Annual distribution by model family (n = 36 eligible)
@@ -175,15 +175,15 @@ Search strings for IEEE Xplore and Web of Science, with platform-specific syntax
 | Computer Vision / Eye-tracking | 1 | 2 | 3 | 10.7% |
 | **Total** | **7** | **21** | **28** | **100%** |
 
-### Performance Metrics (n = 25 eligible with extractable supervised metrics)
+### Performance Metrics (n = 26 eligible with extractable supervised metrics)
 
 | Metric | Studies | % |
 |--------|---------|---|
-| Accuracy (ACC) | 22 | 88% |
-| F1-score | 13 | 52% |
-| Recall | 8 | 32% |
-| AUC | 7 | 28% |
-| Precision | 5 | 20% |
+| Accuracy (ACC) | 23 | 88% |
+| F1-score | 13 | 50% |
+| Recall | 9 | 35% |
+| AUC | 7 | 27% |
+| Precision | 6 | 23% |
 
 Values are reported stratified by clinical domain and do not admit comparison across distinct tasks. Studies on clinically sourced datasets report values that vary substantially by domain (79.1% balanced accuracy in D1, 88.0% in D4 screening); the 67.8% of Johnson et al. (2025) corresponds to seven-class classification on AffectNet. Studies on web-sourced datasets without clinical traceability report 84.0% to 99.01%, and four of the five highest accuracy values in the corpus (99.01%, 97.2%, 96.5% and 96.0%) come from these datasets; these values are not transferable to therapeutic context.
 
@@ -265,7 +265,7 @@ All figure frequencies are computed from `data/extraction_master.csv`, which hol
 ```bash
 cd scripts
 python3 deduplicate_records.py   # rebuilds data/records_deduplicated.csv (1,920 records, 524 duplicates)
-python3 compute_frequencies.py   # checks denominators (36, 36, 28, 25, 24, 18, 21, 21) and writes figure_data.js
+python3 compute_frequencies.py   # checks denominators (36, 36, 28, 26, 25, 18, 21, 21) and writes figure_data.js
 Rscript fig_4_architectures.R
 Rscript fig_6_datasets.R
 Rscript fig_7_input.R

@@ -2,7 +2,7 @@ window.FIGURE_DATA = {
   "n_eligible": 36,
   "n_appraised": 36,
   "n_ml": 28,
-  "n_supervised": 25,
+  "n_supervised": 26,
   "mmat": {
     "Outcome data completeness": {
       "yes": 25,
@@ -74,28 +74,28 @@ window.FIGURE_DATA = {
   "metrics": [
     {
       "label": "ACC",
-      "n": 22,
+      "n": 23,
       "pct": 88
     },
     {
       "label": "F1-score",
       "n": 13,
-      "pct": 52
+      "pct": 50
     },
     {
       "label": "Precision",
-      "n": 5,
-      "pct": 20
+      "n": 6,
+      "pct": 23
     },
     {
       "label": "Recall",
-      "n": 8,
-      "pct": 32
+      "n": 9,
+      "pct": 35
     },
     {
       "label": "AUC",
       "n": 7,
-      "pct": 28
+      "pct": 27
     }
   ],
   "datasets": {
@@ -198,6 +198,6 @@ window.FIGURE_DATA = {
   },
   "primary_evidence": 18,
   "translational": 21,
-  "metrics_numeric": 24,
+  "metrics_numeric": 25,
   "challenge_any": 21
 };
