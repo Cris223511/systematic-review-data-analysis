@@ -16,7 +16,7 @@ The research follows PRISMA-ScR and PRISMA 2020 methodology and analyzes machine
 |----|----------|---------------|
 | RQ1 | What ML architectures and models have been employed for facial emotion recognition in children with ASD in the context of therapeutic monitoring? | 28 eligible studies with identifiable ML architecture |
 | RQ2 | What metrics are used to evaluate the performance of emotion recognition algorithms, methods, or models? | 26 eligible studies with extractable supervised metrics |
-| RQ3 | What are the accuracy, precision, recall, F1-score, and AUC values of these models? | 25 eligible studies with numeric values for those metrics |
+| RQ3 | What are the accuracy, precision, recall, F1-score, and AUC values of these models? | 26 eligible studies with extractable supervised metrics (25 with numeric values) |
 | RQ4 | What datasets are used for model training and validation, and what are their representativeness limitations? | 36 eligible corpus |
 | RQ5 | What input variables or features do emotion recognition systems employ, and to what extent do they correspond to the dimensions required by therapeutic monitoring? | 36 eligible corpus |
 | RQ6 | What technical and methodological limitations impede ML system implementation in resource-limited contexts? | 36 eligible corpus |
@@ -120,7 +120,7 @@ Final corpus publication range: 2018 to 2026 (year of first online publication).
 
 The 9 contextual studies infringe CE(3) by employing exclusively non-facial data (EDA, EEG, VBM, speech diarization, tabular screening, text and clinical records), the age criterion by including exclusively adult participants, or CI(3) because the journal was not indexed in SJR in the year of publication. They do not participate in any denominator of the manuscript.
 
-Eight retrieved records were retracted or withdrawn and are listed in `data/screening_log.csv`. Among them, three (Güngör et al. 2025, Mahmood et al. 2025, Kumar et al. 2024) were identified in the pre-synthesis integrity check (December 2025, retracted due to use of minor images without documented consent or verified diagnosis). A fourth retraction, Ahmad et al. (2024), was identified after corpus finalisation and confirmed on 17 August 2026 (Healthcare Technology Letters, DOI: 10.1049/htl2.70095), under the same causes as the prior three.
+Eight retrieved records were retracted or withdrawn and are listed in `data/screening_log.csv`. Among them, three (Güngör et al. 2025, Mahmood et al. 2025, Kumar et al. 2024) were identified in the pre-synthesis integrity check (December 2025, retracted due to use of minor images without documented consent or verified diagnosis). A fourth retraction, Ahmad et al. (2024), was identified after corpus finalisation and confirmed on 17 August 2026 (Healthcare Technology Letters, DOI: 10.1049/htl2.70095), under the same causes as the prior three. The other four were identified in the V3.6 re-screening: a Scientific Reports article retracted on 8 December 2025 for the same undocumented image provenance, a Soft Computing article retracted on 16 November 2025, a Results in Engineering article withdrawn at the request of its editors, and a 2022 article retracted in September 2023. All eight are listed with DOI and status in Supplementary Material S5.
 
 ## Clinical Domain Taxonomy
 
@@ -187,7 +187,7 @@ Search strings for IEEE Xplore and Web of Science, with platform-specific syntax
 | AUC | 7 | 27% |
 | Precision | 6 | 23% |
 
-Values are reported stratified by clinical domain and do not admit comparison across distinct tasks. Studies on clinically sourced datasets report values that vary substantially by domain (79.1% balanced accuracy in D1, 88.0% in D4 screening); the 67.8% of Johnson et al. (2025) corresponds to seven-class classification on AffectNet. Studies on web-sourced datasets without clinical traceability report 84.0% to 99.01%, and four of the five highest accuracy values in the corpus (99.01%, 97.2%, 96.5% and 96.0%) come from these datasets; these values are not transferable to therapeutic context.
+Values are reported stratified by clinical domain and do not admit comparison across distinct tasks. Studies on clinically sourced datasets report values that vary substantially by domain (68.0% to 90.7% in D1; 82.3% accuracy and AUROC 0.86 to 0.92 in D2; 88.0% to 95.6% in D4 screening); the 67.8% of Johnson et al. (2025) corresponds to seven-class classification on AffectNet. Studies on web-sourced datasets without clinical traceability report 84.0% to 99.01%, and four of the five highest accuracy values in the corpus (99.01%, 97.2%, 96.5% and 96.0%) come from these datasets, while the fifth (97.6%, Fan et al. 2025) is expert-reviewed feedback accuracy rather than held-out test accuracy; these values are not transferable to therapeutic context.
 
 ### Datasets (n = 36 eligible corpus)
 
@@ -246,7 +246,7 @@ The 19 studies kept from V3.5 retain their V3.5 level; Reed et al. (2021, level 
 
 ### Principal Finding
 
-No study in the eligible corpus reports session-to-session longitudinal tracking variables. Shi et al. (2022) record 19 in-home sessions per child but predict affect within each session without quantifying change across sessions, and the pre-post designs (Lecciso et al. 2021, Voss et al. 2019, Fan et al. 2025, Wall et al. 2025) compare two time points at group level. The available evidence is confined to cross-sectional classification, diagnostic screening, emotion recognition under largely controlled conditions and two-point comparisons. Longitudinal therapeutic monitoring remains an open gap rather than a consolidated result.
+No study in the eligible corpus reports session-to-session longitudinal tracking variables. Shi et al. (2022) record 19 in-home sessions in total (4 children) but predict affect within each session without quantifying change across sessions, and the pre-post designs (Lecciso et al. 2021, Voss et al. 2019, Fan et al. 2025, Wall et al. 2025) compare two time points at group level. The available evidence is confined to cross-sectional classification, diagnostic screening, emotion recognition under largely controlled conditions and two-point comparisons. Longitudinal therapeutic monitoring remains an open gap rather than a consolidated result.
 
 ## Supplementary Materials
 

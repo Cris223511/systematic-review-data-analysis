@@ -136,13 +136,27 @@ N36-01 to N36-06 and the closure plan).
   table of retracted or withdrawn records and the readiness table.
 - README and LICENSE-DATA: paths updated; `.gitignore` excludes Office lock files.
 
+
+### Fixed (repository audit, 2026-11-10)
+- Supplementary Material S4: Shi et al. (2022) recorded 19 in-home sessions in total
+  (4 children), not per child; setting of Wang et al. (2025) and Silva et al. (2021)
+  harmonised with the manuscript (rehabilitation classroom, robot therapy); SSBD size
+  stated as 75 videos; empty footnote of the former Reed et al. entry removed and the
+  following footnotes relabelled.
+- Supplementary Material S5: wording of the opening sentence.
+- README: RQ3 base set to 26 studies (25 with numeric values), clinical performance
+  values by domain updated, Fan et al. 97.6% described as feedback accuracy, the four
+  retractions found in V3.6 described, and the Shi et al. session count corrected.
+- CHANGELOG: the six earlier entries marked PENDING were manuscript-only changes made in
+  Overleaf and are now labelled as such.
 ### Commits
 - `d1fb7e6` 2026-11-07 feat: add extraction master and compute all figures from it, add licenses, update README
 - `3791adb` 2026-11-08 feat: reconstruct screening flow with reproducible deduplication and explicit scope criterion
 - `9c57aba` 2026-11-09 fix: verify coding of added studies against full texts
 - `9e90c18` 2026-11-09 chore: link extraction matrix to screening log and finalize repository audit
 - `67f2a7b` 2026-11-10 fix: count Voss and Wang metric flags and update metric denominators
-- `PENDING` 2026-11-10 refactor: restore PRISMA template, move pipeline code and rebuild S4 and S5
+- `32c5913` 2026-11-10 refactor: restore PRISMA template, move pipeline code and rebuild S4 and S5
+- `PENDING` 2026-11-10 fix: correct Shi session count, harmonise S4 settings and update README values
 
 ---
 
@@ -303,12 +317,12 @@ file labelled v3.6, repository up to commit `7d3c607`) corresponds to V3.5 inclu
 - `2cd6ee5` 2026-11-06 fix: verify S4 validation column, merge Kaggle FER into Kaggle ASD in fig_6
 - `1e75a8b` 2026-11-06 fix: move Hassan to D4 (ASD level task), correct CK+ age range in S3, web accuracy range in README, fig_8 y-axis
 - `e3bd31c` 2026-11-06 fix: reclassify corpus to N=21, update S1-S4, regenerate figures 2-8, update PRISMA, README and CHANGELOG
-- `PENDING` 2026-10-29 fix(bib): rename cite key Ramachandran2025 to Vedantham2025; global replace in .tex
-- `PENDING` 2026-10-20 fix(abstract): condense RESUMEN and ABSTRACT preserving all advisory data points
-- `PENDING` 2026-10-20 fix(tabrisk): reorder D1 and D4 rows by ascending citation number
-- `PENDING` 2026-10-20 fix(tabdim): convert to table*, reorder cite groups, remove parbox spacers (Wiley + ElsArticle)
-- `PENDING` 2026-10-20 fix(figures): convert fig3 and fig5 to figure* with textwidth (both versions)
-- `PENDING` 2026-10-20 fix(elsarticle): correct Akın-Bülbül encoding D1; add Scopus box header D3
+- `manuscript (Overleaf)` 2026-10-29 fix(bib): rename cite key Ramachandran2025 to Vedantham2025; global replace in .tex
+- `manuscript (Overleaf)` 2026-10-20 fix(abstract): condense RESUMEN and ABSTRACT preserving all advisory data points
+- `manuscript (Overleaf)` 2026-10-20 fix(tabrisk): reorder D1 and D4 rows by ascending citation number
+- `manuscript (Overleaf)` 2026-10-20 fix(tabdim): convert to table*, reorder cite groups, remove parbox spacers (Wiley + ElsArticle)
+- `manuscript (Overleaf)` 2026-10-20 fix(figures): convert fig3 and fig5 to figure* with textwidth (both versions)
+- `manuscript (Overleaf)` 2026-10-20 fix(elsarticle): correct Akın-Bülbül encoding D1; add Scopus box header D3
 - `be918c2` 2026-10-29 Fix formatting in README license section
 - `6b1c878` 2026-10-29 Update authors and institution details in README
 - `d92e915` 2026-10-29 Fix image extension and update Chart.js details
