@@ -11,7 +11,7 @@ OUTPUT = Path(__file__).resolve().parent / "figure_data.js"
 FAMILIES = [
     "CNN / Deep Learning",
     "Traditional ML",
-    "Computer Vision / Eye-tracking",
+    "Computer Vision pipelines",
     "Other designs (clinical / conceptual)",
 ]
 MMAT_DOMAINS = [
@@ -31,15 +31,15 @@ CHALLENGES = [
 METRICS = [("acc", "ACC"), ("f1", "F1-score"), ("precision", "Precision"), ("recall", "Recall"), ("auc", "AUC")]
 
 EXPECTED = {
-    "eligible": 36,
-    "domains": {"D1": 12, "D2": 6, "D3": 6, "D4": 12},
-    "mmat_appraised": 36,
-    "ml_architecture": 28,
-    "supervised_metrics": 26,
-    "metrics_numeric": 25,
-    "primary_evidence": 18,
-    "translational": 21,
-    "challenge_any": 21,
+    "eligible": 31,
+    "domains": {"D1": 10, "D2": 4, "D3": 6, "D4": 11},
+    "mmat_appraised": 31,
+    "ml_architecture": 23,
+    "supervised_metrics": 22,
+    "metrics_numeric": 22,
+    "primary_evidence": 14,
+    "translational": 18,
+    "challenge_any": 18,
 }
 CURRENT_PARTIAL_YEAR = 2026
 

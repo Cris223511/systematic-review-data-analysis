@@ -14,12 +14,12 @@ The research follows PRISMA-ScR and PRISMA 2020 methodology and analyzes machine
 
 | RQ | Question | Analysis base |
 |----|----------|---------------|
-| RQ1 | What ML architectures and models have been employed for facial emotion recognition in children with ASD in the context of therapeutic monitoring? | 28 eligible studies with identifiable ML architecture |
-| RQ2 | What metrics are used to evaluate the performance of emotion recognition algorithms, methods, or models? | 26 eligible studies with extractable supervised metrics |
-| RQ3 | What are the accuracy, precision, recall, F1-score, and AUC values of these models? | 26 eligible studies with extractable supervised metrics (25 with numeric values) |
-| RQ4 | What datasets are used for model training and validation, and what are their representativeness limitations? | 36 eligible corpus |
-| RQ5 | What input variables or features do emotion recognition systems employ, and to what extent do they correspond to the dimensions required by therapeutic monitoring? | 36 eligible corpus |
-| RQ6 | What technical and methodological limitations impede ML system implementation in resource-limited contexts? | 36 eligible corpus |
+| RQ1 | What ML architectures and models have been employed for facial emotion recognition in children with ASD in the context of therapeutic monitoring? | 23 eligible studies with identifiable ML architecture |
+| RQ2 | What metrics are used to evaluate the performance of emotion recognition algorithms, methods, or models? | 22 eligible studies with extractable supervised metrics |
+| RQ3 | What are the accuracy, precision, recall, F1-score, and AUC values of these models? | 22 eligible studies with extractable supervised metrics, all with numeric values |
+| RQ4 | What datasets are used for model training and validation, and what are their representativeness limitations? | 31 eligible corpus |
+| RQ5 | What input variables or features do emotion recognition systems employ, and to what extent do they correspond to the dimensions required by therapeutic monitoring? | 31 eligible corpus |
+| RQ6 | What technical and methodological limitations impede ML system implementation in resource-limited contexts? | 31 eligible corpus |
 
 ## Repository Structure
 
@@ -28,9 +28,10 @@ systematic-review-data-analysis/
 │
 ├── data/
 │   ├── ACM-data.csv                     # Raw export from ACM Digital Library (5 records) with V3.6 decisions
-│   ├── extraction_master.csv            # Study-level extraction matrix (36 eligible studies)
+│   ├── extraction_master.csv            # Study-level extraction matrix (31 eligible studies)
 │   ├── records_deduplicated.csv         # All 1,920 records with duplicate flags (generated)
 │   ├── screening_log.csv                # Decision, criterion and reason for each of the 1,396 unique records
+│   ├── sjr_verification.csv             # SJR quartile of each included, contextual and CI(3)-excluded venue
 │   ├── IEEE-data.csv                    # Raw export from IEEE Xplore (38 records)
 │   ├── scopus-data.csv                  # Raw export from Scopus (935 records)
 │   └── web-of-science-data.csv          # Raw export from Web of Science (942 records)
@@ -42,13 +43,13 @@ systematic-review-data-analysis/
 │   └── reverse-engineering.xlsm         # V3.5 extraction and reverse-engineering workbook (kept for traceability)
 │
 ├── results/
-│   ├── fig_2_mmat.png                   # MMAT judgement distribution (n = 36 appraised)
-│   ├── fig_3_challenges.png             # Methodological challenges (n = 36 eligible)
-│   ├── fig_4_architectures.png          # Architectural families by configuration (n = 28)
-│   ├── fig_5_metrics.png                # Metric reporting frequency (n = 26)
-│   ├── fig_6_datasets.png               # Dataset treemap by provenance (n = 36 eligible)
-│   ├── fig_7_input.png                  # Input representation approach (n = 36 eligible)
-│   └── fig_8_temporal.png               # Annual distribution by model family (n = 36 eligible)
+│   ├── fig_2_mmat.png                   # MMAT judgement distribution (n = 31 appraised)
+│   ├── fig_3_challenges.png             # Methodological challenges (n = 31 eligible)
+│   ├── fig_4_architectures.png          # Architectural families by configuration (n = 23)
+│   ├── fig_5_metrics.png                # Metric reporting frequency (n = 22)
+│   ├── fig_6_datasets.png               # Dataset treemap by provenance (n = 31 eligible)
+│   ├── fig_7_input.png                  # Input representation approach (n = 31 eligible)
+│   └── fig_8_temporal.png               # Annual distribution by model family (n = 31 eligible)
 │
 ├── pipeline/
 │   ├── deduplicate_records.py           # Reproducible DOI and title-year deduplication of the four exports
@@ -68,7 +69,7 @@ systematic-review-data-analysis/
 │   ├── S1_search_strings.pdf            # Platform-specific search strings with syntax
 │   ├── S2_mmat_appraisal.pdf            # MMAT appraisal by study and domain
 │   ├── S3_dataset_sources.pdf           # Documentary sources for dataset evaluation
-│   ├── S4_stratified_synthesis.pdf      # Stratified synthesis of the 36 eligible studies
+│   ├── S4_stratified_synthesis.pdf      # Stratified synthesis of the 31 eligible studies
 │   └── S5_screening_reconstruction.pdf  # Deduplication, screening log and extraction of the 17 added studies
 │
 ├── CHANGELOG.md
@@ -100,11 +101,11 @@ ACM records were excluded before screening in V3.5 for lack of open access (CI(4
 | Records screened | 1,396 |
 | Excluded at title/abstract | 1,297 |
 | Reports assessed in full text | 99 |
-| Excluded in full text: CI(1) scope 16, CI(1) no automated facial or gaze analysis 8, CE(3) 9, CI(3) 8, retracted 8, CE(2) 2, CI(4) 2, CE(1) 1 | 54 |
-| Contextual evidence (no denominators) | 9 |
-| **Studies included** | **36** |
+| Excluded in full text: CI(1) scope 16, CI(1) no automated facial or gaze analysis 8, CE(3) 10, CI(3) 7, retracted 8, CE(2) 2, CI(4) 2, CE(1) 1 | 54 |
+| Contextual evidence (no denominators) | 14 |
+| **Studies included** | **31** |
 
-Deduplication is reproducible with `python3 pipeline/deduplicate_records.py` (DOI first, then normalized title and year; precedence Scopus, Web of Science, IEEE Xplore, ACM). The V3.5 flow reported 1,002 duplicates and 913 screened records; the reconstruction found 524 duplicates and 1,396 unique records, so 479 unique records had been removed without a documented reason. In V3.6 these 479 records were screened, the 51 full-text exclusions of V3.5 were re-assessed with recorded reasons, and the former criterion of fewer than 10 participants was removed (sample size is charted as a variable). The scope criterion was made explicit (the study must use or evaluate an automated analysis of the face or gaze) and applied to every study, including the V3.5 corpus; it removed eight studies without automated facial or gaze analysis, two of them from the V3.5 corpus (Reed et al. 2021, Almeida et al. 2019). The eligible corpus changes from 21 to 36 studies: 19 from V3.5 and 17 added. Every decision is listed in `data/screening_log.csv`; title/abstract exclusions of the original screening (n = 827) keep their original decision, whose reason was not recorded at the time.
+Deduplication is reproducible with `python3 pipeline/deduplicate_records.py` (DOI first, then normalized title and year; precedence Scopus, Web of Science, IEEE Xplore, ACM). The V3.5 flow reported 1,002 duplicates and 913 screened records; the reconstruction found 524 duplicates and 1,396 unique records, so 479 unique records had been removed without a documented reason. In V3.6 these 479 records were screened, the 51 full-text exclusions of V3.5 were re-assessed with recorded reasons, and the former criterion of fewer than 10 participants was removed (sample size is charted as a variable). The scope criterion was made explicit (the study must use or evaluate an automated analysis of the face or gaze) and applied to every study, including the V3.5 corpus; it removed eight studies without automated facial or gaze analysis, two of them from the V3.5 corpus (Reed et al. 2021, Almeida et al. 2019). The re-screening yielded 36 studies (19 from V3.5 and 17 added). The audit of CI(3) against the SCImago edition of each publication year (`data/sjr_verification.csv`) then moved five V3.5 studies whose venue had no SJR quartile in that year to contextual evidence, as had been done with Akın-Bülbül et al. (2024): Rudovic et al. (2018), Dapogny et al. (2019), Rudovic et al. (2019), Sholikah et al. (2024) and Sariyanidi et al. (2025). The same audit reassigned IEEE-0006 from CI(3) to CE(3), because the 2025 edition of IEEE Access applies to it as to Cicceri et al. (2026). The eligible corpus is 31 studies: 14 from V3.5 and 17 added. Every decision is listed in `data/screening_log.csv`; title/abstract exclusions of the original screening (n = 827) keep their original decision, whose reason was not recorded at the time.
 
 The V3.6 re-screening and the extraction of the 17 added studies were performed by one reviewer and are pending confirmation by a second reviewer.
 
@@ -114,26 +115,26 @@ Final corpus publication range: 2018 to 2026 (year of first online publication).
 
 | Group | N | Role in manuscript |
 |-------|---|-------------------|
-| Eligible corpus | 36 | Main synthesis, all denominators |
-| Contextual evidence (outside eligible set) | 9 | Supplementary Material S4 only, no denominators |
+| Eligible corpus | 31 | Main synthesis, all denominators |
+| Contextual evidence (outside eligible set) | 14 | Supplementary Material S4 only, no denominators |
 | Retracted or withdrawn studies | 8 | Ethical documentation only |
 
-The 9 contextual studies infringe CE(3) by employing exclusively non-facial data (EDA, EEG, VBM, speech diarization, tabular screening, text and clinical records), the age criterion by including exclusively adult participants, or CI(3) because the journal was not indexed in SJR in the year of publication. They do not participate in any denominator of the manuscript.
+The 14 contextual studies infringe CE(3) by employing exclusively non-facial data (EDA, EEG, VBM, speech diarization, tabular screening, text and clinical records), the age criterion by including exclusively adult participants, or CI(3) because the venue had no SJR quartile in the year of publication (six studies). They do not participate in any denominator of the manuscript.
 
 Eight retrieved records were retracted or withdrawn and are listed in `data/screening_log.csv`. Among them, three (Güngör et al. 2025, Mahmood et al. 2025, Kumar et al. 2024) were identified in the pre-synthesis integrity check (December 2025, retracted due to use of minor images without documented consent or verified diagnosis). A fourth retraction, Ahmad et al. (2024), was identified after corpus finalisation and confirmed on 17 August 2026 (Healthcare Technology Letters, DOI: 10.1049/htl2.70095), under the same causes as the prior three. The other four were identified in the V3.6 re-screening: a Scientific Reports article retracted on 8 December 2025 for the same undocumented image provenance, a Soft Computing article retracted on 16 November 2025, a Results in Engineering article withdrawn at the request of its editors, and a 2022 article retracted in September 2023. All eight are listed with DOI and status in Supplementary Material S5.
 
 ## Clinical Domain Taxonomy
 
-Each eligible study is assigned to exactly one domain (mutually exclusive, sum = 36):
+Each eligible study is assigned to exactly one domain (mutually exclusive, sum = 31):
 
 | Domain | Description | N | Role |
 |--------|-------------|---|------|
-| D1 | Automated facial expression | 12 | Primary evidence |
-| D2 | Affect and therapeutic engagement | 6 | Primary evidence |
+| D1 | Automated facial expression | 10 | Primary evidence |
+| D2 | Affect and therapeutic engagement | 4 | Primary evidence |
 | D3 | Emotion recognition by the child (clinical or behavioural reference) | 6 | Clinical reference |
-| D4 | Screening or diagnosis of ASD | 12 | Comparative context |
+| D4 | Screening or diagnosis of ASD | 11 | Comparative context |
 
-Domains D1 and D2 (18 studies) constitute the primary evidence base closest to the review's objective.
+Domains D1 and D2 (14 studies) constitute the primary evidence base closest to the review's objective.
 
 ## Search String (Scopus)
 
@@ -164,85 +165,85 @@ Search strings for IEEE Xplore and Web of Science, with platform-specific syntax
 
 **Age criterion:** studies whose sample is predominantly adult (mean age 18 or above) are outside scope.
 
-**Quality assessment:** Mixed Methods Appraisal Tool (MMAT) version 2018, applied to all 36 eligible studies. No aggregate scores computed. A supplementary dataset quality instrument with 8 domains (provenance, consent, diagnosis, representativeness, license, re-identification, subject-level partitioning, clinical applicability) was constructed and applied independently.
+**Quality assessment:** Mixed Methods Appraisal Tool (MMAT) version 2018, applied to all 31 eligible studies. No aggregate scores computed. A supplementary dataset quality instrument with 8 domains (provenance, consent, diagnosis, representativeness, license, re-identification, subject-level partitioning, clinical applicability) was constructed and applied independently.
 
 ## Key Findings
 
-### Model Architectures (n = 28 eligible with identifiable ML architecture)
+### Model Architectures (n = 23 eligible with identifiable ML architecture)
 
 | Family | Ensemble | Non-ensemble | Total | % |
 |--------|----------|-------------|-------|---|
-| CNN / Deep Learning | 5 | 14 | 19 | 67.9% |
-| Traditional ML | 1 | 5 | 6 | 21.4% |
-| Computer Vision / Eye-tracking | 1 | 2 | 3 | 10.7% |
-| **Total** | **7** | **21** | **28** | **100%** |
+| CNN / Deep Learning | 4 | 12 | 16 | 69.6% |
+| Traditional ML | 1 | 4 | 5 | 21.7% |
+| Computer Vision pipelines | 1 | 1 | 2 | 8.7% |
+| **Total** | **6** | **17** | **23** | **100%** |
 
-### Performance Metrics (n = 26 eligible with extractable supervised metrics)
+The third family was renamed in V3.6 from "Computer Vision / Eye-tracking" to "Computer Vision pipelines", because the former name mixed a model family with a capture modality (advisory observation I-02); its two studies chain facial descriptors or pre-existing expression classifiers.
+
+### Performance Metrics (n = 22 eligible with extractable supervised metrics)
 
 | Metric | Studies | % |
 |--------|---------|---|
-| Accuracy (ACC) | 23 | 88% |
-| F1-score | 13 | 50% |
-| Recall | 9 | 35% |
-| AUC | 7 | 27% |
-| Precision | 6 | 23% |
+| Accuracy (ACC) | 20 | 91% |
+| F1-score | 11 | 50% |
+| Recall | 9 | 41% |
+| AUC | 7 | 32% |
+| Precision | 6 | 27% |
 
-Values are reported stratified by clinical domain and do not admit comparison across distinct tasks. Studies on clinically sourced datasets report values that vary substantially by domain (68.0% to 90.7% in D1; 82.3% accuracy and AUROC 0.86 to 0.92 in D2; 88.0% to 95.6% in D4 screening); the 67.8% of Johnson et al. (2025) corresponds to seven-class classification on AffectNet. Studies on web-sourced datasets without clinical traceability report 84.0% to 99.01%, and four of the five highest accuracy values in the corpus (99.01%, 97.2%, 96.5% and 96.0%) come from these datasets, while the fifth (97.6%, Fan et al. 2025) is expert-reviewed feedback accuracy rather than held-out test accuracy; these values are not transferable to therapeutic context.
+Values are reported stratified by clinical domain and do not admit comparison across distinct tasks. Studies on clinically sourced datasets report values that vary substantially by domain (68.0% to 90.7% in D1; AUROC 0.86 to 0.92 in D2; 88.0% to 95.6% in D4 screening); the 67.8% of Johnson et al. (2025) corresponds to seven-class classification on AffectNet. Studies on web-sourced datasets without clinical traceability report 84.0% to 99.01%, and four of the five highest accuracy values in the corpus (99.01%, 97.2%, 96.5% and 96.0%) come from these datasets, while the fifth (97.6%, Fan et al. 2025) is expert-reviewed feedback accuracy rather than held-out test accuracy; these values are not transferable to therapeutic context.
 
-### Datasets (n = 36 eligible corpus)
+### Datasets (n = 31 eligible corpus)
 
 | Category | Studies | % |
 |----------|---------|---|
-| Own clinical data | 13 | 36.1% |
-| Clinical eye-tracking | 5 | 13.9% |
-| Kaggle ASD collections | 5 | 13.9% |
-| Robot therapy data | 4 | 11.1% |
-| FER-2013 | 2 | 5.6% |
-| Semi-public on request | 2 | 5.6% |
-| CAFE | 1 | 2.8% |
-| DREAM | 1 | 2.8% |
-| FERAC | 1 | 2.8% |
-| Web videos (SSBD and YouTube) | 1 | 2.8% |
-| Own non-ASD training data | 1 | 2.8% |
+| Own clinical data | 13 | 41.9% |
+| Clinical eye-tracking | 5 | 16.1% |
+| Kaggle ASD collections | 5 | 16.1% |
+| Robot therapy data | 2 | 6.5% |
+| CAFE | 1 | 3.2% |
+| DREAM | 1 | 3.2% |
+| FER-2013 | 1 | 3.2% |
+| FERAC | 1 | 3.2% |
+| Web videos (SSBD and YouTube) | 1 | 3.2% |
+| Own non-ASD training data | 1 | 3.2% |
 
 Five studies use Kaggle ASD image collections and one uses web videos. In December 2025, Scientific Reports and PLOS One retracted three articles that used such collections because the images of minors lacked verified diagnosis and documented consent. These six studies are not retracted and remain in the corpus, with this risk of bias stated in the synthesis.
 
 Critical gap: no validated datasets representing Latin American pediatric populations with ASD have been identified.
 
-### Input Features (n = 36 eligible corpus)
+### Input Features (n = 31 eligible corpus)
 
 | Group | Studies | % |
 |-------|---------|---|
-| Facial descriptor extraction | 19 | 52.8% |
-| End-to-end learning (CNN) | 12 | 33.3% |
-| Capture format definition | 2 | 5.6% |
-| Physiological signal derivation | 2 | 5.6% |
-| Algorithmic descriptor selection | 1 | 2.8% |
+| Facial descriptor extraction | 16 | 51.6% |
+| End-to-end learning (CNN) | 12 | 38.7% |
+| Physiological signal derivation | 2 | 6.5% |
+| Capture format definition | 1 | 3.2% |
 
-### Methodological Challenges Stated by the Authors (n = 36 eligible corpus)
+### Methodological Challenges Stated by the Authors (n = 31 eligible corpus)
 
 | Challenge | Studies | % |
 |-----------|---------|---|
-| Poor generalization in small samples | 13 | 36.1% |
-| Class imbalance and sampling biases | 6 | 16.7% |
-| Classification uncertainty and low predictive robustness | 5 | 13.9% |
-| Multicollinearity in multimodal data | 2 | 5.6% |
-| Limited interpretability of black-box models | 2 | 5.6% |
+| Poor generalization in small samples | 13 | 41.9% |
+| Class imbalance and sampling biases | 6 | 19.4% |
+| Classification uncertainty and low predictive robustness | 3 | 9.7% |
+| Limited interpretability of black-box models | 2 | 6.5% |
+| Multicollinearity in multimodal data | 1 | 3.2% |
 
-21 studies state at least one challenge; a study may state more than one.
+18 studies state at least one challenge; a study may state more than one.
 
-### Technological Readiness (n = 36 eligible corpus)
+### Implementation and Validation Evidence (n = 31 eligible corpus)
 
-| Level | Description | Studies | % |
-|-------|-------------|---------|---|
-| 1 | Conceptual model, no implementation | 8 | 22.2% |
-| 2 | Offline evaluation on workstation | 18 | 50.0% |
-| 3 | Deployed prototype, no deployment metrics | 5 | 13.9% |
-| 4 | Measured inference on target device | 0 | 0.0% |
-| 5 | End-user evaluation | 5 | 13.9% |
-| 6 | Longitudinal clinical validation | 0 | 0.0% |
+| Category | Studies | % |
+|----------|---------|---|
+| No implementation (conceptual model) | 8 | 25.8% |
+| Offline evaluation on workstation | 14 | 45.2% |
+| Prototype without deployment metrics | 4 | 12.9% |
+| Measurement on target device | 0 | 0.0% |
+| Evaluation with end users | 5 | 16.1% |
+| Longitudinal clinical validation | 0 | 0.0% |
 
-The 19 studies kept from V3.5 retain their V3.5 level; Reed et al. (2021, level 1) and Almeida et al. (2019, level 5) left the corpus. The levels of the 17 added studies are listed in Supplementary Material S5 (Section G). Voss et al. (2019), a randomised clinical evaluation of a deployed system with two time points, is the study closest to level 6.
+The categories are nominal and non-cumulative (advisory observation I-10). Each study is assigned to one category with an explicit rule (longitudinal clinical validation, otherwise evaluation with end users, otherwise measurement on device, otherwise prototype, otherwise offline evaluation, otherwise no implementation) that resolves membership and does not express an order of maturity. The categories of the 17 added studies are listed in Supplementary Material S5 (Section G). Of the five studies moved to contextual evidence, Sholikah et al. (2024) had a prototype without deployment metrics and the other four an offline evaluation. Voss et al. (2019), a randomised clinical evaluation of a deployed system with two time points, is the study closest to longitudinal clinical validation.
 
 ### Principal Finding
 
@@ -250,15 +251,15 @@ No study in the eligible corpus reports session-to-session longitudinal tracking
 
 ## Supplementary Materials
 
-All supplementary materials describe the V3.6 corpus of 36 eligible studies. Rows added in V3.6 are first-reviewer coding pending a second reviewer.
+All supplementary materials describe the V3.6 corpus of 31 eligible studies. Rows added in V3.6 are first-reviewer coding pending a second reviewer.
 
 | File | Content |
 |------|---------|
 | S1 | Platform-specific search strings with syntax, temporal ranges and record counts; distribution by platform at each stage, deduplication method and ACM decision |
-| S2 | MMAT appraisal by study and domain: Section A (36 eligible), Section B (9 contextual) |
+| S2 | MMAT appraisal by study and domain: Section A (31 eligible), Section B (14 contextual) |
 | S3 | Documentary sources for the 8-domain dataset quality evaluation (SSBD and web videos added, ALSPAC removed) |
-| S4 | Stratified synthesis: Section A (36 eligible by D1-D4), Section B (9 contextual), Section C (longitudinal tracking audit and coding matrix) |
-| S5 | Screening reconstruction: deduplication, screening counts, the 99 full-text decisions, extraction and MMAT of the 17 added studies, the explicit scope criterion, data provenance risk and technological readiness of the added studies |
+| S4 | Stratified synthesis: Section A (31 eligible by D1-D4), Section B (14 contextual), Section C (longitudinal tracking audit and coding matrix) |
+| S5 | Screening reconstruction: deduplication, screening counts, the 99 full-text decisions, extraction and MMAT of the 17 added studies, the explicit scope criterion, data provenance risk, the audit of CI(3) and the implementation and validation evidence of the added studies |
 
 ## Reproducing the Figures
 
@@ -267,7 +268,7 @@ All figure frequencies are computed from `data/extraction_master.csv`, which hol
 ```bash
 cd pipeline
 python3 deduplicate_records.py   # rebuilds data/records_deduplicated.csv (1,920 records, 524 duplicates)
-python3 compute_frequencies.py   # checks denominators (36, 36, 28, 26, 25, 18, 21, 21) and writes figure_data.js
+python3 compute_frequencies.py   # checks denominators (31, 31, 23, 22, 22, 14, 18, 18) and writes figure_data.js
 cd ../scripts
 Rscript fig_4_architectures.R
 Rscript fig_6_datasets.R

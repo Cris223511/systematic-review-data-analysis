@@ -3,7 +3,7 @@ library(dplyr)
 
 master <- read.csv("../data/extraction_master.csv", stringsAsFactors = FALSE, encoding = "UTF-8")
 ml <- subset(master, ml_architecture == 1)
-families <- c("CNN / Deep Learning", "Traditional ML", "Computer Vision / Eye-tracking")
+families <- c("CNN / Deep Learning", "Traditional ML", "Computer Vision pipelines")
 
 df_arch <- expand.grid(
   Configuration = c("Non-ensemble", "Ensemble"),
@@ -20,7 +20,7 @@ x_upper <- ceiling(max(tapply(df_arch$Studies, df_arch$Family, sum)) * 1.15 / 2)
 df_arch$Family <- factor(
   df_arch$Family,
   levels = c(
-    "Computer Vision / Eye-tracking",
+    "Computer Vision pipelines",
     "Traditional ML",
     "CNN / Deep Learning"
   )

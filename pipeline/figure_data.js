@@ -1,101 +1,101 @@
 window.FIGURE_DATA = {
-  "n_eligible": 36,
-  "n_appraised": 36,
-  "n_ml": 28,
-  "n_supervised": 26,
+  "n_eligible": 31,
+  "n_appraised": 31,
+  "n_ml": 23,
+  "n_supervised": 22,
   "mmat": {
     "Outcome data completeness": {
-      "yes": 25,
+      "yes": 20,
       "cannot_tell": 10,
       "no": 1
     },
     "Appropriateness of measurements": {
-      "yes": 33,
+      "yes": 28,
       "cannot_tell": 3,
       "no": 0
     },
     "Intervention as intended and sampling strategy": {
-      "yes": 28,
-      "cannot_tell": 5,
+      "yes": 24,
+      "cannot_tell": 4,
       "no": 3
     },
     "Sample representativeness": {
-      "yes": 18,
-      "cannot_tell": 9,
+      "yes": 14,
+      "cannot_tell": 8,
       "no": 9
     },
     "Confounding control and analysis": {
-      "yes": 17,
+      "yes": 13,
       "cannot_tell": 11,
-      "no": 8
+      "no": 7
     }
   },
   "challenges": [
     {
       "label": "Poor generalization in small samples",
       "n": 13,
-      "pct": 36.1
+      "pct": 41.9
     },
     {
       "label": "Class imbalance and sampling biases",
       "n": 6,
-      "pct": 16.7
+      "pct": 19.4
     },
     {
       "label": "Classification uncertainty and low predictive robustness",
-      "n": 5,
-      "pct": 13.9
-    },
-    {
-      "label": "Multicollinearity in multimodal data",
-      "n": 2,
-      "pct": 5.6
+      "n": 3,
+      "pct": 9.7
     },
     {
       "label": "Limited interpretability of black-box models",
       "n": 2,
-      "pct": 5.6
+      "pct": 6.5
+    },
+    {
+      "label": "Multicollinearity in multimodal data",
+      "n": 1,
+      "pct": 3.2
     }
   ],
   "families": {
     "CNN / Deep Learning": {
-      "non_ensemble": 14,
-      "ensemble": 5
+      "non_ensemble": 12,
+      "ensemble": 4
     },
     "Traditional ML": {
-      "non_ensemble": 5,
+      "non_ensemble": 4,
       "ensemble": 1
     },
-    "Computer Vision / Eye-tracking": {
-      "non_ensemble": 2,
+    "Computer Vision pipelines": {
+      "non_ensemble": 1,
       "ensemble": 1
     }
   },
   "metrics": [
     {
       "label": "ACC",
-      "n": 23,
-      "pct": 88
+      "n": 20,
+      "pct": 91
     },
     {
       "label": "F1-score",
-      "n": 13,
+      "n": 11,
       "pct": 50
     },
     {
       "label": "Precision",
       "n": 6,
-      "pct": 23
+      "pct": 27
     },
     {
       "label": "Recall",
       "n": 9,
-      "pct": 35
+      "pct": 41
     },
     {
       "label": "AUC",
       "n": 7,
-      "pct": 27
+      "pct": 32
     }
   ],
   "datasets": {
@@ -104,33 +104,28 @@ window.FIGURE_DATA = {
     "Kaggle ASD collections": 5,
     "FERAC": 1,
     "CAFE": 1,
-    "FER-2013": 2,
-    "Semi-public on request": 2,
     "DREAM": 1,
-    "Robot therapy data": 4,
+    "Robot therapy data": 2,
     "Web videos (SSBD and YouTube)": 1,
-    "Own non-ASD training data": 1
+    "Own non-ASD training data": 1,
+    "FER-2013": 1
   },
   "inputs": {
     "Facial descriptor extraction": {
-      "n": 19,
-      "pct": 52.8
+      "n": 16,
+      "pct": 51.6
     },
     "End-to-end learning (CNN)": {
       "n": 12,
-      "pct": 33.3
-    },
-    "Capture format definition": {
-      "n": 2,
-      "pct": 5.6
+      "pct": 38.7
     },
     "Physiological signal derivation": {
       "n": 2,
-      "pct": 5.6
+      "pct": 6.5
     },
-    "Algorithmic descriptor selection": {
+    "Capture format definition": {
       "n": 1,
-      "pct": 2.8
+      "pct": 3.2
     }
   },
   "years": [
@@ -146,19 +141,19 @@ window.FIGURE_DATA = {
   ],
   "temporal": {
     "CNN / Deep Learning": [
-      1,
-      1,
+      0,
+      0,
       0,
       0,
       2,
       0,
-      5,
+      4,
       9,
       1
     ],
     "Traditional ML": [
       0,
-      1,
+      0,
       1,
       1,
       1,
@@ -167,7 +162,7 @@ window.FIGURE_DATA = {
       2,
       0
     ],
-    "Computer Vision / Eye-tracking": [
+    "Computer Vision pipelines": [
       1,
       1,
       0,
@@ -175,7 +170,7 @@ window.FIGURE_DATA = {
       0,
       0,
       0,
-      1,
+      0,
       0
     ],
     "Other designs (clinical / conceptual)": [
@@ -191,13 +186,13 @@ window.FIGURE_DATA = {
     ]
   },
   "domains": {
-    "D1": 12,
+    "D1": 10,
     "D3": 6,
-    "D2": 6,
-    "D4": 12
+    "D2": 4,
+    "D4": 11
   },
-  "primary_evidence": 18,
-  "translational": 21,
-  "metrics_numeric": 25,
-  "challenge_any": 21
+  "primary_evidence": 14,
+  "translational": 18,
+  "metrics_numeric": 22,
+  "challenge_any": 18
 };

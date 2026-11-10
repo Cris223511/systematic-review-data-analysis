@@ -1,0 +1,41 @@
+record_id,study,venue,publication_year,sjr_edition,source_type,best_quartile,sjr,meets_CI3,decision
+SCO-0022,Johnson et al. (2025),Computers in Human Behavior Reports,2025,2025,journal,Q1,1.436,yes,Included
+SCO-0930,He et al. (2019),Frontiers in Psychiatry,2019,2019,journal,Q1,1.229,yes,Included
+SCO-0681,Lecciso et al. (2021),Frontiers in Psychology,2021,2021,journal,Q1,0.873,yes,Included
+SCO-0050,Shaik et al. (2025),Ingenierie des Systemes d'Information,2025,2025,journal,Q3,0.236,yes,Included
+SCO-0064,Radočaj and Martinović (2025),Applied Sciences (Switzerland),2025,2025,journal,Q2,0.555,yes,Included
+SCO-0584,Washington et al. (2022),JMIR Pediatrics and Parenting,2022,2022,journal,Q1,0.778,yes,Included
+IEEE-0008,Hassan et al. (2025),IEEE Transactions on Neural Systems and Rehabilitation Engineering,2025,2025,journal,Q1,1.531,yes,Included
+IEEE-0021,Cicceri et al. (2026),IEEE Access,2026,2025,journal,Q1,0.884,yes,Included
+SCO-0078,Alam et al. (2025),Diagnostics,2025,2025,journal,Q2,0.848,yes,Included
+WOS-0684,Hwang et al. (2024),Psychiatry Investigation,2024,2024,journal,Q2,0.703,yes,Included
+SCO-0063,Aljbori et al. (2025),"Journal of Wireless Mobile Networks, Ubiquitous Computing, and Dependable Applications",2025,2025,journal,Q3,0.281,yes,Included
+SCO-0119,Vedantham et al. (2025),"International Journal of Image, Graphics and Signal Processing",2025,2025,journal,Q3,0.277,yes,Included
+SCO-0235,Hosney et al. (2024),Neural Computing and Applications,2024,2024,journal,Q1,1.102,yes,Included
+WOS-0157,Leo et al. (2018),Sensors,2018,2018,journal,Q2,0.592,yes,Included
+SCO-0012,Kiejdo et al. (2025),Sensors,2025,2025,journal,Q1,0.802,yes,Included
+SCO-0113,Wang et al. (2025),Applied Sciences (Switzerland),2025,2025,journal,Q2,0.555,yes,Included
+SCO-0137,Kurian and Tripathi (2024),IEEE Access,2024,2024,journal,Q1,0.849,yes,Included
+SCO-0021,Manelis-Baram et al. (2025),Molecular Autism,2025,2025,journal,Q1,1.788,yes,Included
+SCO-0210,Chen et al. (2024),Children,2024,2024,journal,Q2,0.674,yes,Included
+SCO-0550,Shi et al. (2022),ACM Transactions on Human-Robot Interaction,2022,2022,journal,Q2,0.694,yes,Included
+SCO-0659,Silva et al. (2021),Multimodal Technologies and Interaction,2021,2021,journal,Q2,0.506,yes,Included
+SCO-0710,Alvari et al. (2021),Journal of Clinical Medicine,2021,2021,journal,Q1,1.040,yes,Included
+SCO-0717,Carpenter et al. (2020),Autism Research,2020,2020,journal,Q1,1.656,yes,Included
+WOS-0254,Pliska et al. (2025),BMC Psychiatry,2025,2025,journal,Q1,1.423,yes,Included
+SCO-0898,Voss et al. (2019),JAMA Pediatrics,2019,2019,journal,Q1,4.466,yes,Included
+SCO-0087,Fan et al. (2025),International Journal of Human Computer Studies,2025,2025,journal,Q1,1.134,yes,Included
+SCO-0162,Wall et al. (2025),Clinical EEG and Neuroscience,2025,2025,journal,Q2,0.649,yes,Included
+SCO-0657,Carter Leno et al. (2020),Development and Psychopathology,2020,2020,journal,Q1,1.761,yes,Included
+SCO-0895,Kalantarian et al. (2019),Artificial Intelligence in Medicine,2019,2019,journal,Q1,1.004,yes,Included
+IEEE-0014,Han et al. (2022),IEEE Transactions on Neural Systems and Rehabilitation Engineering,2022,2022,journal,Q1,1.260,yes,Included
+WOS-0611,Bochet et al. (2021),Frontiers in Psychiatry,2021,2021,journal,Q1,1.279,yes,Included
+WOS-0437,Rudovic et al. (2018),Science Robotics,2018,2018,journal,none,none,no,Contextual evidence
+SCO-0880,Dapogny et al. (2019),Frontiers in Computer Science,2019,2019,journal,none,none,no,Contextual evidence
+SCO-0879,Rudovic et al. (2019),ICMI 2019 - Proceedings of the 2019 International Conference on Multimodal Interaction,2019,2020,conference and proceedings,none,0.129,no,Contextual evidence
+SCO-0325,Sholikah et al. (2024),Procedia Computer Science,2024,2024,conference and proceedings,none,0.471,no,Contextual evidence
+SCO-0160,Sariyanidi et al. (2025),2025 IEEE 19th International Conference on Automatic Face and Gesture Recognition (FG),2025,2025,not indexed,none,none,no,Contextual evidence
+WOS-0236,Akın-Bülbül et al. (2024),Turk Psikoloji Dergisi,2024,2024,not indexed,none,none,no,Contextual evidence
+SCO-0909,Guess What? (2019),Journal of Healthcare Informatics Research,2019,2019,journal,none,none,no,Excluded
+ACM-0003,CHI Extended Abstracts (2024),Conference on Human Factors in Computing Systems - Proceedings,2024,2024,conference and proceedings,none,0.889,no,Excluded
+SCO-0534,ToMtool (2022),ACM International Conference Proceeding Series,2022,2022,conference and proceedings,none,0.209,no,Excluded

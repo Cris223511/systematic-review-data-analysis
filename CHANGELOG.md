@@ -149,6 +149,33 @@ N36-01 to N36-06 and the closure plan).
   retractions found in V3.6 described, and the Shi et al. session count corrected.
 - CHANGELOG: the six earlier entries marked PENDING were manuscript-only changes made in
   Overleaf and are now labelled as such.
+
+### Changed (audit of criterion CI(3), 2026-11-10)
+- Criterion CI(3) audited against the SCImago edition of the year of first online
+  publication of every included study, every contextual study and the records excluded
+  for CI(3) (advisory I-09). New file `data/sjr_verification.csv` records source type,
+  best quartile and SJR for each of them. The 31 remaining eligible studies have a
+  quartile from Q1 to Q3; the 2026 study uses the 2025 edition.
+- Five V3.5 studies whose venue had no SJR quartile in the year of publication moved to
+  contextual evidence, as Akın-Bülbül et al. (2024) had in V3.5: Rudovic et al. (2018),
+  Science Robotics (first quartile in 2019); Dapogny et al. (2019), Frontiers in Computer
+  Science (first quartile in 2022); Rudovic et al. (2019), ICMI 2019 proceedings;
+  Sholikah et al. (2024), Procedia Computer Science (proceedings); Sariyanidi et al.
+  (2025), IEEE FG 2025 (not indexed). Eligible corpus 36 to 31 (D1 10, D2 4, D3 6, D4 11);
+  contextual evidence 9 to 14; ML architecture 28 to 23; supervised metrics 26 to 22
+  (numeric 25 to 22); primary evidence 18 to 14; translational relevance 21 to 18; studies
+  with at least one stated challenge 21 to 18.
+- IEEE-0006 reassigned from CI(3) to CE(3): the 2025 edition of IEEE Access applies to it as
+  to Cicceri et al. (2026), and the study uses only health-insurance administrative
+  records. Full-text exclusions: CE(3) 9 to 10, CI(3) 8 to 7; total unchanged (46).
+- Model family "Computer Vision / Eye-tracking" renamed "Computer Vision pipelines" in the
+  extraction matrix, `pipeline/compute_frequencies.py`, `scripts/fig_4_architectures.R`
+  and `scripts/fig_8_temporal.html` (advisory I-02).
+- Figures 2, 3, 4, 5, 7 and 8 regenerated from the matrix; Figure 6 is regenerated with
+  `scripts/fig_6_datasets.R`.
+- Supplementary Materials S1 to S5 and `prisma/PRISMA_2020.docx` updated to 31 eligible and
+  14 contextual studies. S5 Section G and the README use nominal, non-cumulative categories
+  of implementation and validation evidence instead of readiness levels (advisory I-10).
 ### Commits
 - `d1fb7e6` 2026-11-07 feat: add extraction master and compute all figures from it, add licenses, update README
 - `3791adb` 2026-11-08 feat: reconstruct screening flow with reproducible deduplication and explicit scope criterion
@@ -157,6 +184,7 @@ N36-01 to N36-06 and the closure plan).
 - `67f2a7b` 2026-11-10 fix: count Voss and Wang metric flags and update metric denominators
 - `32c5913` 2026-11-10 refactor: restore PRISMA template, move pipeline code and rebuild S4 and S5
 - `4521e23` 2026-11-10 fix: correct Shi session count, harmonise S4 settings and update README values
+- `PENDING` 2026-11-10 fix: apply CI(3) to every venue, move five studies to contextual evidence and rename the CV family
 
 ---
 
