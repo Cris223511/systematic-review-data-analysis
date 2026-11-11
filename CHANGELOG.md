@@ -182,6 +182,10 @@ N36-01 to N36-06 and the closure plan).
   `lim_interpretability` added to the extraction matrix. The 14 studies kept from V3.5
   were recoded from their full texts with the rule used for the 17 added studies, because
   the V3.5 coding kept only totals. Result for 31 studies: 27, 11, 10 and 1.
+- `data/sjr_verification.csv` extended to the four remaining records excluded for CI(3)
+  (ACII Workshops 2023, CSEDU 2023, IEEE SMC Magazine 2021 and AICCONF 2024, none with an
+  SJR quartile) and to IEEE-0006, which meets CI(3) and is excluded for CE(3). The
+  verification now covers all 45 records named in the manuscript.
 ### Commits
 - `d1fb7e6` 2026-11-07 feat: add extraction master and compute all figures from it, add licenses, update README
 - `3791adb` 2026-11-08 feat: reconstruct screening flow with reproducible deduplication and explicit scope criterion
@@ -191,7 +195,8 @@ N36-01 to N36-06 and the closure plan).
 - `32c5913` 2026-11-10 refactor: restore PRISMA template, move pipeline code and rebuild S4 and S5
 - `4521e23` 2026-11-10 fix: correct Shi session count, harmonise S4 settings and update README values
 - `a5a9b6c` 2026-11-10 fix: apply CI(3) to every venue, move five studies to contextual evidence and rename the CV family
-- `PENDING` 2026-11-11 feat: add declared-limitation columns to the extraction matrix
+- `1e1b9bf` 2026-11-11 feat: add declared-limitation columns to the extraction matrix
+- `PENDING` 2026-11-11 data: record SJR verification of every CI(3)-excluded record
 
 ---
 

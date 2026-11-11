@@ -31,7 +31,7 @@ systematic-review-data-analysis/
 │   ├── extraction_master.csv            # Study-level extraction matrix (31 eligible studies)
 │   ├── records_deduplicated.csv         # All 1,920 records with duplicate flags (generated)
 │   ├── screening_log.csv                # Decision, criterion and reason for each of the 1,396 unique records
-│   ├── sjr_verification.csv             # SJR quartile of each included, contextual and CI(3)-excluded venue
+│   ├── sjr_verification.csv             # SJR quartile of each included venue and each record moved or excluded under CI(3)
 │   ├── IEEE-data.csv                    # Raw export from IEEE Xplore (38 records)
 │   ├── scopus-data.csv                  # Raw export from Scopus (935 records)
 │   └── web-of-science-data.csv          # Raw export from Web of Science (942 records)
