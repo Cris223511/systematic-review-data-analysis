@@ -232,6 +232,17 @@ Critical gap: no validated datasets representing Latin American pediatric popula
 
 18 studies state at least one challenge; a study may state more than one.
 
+### Declared Limitations (n = 31 eligible corpus)
+
+| Limitation | Studies | % |
+|------------|---------|---|
+| Class imbalance and sampling bias (including small samples) | 27 | 87.1% |
+| Inconsistent recording and annotation | 11 | 35.5% |
+| Limited ecological representativeness | 10 | 32.3% |
+| Limited clinical interpretability | 1 | 3.2% |
+
+Columns `lim_*` of the extraction matrix record, per study, only the limitations the authors declare explicitly about their own study. In V3.6 the 14 studies kept from the original corpus were recoded with the rule applied to the 17 added studies (a small sample declared as a limitation counts as sampling bias), because the V3.5 coding kept only totals; the coding is by the first reviewer and its second-reviewer verification is pending.
+
 ### Implementation and Validation Evidence (n = 31 eligible corpus)
 
 | Category | Studies | % |

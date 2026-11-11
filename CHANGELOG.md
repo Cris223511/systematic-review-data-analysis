@@ -176,6 +176,12 @@ N36-01 to N36-06 and the closure plan).
 - Supplementary Materials S1 to S5 and `prisma/PRISMA_2020.docx` updated to 31 eligible and
   14 contextual studies. S5 Section G and the README use nominal, non-cumulative categories
   of implementation and validation evidence instead of readiness levels (advisory I-10).
+
+### Added (declared limitations, 2026-11-11)
+- Columns `lim_ecological`, `lim_imbalance_sampling`, `lim_annotation` and
+  `lim_interpretability` added to the extraction matrix. The 14 studies kept from V3.5
+  were recoded from their full texts with the rule used for the 17 added studies, because
+  the V3.5 coding kept only totals. Result for 31 studies: 27, 11, 10 and 1.
 ### Commits
 - `d1fb7e6` 2026-11-07 feat: add extraction master and compute all figures from it, add licenses, update README
 - `3791adb` 2026-11-08 feat: reconstruct screening flow with reproducible deduplication and explicit scope criterion
@@ -185,6 +191,7 @@ N36-01 to N36-06 and the closure plan).
 - `32c5913` 2026-11-10 refactor: restore PRISMA template, move pipeline code and rebuild S4 and S5
 - `4521e23` 2026-11-10 fix: correct Shi session count, harmonise S4 settings and update README values
 - `a5a9b6c` 2026-11-10 fix: apply CI(3) to every venue, move five studies to contextual evidence and rename the CV family
+- `PENDING` 2026-11-11 feat: add declared-limitation columns to the extraction matrix
 
 ---
 
