@@ -70,7 +70,8 @@ systematic-review-data-analysis/
 │   ├── S2_mmat_appraisal.pdf            # MMAT appraisal by study and domain
 │   ├── S3_dataset_sources.pdf           # Documentary sources for dataset evaluation
 │   ├── S4_stratified_synthesis.pdf      # Stratified synthesis of the 31 eligible studies
-│   └── S5_screening_reconstruction.pdf  # Deduplication, screening log and extraction of the 17 added studies
+│   ├── S5_screening_reconstruction.pdf  # Deduplication, screening log and extraction of the 17 added studies
+│   └── S6_claim_evidence_matrix.pdf     # Claim, citation and evidence matrix of the Discussion and Conclusions
 │
 ├── CHANGELOG.md
 ├── LICENSE                              # MIT license for the code
@@ -271,6 +272,7 @@ All supplementary materials describe the V3.6 corpus of 31 eligible studies. Row
 | S3 | Documentary sources for the 8-domain dataset quality evaluation (SSBD and web videos added, ALSPAC removed) |
 | S4 | Stratified synthesis: Section A (31 eligible by D1-D4), Section B (14 contextual), Section C (longitudinal tracking audit and coding matrix) |
 | S5 | Screening reconstruction: deduplication, screening counts, the 99 full-text decisions, extraction and MMAT of the 17 added studies, the explicit scope criterion, data provenance risk, the audit of CI(3) and the implementation and validation evidence of the added studies |
+| S6 | Claim, citation and evidence matrix: each claim of the Discussion and the Conclusions with its citations, the supporting evidence and its status |
 
 ## Reproducing the Figures
 

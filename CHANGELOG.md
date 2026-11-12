@@ -186,6 +186,18 @@ N36-01 to N36-06 and the closure plan).
   (ACII Workshops 2023, CSEDU 2023, IEEE SMC Magazine 2021 and AICCONF 2024, none with an
   SJR quartile) and to IEEE-0006, which meets CI(3) and is excluded for CE(3). The
   verification now covers all 45 records named in the manuscript.
+
+### Added (claim-evidence audit, 2026-11-11)
+- `supplementary/S6_claim_evidence_matrix.pdf`: every claim of the Discussion and the
+  Conclusions that states a number, cites a study or uses evaluative, causal or
+  transferability wording, with its citations, the evidence in the extraction matrix, the
+  manuscript tables or S3 and S4, and its status (advisory I-08). 52 claims: 32 supported,
+  15 corrected in the manuscript and 5 with a citation fit check pending against the full
+  texts.
+- Manuscript table numbers corrected in S2 (dataset quality evaluation, Table 5) and S4
+  (stratified synthesis, Table 22); both had cited the LaTeX label instead of the printed
+  number.
+
 ### Commits
 - `d1fb7e6` 2026-11-07 feat: add extraction master and compute all figures from it, add licenses, update README
 - `3791adb` 2026-11-08 feat: reconstruct screening flow with reproducible deduplication and explicit scope criterion
@@ -196,7 +208,8 @@ N36-01 to N36-06 and the closure plan).
 - `4521e23` 2026-11-10 fix: correct Shi session count, harmonise S4 settings and update README values
 - `a5a9b6c` 2026-11-10 fix: apply CI(3) to every venue, move five studies to contextual evidence and rename the CV family
 - `1e1b9bf` 2026-11-11 feat: add declared-limitation columns to the extraction matrix
-- `PENDING` 2026-11-11 data: record SJR verification of every CI(3)-excluded record
+- `cd3db2e` 2026-11-11 data: record SJR verification of every CI(3)-excluded record
+- `PENDING` 2026-11-11 docs: add claim-citation-evidence matrix S6 and fix manuscript table numbers in S2 and S4
 
 ---
 
