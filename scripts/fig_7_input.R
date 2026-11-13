@@ -70,4 +70,4 @@ p <- ggplot(df_input, aes(x = Studies, y = Group)) +
     panel.grid.major.x = element_line(colour = "gray90")
   )
 
-ggsave("../results/fig_7_input.png", plot = p, width = 9, height = 4.8, dpi = 300)
+ggsave("../results/fig_7_input.png", plot = p, width = 9, height = 4.8, dpi = 300, bg = "white")

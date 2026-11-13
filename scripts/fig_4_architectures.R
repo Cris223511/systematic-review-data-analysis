@@ -99,4 +99,4 @@ p <- ggplot(df_arch, aes(x = Studies, y = Family, fill = Configuration)) +
     panel.grid.major.x = element_line(colour = "gray90")
   )
 
-ggsave("../results/fig_4_architectures.png", plot = p, width = 9, height = 5.2, dpi = 300)
+ggsave("../results/fig_4_architectures.png", plot = p, width = 9, height = 5.2, dpi = 300, bg = "white")

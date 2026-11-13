@@ -31,14 +31,14 @@ CHALLENGES = [
 METRICS = [("acc", "ACC"), ("f1", "F1-score"), ("precision", "Precision"), ("recall", "Recall"), ("auc", "AUC")]
 
 EXPECTED = {
-    "eligible": 31,
-    "domains": {"D1": 10, "D2": 4, "D3": 6, "D4": 11},
-    "mmat_appraised": 31,
-    "ml_architecture": 23,
+    "eligible": 30,
+    "domains": {"D1": 10, "D2": 3, "D3": 6, "D4": 11},
+    "mmat_appraised": 30,
+    "ml_architecture": 22,
     "supervised_metrics": 22,
     "metrics_numeric": 22,
-    "primary_evidence": 14,
-    "translational": 18,
+    "primary_evidence": 13,
+    "translational": 17,
     "challenge_any": 18,
 }
 CURRENT_PARTIAL_YEAR = 2026
@@ -84,7 +84,7 @@ def compute(rows):
         {"label": label, "n": sum(flag(r, key) for r in supervised), "pct": round(100 * sum(flag(r, key) for r in supervised) / len(supervised))}
         for key, label in METRICS
     ]
-    years = list(range(min(int(r["year"]) for r in rows), max(int(r["year"]) for r in rows) + 1))
+    years = list(range(min(int(r["year"]) for r in rows), max(max(int(r["year"]) for r in rows), CURRENT_PARTIAL_YEAR) + 1))
     datasets = Counter(r["dataset_category"] for r in rows)
     inputs = Counter(r["input_group"] for r in rows)
     temporal = {fam: [sum(r["model_family"] == fam and int(r["year"]) == y for r in rows) for y in years] for fam in FAMILIES}

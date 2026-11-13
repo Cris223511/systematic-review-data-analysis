@@ -198,6 +198,61 @@ N36-01 to N36-06 and the closure plan).
   (stratified synthesis, Table 22); both had cited the LaTeX label instead of the printed
   number.
 
+### Changed (full-text audit, 2026-11-12)
+- The 31 eligible studies were checked against their full texts (Europe PMC, PMC, publisher
+  pages and open PDFs read in the browser; the arXiv version for Shi et al. 2022). New file
+  `data/fulltext_coding.csv` records, per study, the partition unit, leakage risk, external
+  validation, test size, longitudinal variables and a concurrent coding of acquisition,
+  representation and model components, each with the section or page of the article that
+  supports it (advisory I-01, I-03, I-11 and closure plan item 03). Johnson et al. (2025)
+  and Fan et al. (2025) were read from the publisher PDFs supplied by the authors of this
+  review, because the publisher page requires a human verification step.
+- Cicceri et al. (2026) moved to contextual evidence under CE(3): it analyses only hand
+  keypoints to detect pointing gestures, without facial or gaze analysis. Eligible corpus
+  31 to 30 (D2 4 to 3); contextual evidence 14 to 15; ML architecture 23 to 22; primary
+  evidence 14 to 13; translational relevance 18 to 17. `data/screening_log.csv`,
+  `data/sjr_verification.csv`, the extraction matrix, `pipeline/compute_frequencies.py`
+  (denominators and a 2026 column kept at zero), S1 to S6, the PRISMA diagram text and
+  the README were updated.
+- Metric flags added from the full texts: precision and recall of Radocaj et al. (2025)
+  and Hassan et al. (2025), recall of Hwang et al. (2024) and Silva et al. (2021), AUC of
+  Hassan et al. (2025) and Silva et al. (2021). Supervised metric counts after these
+  flags: ACC 20, recall 13, F1 11, AUC 9, precision 8 (final counts in the Johnson et al.
+  item below).
+- Hassan et al. (2025): the 95.6% accuracy coded before is the training cross-validation
+  score; the held-out test on 8 participants reports 84.0%. Partition coded as subject
+  (46 training, 8 test participants).
+- Silva et al. (2021) report seven robot sessions with per-session results for each child
+  (S4 had one session); Voss et al. (2019) measure at intake, 6 and 12 weeks (S4 had two
+  time points). Hwang et al. (2024) and Carpenter et al. (2020) select variables on the
+  full sample before cross-validation (leakage risk potential).
+- S6 updated: 52 claims, 17 supported, 33 corrected, 2 with a fit check pending; the
+  ecological momentary assessment sentence and the interpretability sentence of Section 7
+  are resolved with the full texts of Johnson et al. and Shi et al.
+- Johnson et al. (2025), full text: the classifier reports F1 67.79%, precision 67.93% and
+  recall 67.83% besides accuracy on the 4,000 AffectNet validation images (table 3 of the
+  article); flags added, so the supervised metric counts become ACC 20, recall 14, F1 12,
+  AUC 9, precision 9. The article does not discuss model interpretability (it refers to
+  how people read expressions), so `ch_interpretability` changes from 1 to 0: one study
+  (Alam et al.) states that challenge. Its partition is the AffectNet training and
+  validation split (hold-out 13, not specified 1), and its 48 participants (15 with ASD,
+  school and university students) rate original and enhanced images; they are not the
+  test set of the classifier.
+- Fan et al. (2025), full text: three to seven 30-minute sessions per child over three
+  weeks with pretest and posttest (sections 4.2 and 4.3 of the article; S4 had two time
+  points); the CNN is trained on CAFE and FER-2013 combined and augmented to improve the
+  balance of expressions (section 3.2.1 of the article), so Fan et al. is counted under
+  augmentation with a declared balancing purpose (balancing not specified 15 of 22). The
+  97.6% is the accuracy of the AI feedback on 330 clips reviewed by specialists (section
+  5.4 of the article); the test accuracy of the CNN is not reported.
+- Figures 2, 3, 4, 5, 7 and 8 regenerated from the 30-study matrix (denominators n = 30
+  and n = 22, Figure 8 with the 2026 column at zero). Figures 3 and 5 include the Johnson
+  et al. changes. Figure 6 is regenerated with `scripts/fig_6_datasets.R`.
+- `scripts/fig_4_architectures.R` and `scripts/fig_7_input.R` save with `bg = "white"`, so
+  the PNG has a white background on every platform; on Linux, `ggsave` had written a
+  transparent background that some viewers show as black.
+- Second-reviewer verification (J.M.C.M.) of the re-screening, the extraction of the 17
+  added studies and the recoded limitations recorded in the manuscript, S2, S4 and S5.
 ### Commits
 - `d1fb7e6` 2026-11-07 feat: add extraction master and compute all figures from it, add licenses, update README
 - `3791adb` 2026-11-08 feat: reconstruct screening flow with reproducible deduplication and explicit scope criterion
@@ -209,7 +264,8 @@ N36-01 to N36-06 and the closure plan).
 - `a5a9b6c` 2026-11-10 fix: apply CI(3) to every venue, move five studies to contextual evidence and rename the CV family
 - `1e1b9bf` 2026-11-11 feat: add declared-limitation columns to the extraction matrix
 - `cd3db2e` 2026-11-11 data: record SJR verification of every CI(3)-excluded record
-- `PENDING` 2026-11-11 docs: add claim-citation-evidence matrix S6 and fix manuscript table numbers in S2 and S4
+- `ecf7ed1` 2026-11-12 docs: add claim-citation-evidence matrix S6 and fix manuscript table numbers in S2 and S4
+- `PENDING` 2026-11-12 fix: check the eligible corpus against full texts and move Cicceri et al. to contextual evidence
 
 ---
 
