@@ -253,6 +253,15 @@ N36-01 to N36-06 and the closure plan).
   transparent background that some viewers show as black.
 - Second-reviewer verification (J.M.C.M.) of the re-screening, the extraction of the 17
   added studies and the recoded limitations recorded in the manuscript, S2, S4 and S5.
+### Fixed (DOI check, 2026-11-13)
+- The DOIs of the 45 eligible and contextual records in `data/screening_log.csv` were
+  checked against the bibliography of the manuscript. One differs: the Web of Science
+  export gives Akın-Bülbül et al. (2024, WOS-0236) the DOI
+  10.31828/turkpsikoloji.1515430, which resolves to another article of the same special
+  issue (Kaynar Yaman and Jurist); DergiPark gives 10.31828/turkpsikoloji.1537964, the
+  DOI already used in the manuscript. Corrected in `data/screening_log.csv` and S5; the
+  raw export `data/web-of-science-data.csv` and `data/records_deduplicated.csv` keep the
+  exported value so that deduplication stays reproducible.
 ### Commits
 - `d1fb7e6` 2026-11-07 feat: add extraction master and compute all figures from it, add licenses, update README
 - `3791adb` 2026-11-08 feat: reconstruct screening flow with reproducible deduplication and explicit scope criterion
@@ -265,7 +274,8 @@ N36-01 to N36-06 and the closure plan).
 - `1e1b9bf` 2026-11-11 feat: add declared-limitation columns to the extraction matrix
 - `cd3db2e` 2026-11-11 data: record SJR verification of every CI(3)-excluded record
 - `ecf7ed1` 2026-11-12 docs: add claim-citation-evidence matrix S6 and fix manuscript table numbers in S2 and S4
-- `PENDING` 2026-11-12 fix: check the eligible corpus against full texts and move Cicceri et al. to contextual evidence
+- `f9e0989` 2026-11-13 fix: check the eligible corpus against full texts and move Cicceri et al. to contextual evidence
+- `PENDING` 2026-11-13 docs: record commit f9e0989 and correct the DOI of Akın-Bülbül et al. in the screening log
 
 ---
 
