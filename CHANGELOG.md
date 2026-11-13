@@ -253,6 +253,14 @@ N36-01 to N36-06 and the closure plan).
   transparent background that some viewers show as black.
 - Second-reviewer verification (J.M.C.M.) of the re-screening, the extraction of the 17
   added studies and the recoded limitations recorded in the manuscript, S2, S4 and S5.
+### Changed (citation style of the manuscript, 2026-11-13)
+- Following the advisor's style rule, every citation group of the manuscript is sorted by
+  reference number. In the running text and notes, groups that support a statement have
+  at most two references (two groups were shortened: transfer learning in the
+  Introduction and black-box models in Section 3); groups that enumerate every study of a
+  stated set keep the complete list. All 71 references remain cited. S6 records the rule
+  in its notes.
+
 ### Fixed (DOI check, 2026-11-13)
 - The DOIs of the 45 eligible and contextual records in `data/screening_log.csv` were
   checked against the bibliography of the manuscript. One differs: the Web of Science
@@ -275,7 +283,8 @@ N36-01 to N36-06 and the closure plan).
 - `cd3db2e` 2026-11-11 data: record SJR verification of every CI(3)-excluded record
 - `ecf7ed1` 2026-11-12 docs: add claim-citation-evidence matrix S6 and fix manuscript table numbers in S2 and S4
 - `f9e0989` 2026-11-13 fix: check the eligible corpus against full texts and move Cicceri et al. to contextual evidence
-- `PENDING` 2026-11-13 docs: record commit f9e0989 and correct the DOI of Akın-Bülbül et al. in the screening log
+- `ab38f69` 2026-11-13 docs: record commit f9e0989 and correct the DOI of Akın-Bülbül et al. in the screening log
+- `PENDING` 2026-11-13 docs: record commit ab38f69 and note the citation style of the manuscript in S6
 
 ---
 
