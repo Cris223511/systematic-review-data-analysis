@@ -136,8 +136,7 @@ window.FIGURE_DATA = {
     "2022",
     "2023",
     "2024",
-    "2025",
-    "2026*"
+    "2025"
   ],
   "temporal": {
     "CNN / Deep Learning": [
@@ -148,8 +147,7 @@ window.FIGURE_DATA = {
       2,
       0,
       4,
-      9,
-      0
+      9
     ],
     "Traditional ML": [
       0,
@@ -159,13 +157,11 @@ window.FIGURE_DATA = {
       1,
       0,
       0,
-      2,
-      0
+      2
     ],
     "Computer Vision pipelines": [
       1,
       1,
-      0,
       0,
       0,
       0,
@@ -181,8 +177,7 @@ window.FIGURE_DATA = {
       0,
       0,
       0,
-      2,
-      0
+      2
     ]
   },
   "domains": {

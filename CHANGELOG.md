@@ -147,8 +147,8 @@ N36-01 to N36-06 and the closure plan).
 - README: RQ3 base set to 26 studies (25 with numeric values), clinical performance
   values by domain updated, Fan et al. 97.6% described as feedback accuracy, the four
   retractions found in V3.6 described, and the Shi et al. session count corrected.
-- CHANGELOG: the six earlier entries marked PENDING were manuscript-only changes made in
-  Overleaf and are now labelled as such.
+- CHANGELOG: the six earlier entries without a commit hash were manuscript-only changes
+  made in Overleaf and are now labelled as such.
 
 ### Changed (audit of criterion CI(3), 2026-11-10)
 - Criterion CI(3) audited against the SCImago edition of the year of first online
@@ -270,6 +270,23 @@ N36-01 to N36-06 and the closure plan).
   DOI already used in the manuscript. Corrected in `data/screening_log.csv` and S5; the
   raw export `data/web-of-science-data.csv` and `data/records_deduplicated.csv` keep the
   exported value so that deduplication stays reproducible.
+### Release (closure of V3.6, 2026-11-14)
+- `CHECKSUMS.sha256`: SHA-256 of the three final PDFs compiled in Overleaf from the
+  closed sources: the internal Wiley version (`willey.pdf`), the ElsArticle version
+  (`elsarticle.pdf`) and the anonymised submission to Cognitive Systems Research
+  (`manuscript_anonymised.pdf`). Addresses advisory I-04, N35-04 and closure plan item 06.
+- Manuscript-only correction before compiling: RQ2 text and the note of the table of
+  reported values said that seven studies report AUC; the extraction matrix gives nine
+  (Shaik, Hassan, Alam, Aljbori, Vedantham, Shi, Silva, Carpenter and Han). Shaik et al.
+  (2025) added to the list of AUC values obtained on images without clinical traceability.
+- Figure 8 now ends at 2025: no eligible study has 2026 as year of first online
+  publication, so the empty 2026 column and its asterisk were removed.
+  `pipeline/compute_frequencies.py` no longer pads the series to the current partial
+  year; `pipeline/figure_data.js` and `results/fig_8_temporal.png` regenerated. The
+  manuscript caption of Figure 8 was updated, and the empty 2026 column of the
+  manuscript table of model families by year was removed as well (totals unchanged).
+- Tag `v3.6` moved from `c7cd7df` to the closing commit; no entry of V3.6 remains without
+  a commit hash.
 ### Commits
 - `d1fb7e6` 2026-11-07 feat: add extraction master and compute all figures from it, add licenses, update README
 - `3791adb` 2026-11-08 feat: reconstruct screening flow with reproducible deduplication and explicit scope criterion
@@ -284,7 +301,8 @@ N36-01 to N36-06 and the closure plan).
 - `ecf7ed1` 2026-11-12 docs: add claim-citation-evidence matrix S6 and fix manuscript table numbers in S2 and S4
 - `f9e0989` 2026-11-13 fix: check the eligible corpus against full texts and move Cicceri et al. to contextual evidence
 - `ab38f69` 2026-11-13 docs: record commit f9e0989 and correct the DOI of Akın-Bülbül et al. in the screening log
-- `PENDING` 2026-11-13 docs: record commit ab38f69 and note the citation style of the manuscript in S6
+- `c7cd7df` 2026-11-13 docs: record commit ab38f69 and note the citation style of the manuscript in S6
+- `v3.6` 2026-11-14 docs: record commit c7cd7df, end Figure 8 at 2025 and add the SHA-256 checksums of the final PDFs (closing commit of V3.6; its hash is the target of tag `v3.6`)
 
 ---
 

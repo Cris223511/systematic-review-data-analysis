@@ -41,7 +41,6 @@ EXPECTED = {
     "translational": 17,
     "challenge_any": 18,
 }
-CURRENT_PARTIAL_YEAR = 2026
 
 
 def load(path=MASTER):
@@ -84,7 +83,7 @@ def compute(rows):
         {"label": label, "n": sum(flag(r, key) for r in supervised), "pct": round(100 * sum(flag(r, key) for r in supervised) / len(supervised))}
         for key, label in METRICS
     ]
-    years = list(range(min(int(r["year"]) for r in rows), max(max(int(r["year"]) for r in rows), CURRENT_PARTIAL_YEAR) + 1))
+    years = list(range(min(int(r["year"]) for r in rows), max(int(r["year"]) for r in rows) + 1))
     datasets = Counter(r["dataset_category"] for r in rows)
     inputs = Counter(r["input_group"] for r in rows)
     temporal = {fam: [sum(r["model_family"] == fam and int(r["year"]) == y for r in rows) for y in years] for fam in FAMILIES}
@@ -100,7 +99,7 @@ def compute(rows):
         "metrics": metrics,
         "datasets": dict(datasets),
         "inputs": {k: {"n": v, "pct": pct(v, n)} for k, v in inputs.most_common()},
-        "years": [f"{y}*" if y == CURRENT_PARTIAL_YEAR else str(y) for y in years],
+        "years": [str(y) for y in years],
         "temporal": temporal,
         "domains": dict(Counter(r["domain"] for r in rows)),
         "primary_evidence": sum(flag(r, "primary_evidence") for r in rows),
