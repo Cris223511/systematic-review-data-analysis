@@ -285,6 +285,11 @@ N36-01 to N36-06 and the closure plan).
   year; `pipeline/figure_data.js` and `results/fig_8_temporal.png` regenerated. The
   manuscript caption of Figure 8 was updated, and the empty 2026 column of the
   manuscript table of model families by year was removed as well (totals unchanged).
+- The first build of the anonymised manuscript (checksum recorded in `488ef63`) cut the
+  bottom of Table 1 (eligible studies by domain) because the review option of elsarticle
+  double-spaces tables. Tables 1 and 2 of that manuscript are now single-spaced; text,
+  values and citations are unchanged. `CHECKSUMS.sha256` updated with the new PDF; the
+  Wiley and ElsArticle PDFs are unchanged.
 - Tag `v3.6` moved from `c7cd7df` to the closing commit; no entry of V3.6 remains without
   a commit hash.
 ### Commits
@@ -302,7 +307,8 @@ N36-01 to N36-06 and the closure plan).
 - `f9e0989` 2026-11-13 fix: check the eligible corpus against full texts and move Cicceri et al. to contextual evidence
 - `ab38f69` 2026-11-13 docs: record commit f9e0989 and correct the DOI of Akın-Bülbül et al. in the screening log
 - `c7cd7df` 2026-11-13 docs: record commit ab38f69 and note the citation style of the manuscript in S6
-- `v3.6` 2026-11-14 docs: record commit c7cd7df, end Figure 8 at 2025 and add the SHA-256 checksums of the final PDFs (closing commit of V3.6; its hash is the target of tag `v3.6`)
+- `488ef63` 2026-11-14 docs: record commit c7cd7df, end Figure 8 at 2025 and add the SHA-256 checksums of the final PDFs
+- `v3.6` 2026-11-14 docs: record commit 488ef63 and update the checksum of the anonymised manuscript PDF (closing commit of V3.6; its hash is the target of tag `v3.6`)
 
 ---
 
