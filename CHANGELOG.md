@@ -305,6 +305,20 @@ N36-01 to N36-06 and the closure plan).
   number is missing ("Front Psychiatry10"); the copy in the Overleaf project is patched in
   the name-list and journal-volume functions only. `CHECKSUMS.sha256` updated with the
   three rebuilt PDFs.
+- Supplementary Material S6, rows 29 and 34, checked against the full texts (advisory
+  I-08). Row 29: Voss et al. (2019) report a moderation effect of sex on the primary
+  outcome and Manelis-Baram et al. (2025) test their outcome by sex and against ADOS-2
+  severity, so the claim that no study disaggregates by sex or severity was false; the
+  Discussion now says that subgroup analysis is exceptional (those two studies) and that
+  no study was found with results by skin tone, ethnic origin or comorbidity. Row 34:
+  among the 11 non-ensembled CNN studies, ImageNet weights are documented in Washington et
+  al. (2022) and Johnson et al. (2025) and training on facial expression databases in Fan
+  et al. (2025) and Chen et al. (2024), so ImageNet transfer learning is frequent but not
+  predominant; the sentences of Sections 4 and 7.1 were changed accordingly and the
+  Section 4 sentence now also cites Johnson et al. (2025) and Fan et al. (2025). S6 now has
+  52 rows, 17 supported and 35 corrected, none pending. The anonymised submission does not
+  contain these sentences and is unchanged; the Wiley and ElsArticle PDFs are rebuilt and
+  `CHECKSUMS.sha256` updated.
 - Tag `v3.6` moved from `c7cd7df` to the closing commit; no entry of V3.6 remains without
   a commit hash.
 ### Commits
@@ -324,7 +338,8 @@ N36-01 to N36-06 and the closure plan).
 - `c7cd7df` 2026-11-13 docs: record commit ab38f69 and note the citation style of the manuscript in S6
 - `488ef63` 2026-11-14 docs: record commit c7cd7df, end Figure 8 at 2025 and add the SHA-256 checksums of the final PDFs
 - `57cbbff` 2026-11-14 docs: record commit 488ef63 and update the checksum of the anonymised manuscript PDF
-- `v3.6` 2026-11-14 docs: record commit 57cbbff and the checksums of the corrected final PDFs (closing commit of V3.6; its hash is the target of tag `v3.6`)
+- `1b0457c` 2026-11-14 docs: record commit 57cbbff and the checksums of the corrected final PDFs
+- `v3.6` 2026-11-15 docs: close the last two rows of S6, record commit 1b0457c and the checksums of the final PDFs (closing commit of V3.6; its hash is the target of tag `v3.6`)
 
 ---
 
