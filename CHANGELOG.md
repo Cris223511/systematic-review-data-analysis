@@ -290,6 +290,21 @@ N36-01 to N36-06 and the closure plan).
   double-spaces tables. Tables 1 and 2 of that manuscript are now single-spaced; text,
   values and citations are unchanged. `CHECKSUMS.sha256` updated with the new PDF; the
   Wiley and ElsArticle PDFs are unchanged.
+- The rebuild recorded in `57cbbff` still cut Table 1 of the anonymised manuscript. Built
+  with the elsarticle class itself, single spacing was not enough (the table was 64 pt
+  taller than the page), so Table 1 is now split over two consecutive pages (D1 and D2;
+  D3 and D4, headed "Table 1 (continued)"). Text, values and citations are unchanged.
+- Final proofreading of the manuscript sources (Wiley and ElsArticle): the author
+  contribution statement no longer prints an em dash ("redacción (revisión y edición)",
+  "redacción (borrador original)"); the reference of Peters et al. (2020) uses initials and
+  the abbreviated journal name like the other 70; the em dash in the title of Shaw et al.
+  (2025) is replaced by a colon, as in the APA list of the submission. No citation added,
+  removed or moved. The bibliography style of the Wiley template (`wileyNJD-Chicago.bst`)
+  printed a double comma before the last author ("Barman,, and Politis"), a comma between
+  two authors ("Nagae, and Lee") and no space between journal and volume when the issue
+  number is missing ("Front Psychiatry10"); the copy in the Overleaf project is patched in
+  the name-list and journal-volume functions only. `CHECKSUMS.sha256` updated with the
+  three rebuilt PDFs.
 - Tag `v3.6` moved from `c7cd7df` to the closing commit; no entry of V3.6 remains without
   a commit hash.
 ### Commits
@@ -308,7 +323,8 @@ N36-01 to N36-06 and the closure plan).
 - `ab38f69` 2026-11-13 docs: record commit f9e0989 and correct the DOI of Akın-Bülbül et al. in the screening log
 - `c7cd7df` 2026-11-13 docs: record commit ab38f69 and note the citation style of the manuscript in S6
 - `488ef63` 2026-11-14 docs: record commit c7cd7df, end Figure 8 at 2025 and add the SHA-256 checksums of the final PDFs
-- `v3.6` 2026-11-14 docs: record commit 488ef63 and update the checksum of the anonymised manuscript PDF (closing commit of V3.6; its hash is the target of tag `v3.6`)
+- `57cbbff` 2026-11-14 docs: record commit 488ef63 and update the checksum of the anonymised manuscript PDF
+- `v3.6` 2026-11-14 docs: record commit 57cbbff and the checksums of the corrected final PDFs (closing commit of V3.6; its hash is the target of tag `v3.6`)
 
 ---
 
